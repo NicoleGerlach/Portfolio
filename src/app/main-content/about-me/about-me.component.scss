@@ -1,0 +1,122 @@
+.logo-box {
+    display: flex;
+    margin: 27px 18px 0 7px;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 58px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    .logo-pic {
+        width: 58px;
+        height: 38px;
+    }
+
+    .name-small {
+        height: 16px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 120%;
+    }
+
+    .profession-small {
+        font-family: 'Josefin Sans';
+        font-size: 12px;
+        color: #F28A62;
+        text-align: center;
+        line-height: 120%;
+    }
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 23px;
+
+    .elipse {
+        width: 311.17px;
+        height: 326px;
+        top: 43px;
+        left: 38.91px;
+        box-sizing: border-box;
+        padding: 0 12px;
+        max-width: 100%;
+    }
+
+    .bw-pic {
+        position: absolute;
+        width: 266.96px;
+        height: 326px;
+
+    }
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+}
+
+.menu-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 300px;
+    margin-top: 23px;
+    position: absolute;
+    z-index: 1;
+
+    .menu-box-pic {
+        width: 300px;
+    }
+
+    .menu-list {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 8px;
+    // gap: 8px;
+    color: #F8F5EC;
+
+    .fullname {
+        font-family: 'Anta';
+        font-size: 37px;
+        height: 48px;
+    }
+
+    .profession {
+        font-size: 20px;
+        text-transform: uppercase;
+        font-family: 'Josefin Sans';
+    }
+}
+
+.arrow-down {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+
+    .img:hover {
+        cursor: pointer;
+    }
+}
+
+.d-none {
+    display: none;
+}

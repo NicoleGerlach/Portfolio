@@ -1,0 +1,13 @@
+* {
+    background-color: #F28A62;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo-pic {
+        height: 38px;
+    }
+}

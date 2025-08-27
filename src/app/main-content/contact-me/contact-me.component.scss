@@ -1,0 +1,54 @@
+* {
+    text-align: center;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-box {
+    gap: 32px;
+}
+
+.work-together {
+    font-size: 20px;
+    color: #F28A62;
+    margin-top: 32px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+input {
+    background-color: #042639;
+    text-align: start;
+    height: 60px;
+    border-radius: 30px;
+    border: solid 1px #F28A62;
+    font-family: 'Josefin Sans';
+    padding-left: 26px;
+    color: #F8F5EC;
+}
+
+textarea {
+    background-color: #042639;
+    text-align: start;
+    resize: none;
+    height: 200px;
+    border-radius: 30px;
+    border: solid 1px #F28A62;
+    font-family: 'Josefin Sans';
+    padding: 29px 0 0 26px;
+    color: #F8F5EC;
+}
+
+input::placeholder,
+textarea::placeholder {
+    opacity: 40%;
+    font-size: 16px;
+}

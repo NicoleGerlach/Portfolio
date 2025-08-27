@@ -1,0 +1,33 @@
+
+<div class="logo-box">
+    <div class="logo">
+        <img class="logo-pic" src="assets/img/Logo.svg">
+        <span class="name-small">N.Gerlach</span>
+        <span class="profession-small">developer</span>
+    </div>
+    <div (click)="toggleMenu()">Menu</div>
+</div>
+<div class="menu-container">
+    <div class="menu-box" [class.d-none]="!menuOpen">
+        <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
+        <div class="menu-list">
+            <span>Warum ich</span>
+            <span>Skills</span>
+            <span>Projekte</span>
+            <span>Kontakt</span>
+        </div>
+    </div>
+</div>
+
+<div class="pic">
+    <img class="elipse" src="assets/img/Ellipse.svg">
+    <img class="bw-pic" src="assets/img/BW_pic.png">
+</div>
+<div class="name">
+    <span class="fullname">Nicole Gerlach</span>
+    <span class="profession">Frontend Developer</span>
+</div>
+
+<div class="arrow-down">
+    <img src="assets/img/Arrow_down.svg">
+</div>
