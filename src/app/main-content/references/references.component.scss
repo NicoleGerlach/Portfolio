@@ -1,3 +1,18 @@
-* {
-    text-align: center;
+
+.feedback-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    .name {
+        margin-bottom: 8px;
+    }
+
+    .project {
+        margin-bottom: 16px;
+    }
+}
+
+.background-elipse {
+    position: relative;
 }
