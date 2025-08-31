@@ -2,6 +2,12 @@
     background-color: #F28A62;
 }
 
+section {
+    padding: 30px 30px;
+}
+
+.footer {}
+
 .logo {
     display: flex;
     flex-direction: column;
@@ -10,4 +16,20 @@
     .logo-pic {
         height: 38px;
     }
+}
+
+.profession-small {
+    color: #042639;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 32px 63px;
+}
+
+.impressum {
+    font-size: 14px;
+    display: flex;
+    gap: 32px;
 }
