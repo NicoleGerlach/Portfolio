@@ -86,6 +86,10 @@
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #042639;
   color: #F8F5EC;
