@@ -1,4 +1,18 @@
-* {
-    border: solid 1px grey;
-    text-align: center;
+.projects {
+    display: flex;
+
+    .project-list {
+        width: 90px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-sizing: border-box;
+        padding-left: 12px;
+    }
+
+    .project-background {
+        background-color: #2D383F;
+    }
 }
