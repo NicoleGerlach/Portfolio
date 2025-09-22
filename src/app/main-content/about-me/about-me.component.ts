@@ -11,6 +11,7 @@ import { RouterLink } from "@angular/router";
 export class AboutMeComponent {
 
 menuOpen = false;
+hover = false;
 
 toggleMenu() {
   this.menuOpen = !this.menuOpen;

@@ -30,7 +30,13 @@
         <span class="profession">Frontend Developer</span>
     </div>
 
-    <div class="arrow-down">
-        <img src="assets/img/Arrow_down.svg">
-    </div>
+    <!-- <div class="arrow-down">
+        <img class="arrow-down-img" src="assets/img/Arrow_down.svg">
+        <img class="arrow-down-hover-img" src="assets/img/Arrow_down_hover.svg">
+    </div> -->
+    
+<div class="arrow-down">
+  <img class="arrow-down-img" (mouseover)="hover = true" (mouseout)="hover = false"
+       [src]="hover ? 'assets/img/Arrow_down_hover.svg' : 'assets/img/Arrow_down.svg'">
+</div>
 </section>

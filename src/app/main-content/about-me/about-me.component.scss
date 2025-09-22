@@ -118,10 +118,12 @@
     display: flex;
     justify-content: center;
     margin-top: 24px;
+    position: relative;
 
-    .img:hover {
+    .arrow-down-img:hover {
         cursor: pointer;
     }
+
 }
 
 .d-none {
