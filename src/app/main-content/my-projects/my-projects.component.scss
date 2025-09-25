@@ -12,7 +12,11 @@
         padding-left: 12px;
     }
 
-    .project-background {
+    &:hover {
+        cursor: pointer;
+    }
+
+    .card-background {
         background-color: #2D383F;
     }
 }

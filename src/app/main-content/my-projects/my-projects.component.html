@@ -1,10 +1,12 @@
+
 <section id="projects">
     <h2>Meine Projekte</h2>
     <div class="projects">
-        <span class="project-list project-background">1. Projekt</span>
-        <span class="project-list">2. Projekt</span>
-        <span class="project-list">3. Projekt</span>
+        <span (click)="showProject('first')" [class.card-background]="currentProject === 'first'" class="project-list">1. Projekt</span>
+        <span (click)="showProject('second')" [class.card-background]="currentProject === 'second'" class="project-list">2. Projekt</span>
+        <span (click)="showProject('third')" [class.card-background]="currentProject === 'third'" class="project-list">3. Projekt</span>
     </div>
-    <app-join></app-join>
-    <app-pit-penguin></app-pit-penguin>
+    <app-dabubble *ngIf="currentProject === 'first'"></app-dabubble>
+    <app-join *ngIf="currentProject === 'second'"></app-join>
+    <app-pit-penguin *ngIf="currentProject === 'third'"></app-pit-penguin>
 </section>

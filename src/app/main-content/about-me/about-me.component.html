@@ -15,18 +15,17 @@
         <div class="menu-box" [class.d-none]="!menuOpen">
             <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
             <ul class="menu-list">
-                <li><a href="#whyMe" (click)="closeMenu()" [class.fontColor]="!fontColorBlack">Warum ich</a></li>
-                <li><a href="#skills" (click)="closeMenu()" [class.fontColor]="fontColorBlack">Skills</a></li>
-                <li><a href="#projects" (click)="closeMenu()" [class.fontColor]="fontColorBlack">Projekte</a></li>
-                <li><a href="#contactMe" (click)="closeMenu()" [class.fontColor]="fontColorBlack">Kontakt</a></li>
-                <div class="languages">
-                    <span class="german" (click)="closeMenu()" [class.fontColor]="!fontColorBlack">DE</span>
-                    <span class="english" (click)="closeMenu()" [class.fontColor]="fontColorBlack">EN</span>
+                <li><a href="#whyMe" (click)="closeMenu()">Warum ich</a></li>
+                <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+                <li><a href="#projects" (click)="closeMenu()">Projekte</a></li>
+                <li><a [routerLink]="[]" fragment="contactMe" (click)="closeMenu()">Kontakt</a></li>
+                <div class="languages" [ngClass]="getLangClasses()">
+                    <span class="german" (click)="setLang('de')">DE</span>
+                    <span class="english" (click)="setLang('en')">EN</span>
                 </div>
             </ul>
         </div>
     </div>
-
     <div class="pic">
         <img class="elipse" src="assets/img/Ellipse.svg">
         <img class="bw-pic" src="assets/img/BW_pic.png">
@@ -35,14 +34,10 @@
         <span class="fullname">Nicole Gerlach</span>
         <span class="profession">Frontend Developer</span>
     </div>
-
-    <!-- <div class="arrow-down">
-        <img class="arrow-down-img" src="assets/img/Arrow_down.svg">
-        <img class="arrow-down-hover-img" src="assets/img/Arrow_down_hover.svg">
-    </div> -->
-
     <div class="arrow-down">
-        <img class="arrow-down-img" (mouseover)="hover = true" (mouseout)="hover = false"
-            [src]="hover ? 'assets/img/Arrow_down_hover.svg' : 'assets/img/Arrow_down.svg'">
+        <a href="#whyMe">
+            <img class="arrow-down-img" (mouseover)="hover = true" (mouseout)="hover = false"
+                [src]="hover ? 'assets/img/Arrow_down_hover.svg' : 'assets/img/Arrow_down.svg'">
+        </a>
     </div>
 </section>
