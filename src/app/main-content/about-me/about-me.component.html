@@ -1,9 +1,10 @@
+
 <section id="aboutMe">
     <div class="logo-box">
         <div class="logo">
             <img class="logo-pic" src="assets/img/Logo.svg">
-            <span class="name-small">N.Gerlach</span>
-            <span class="profession-small">developer</span>
+            <span class="name-small">{{ aboutContent?.nameSmall }}</span>
+            <span class="profession-small">{{ aboutContent?.professionSmall }}</span>
         </div>
         <div class="hamburger-menu" (click)="toggleMenu()" [class.open]="menuOpen">
             <div class="line"></div>
@@ -15,10 +16,10 @@
         <div class="menu-box" [class.d-none]="!menuOpen">
             <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
             <ul class="menu-list">
-                <li><a href="#whyMe" (click)="closeMenu()">Warum ich</a></li>
-                <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
-                <li><a href="#projects" (click)="closeMenu()">Projekte</a></li>
-                <li><a [routerLink]="[]" fragment="contactMe" (click)="closeMenu()">Kontakt</a></li>
+                <li><a href="#whyMe" (click)="closeMenu()">{{ menu?.whyMe }}</a></li>
+                <li><a href="#skills" (click)="closeMenu()">{{ menu?.skills}}</a></li>
+                <li><a href="#projects" (click)="closeMenu()">{{ menu?.projects}}</a></li>
+                <li><a href="#contactMe" (click)="closeMenu()">{{ menu?.contact}}</a></li>
                 <div class="languages" [ngClass]="getLangClasses()">
                     <span class="german" (click)="setLang('de')">DE</span>
                     <span class="english" (click)="setLang('en')">EN</span>
@@ -27,12 +28,12 @@
         </div>
     </div>
     <div class="pic">
-        <img class="elipse" src="assets/img/Ellipse.svg">
-        <img class="bw-pic" src="assets/img/BW_pic.png">
+        <!-- <img class="elipse" src="assets/img/Ellipse.svg"> -->
+        <img class="bw-pic" src="assets/img/BW_Pic.png">
     </div>
     <div class="name">
-        <span class="fullname">Nicole Gerlach</span>
-        <span class="profession">Frontend Developer</span>
+        <span class="fullname">{{ aboutContent?.name }}</span>
+        <span class="profession">{{ aboutContent?.profession }}</span>
     </div>
     <div class="arrow-down">
         <a href="#whyMe">

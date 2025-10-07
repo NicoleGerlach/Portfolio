@@ -22,6 +22,10 @@ form {
     gap: 24px;
 }
 
+.field:focus::placeholder {
+    color: transparent;
+}
+
 input {
     background-color: #042639;
     text-align: start;
