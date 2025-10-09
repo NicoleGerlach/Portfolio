@@ -3,7 +3,17 @@ import { NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { AboutMeService } from '../../services/about-me.service';
-import { AboutMeContent, Menu } from '../../interfaces/about-me.interface';
+
+type AboutMeContent = {
+  whyMe: string;
+  skills: string;
+  projects: string;
+  contact: string;
+  nameSmall: string;
+  professionSmall: string;
+  name: string;
+  profession: string
+}
 
 @Component({
   selector: 'app-about-me',
@@ -15,21 +25,29 @@ import { AboutMeContent, Menu } from '../../interfaces/about-me.interface';
 
 export class AboutMeComponent implements OnInit {
 
+  aboutContent: AboutMeContent = {
+    whyMe: '', skills: '', projects: '', contact: '',
+    nameSmall: '', professionSmall: '', name: '', profession: '',
+  };
+
   menuOpen = false;
   hover = false;
   fontColorBlack = true;
   currentLang: 'de' | 'en' = 'de';
 
-  aboutContent?: AboutMeContent;
-  menu?: Menu;
-
-  constructor(private aboutMeService: AboutMeService) { }
+  constructor(public aboutMeService: AboutMeService) { }
 
   ngOnInit(): void {
-    // Beispiel: Inhalte laden (Passe Pfad/URL ggf. an)
-    // this.aboutMeService.loadAboutMe('assets/i18n/de/about-me.json').subscribe(data => {
-    //   this.aboutContent = data as AboutMeContent;
-    // });
+    this.loadTexts();
+    };
+
+  loadTexts(): void {
+    const path = this.currentLang === 'de'
+    ? 'assets/i18n/about-me/de.json'
+    : 'assets/i18n/about-me/en.json';
+    this.aboutMeService.loadAboutMe(path).subscribe(data => {
+      this.aboutContent = data as AboutMeContent;
+    })
   }
 
   toggleMenu() {
@@ -41,7 +59,11 @@ export class AboutMeComponent implements OnInit {
   }
 
   setLang(lang: 'de' | 'en') {
+    if (this.currentLang !== lang) {
     this.currentLang = lang;
+    this.loadTexts();
+    }
+    this.closeMenu();
   }
 
   getLangClasses(): { 'lang-de': boolean; 'lang-en': boolean } {

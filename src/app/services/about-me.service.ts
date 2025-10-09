@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 @Injectable({ providedIn: 'root'})
 
 export class AboutMeService {
-    constructor (private http: HttpClient) {}
+    constructor (public http: HttpClient) {}
 
     loadAboutMe ( path: string): Observable <any> {
         return this.http.get<any>(path);
