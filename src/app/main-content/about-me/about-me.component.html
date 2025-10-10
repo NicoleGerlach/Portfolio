@@ -3,8 +3,8 @@
     <div class="logo-box">
         <div class="logo">
             <img class="logo-pic" src="assets/img/Logo.svg">
-            <span class="name-small">{{ aboutContent.nameSmall }}</span>
-            <span class="profession-small">{{ aboutContent.professionSmall }}</span>
+            <span class="name-small">{{ languageService.aboutContent.nameSmall }}</span>
+            <span class="profession-small">{{ languageService.aboutContent.professionSmall }}</span>
         </div>
         <div class="hamburger-menu" (click)="toggleMenu()" [class.open]="menuOpen">
             <div class="line"></div>
@@ -16,10 +16,10 @@
         <div class="menu-box" [class.d-none]="!menuOpen">
             <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
             <ul class="menu-list">
-                <li><a href="#whyMe" (click)="closeMenu()">{{ aboutContent.whyMe }}</a></li>
-                <li><a href="#skills" (click)="closeMenu()">{{ aboutContent.skills}}</a></li>
-                <li><a href="#projects" (click)="closeMenu()">{{ aboutContent.projects}}</a></li>
-                <li><a href="#contactMe" (click)="closeMenu()">{{ aboutContent.contact}}</a></li>
+                <li><a href="#whyMe" (click)="closeMenu()">{{ languageService.aboutContent.whyMe }}</a></li>
+                <li><a href="#skills" (click)="closeMenu()">{{ languageService.aboutContent.skills}}</a></li>
+                <li><a href="#projects" (click)="closeMenu()">{{ languageService.aboutContent.projects}}</a></li>
+                <li><a href="#contactMe" (click)="closeMenu()">{{ languageService.aboutContent.contact}}</a></li>
                 <div class="languages" [ngClass]="getLangClasses()">
                     <span class="german" (click)="setLang('de')">DE</span>
                     <span class="english" (click)="setLang('en')">EN</span>
@@ -31,8 +31,8 @@
         <img class="bw-pic" src="assets/img/BW_Pic.png">
     </div>
     <div class="name">
-        <span class="fullname">{{ aboutContent.name }}</span>
-        <span class="profession">{{ aboutContent.profession }}</span>
+        <span class="fullname">{{ languageService.aboutContent.name }}</span>
+        <span class="profession">{{ languageService.aboutContent.profession }}</span>
     </div>
     <div class="arrow-down">
         <a href="#whyMe">
