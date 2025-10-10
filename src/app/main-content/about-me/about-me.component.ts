@@ -1,4 +1,3 @@
-
 import { NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
@@ -8,7 +7,7 @@ import { LanguageService } from '../../services/language.service';
   standalone: true,
   imports: [NgClass],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  styleUrls: ['./about-me.component.scss']
 })
 
 export class AboutMeComponent implements OnInit {
