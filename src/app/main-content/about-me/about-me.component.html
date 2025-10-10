@@ -21,8 +21,8 @@
                 <li><a href="#projects" (click)="closeMenu()">{{ aboutContent.projects}}</a></li>
                 <li><a href="#contactMe" (click)="closeMenu()">{{ aboutContent.contact}}</a></li>
                 <div class="languages" [ngClass]="getLangClasses()">
-                    <span class="german" (click)="setLang('de')">DE</span>
-                    <span class="english" (click)="setLang('en')">EN</span>
+                    <span class="german" (click)="switchLanguages()">DE</span>
+                    <span class="english" (click)="switchLanguages()">EN</span>
                 </div>
             </ul>
         </div>
