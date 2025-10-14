@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -9,8 +9,12 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './why-me.component.html',
   styleUrl: './why-me.component.scss'
 })
-export class WhyMeComponent {
+export class WhyMeComponent implements OnInit {
 
   constructor (public languageService: LanguageService) {}
+
+  ngOnInit(): void {
+    this.languageService.loadTexts();
+  }
 
 }

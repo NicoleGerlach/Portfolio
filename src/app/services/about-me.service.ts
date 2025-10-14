@@ -1,15 +1,26 @@
 
-// import { Injectable } from "@angular/core";
-// import { HttpClient } from "@angular/common/http";
-// import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-// @Injectable({ providedIn: 'root'})
+export interface AboutMeContent {
+    whyMe: string;
+    skills: string;
+    projects: string;
+    contact: string;
+    nameSmall: string;
+    professionSmall: string;
+    name: string;
+    profession: string;
+}
 
-// export class AboutMeService {
-    
-//     constructor (public http: HttpClient) {}
+@Injectable({ providedIn: 'root' })
 
-//     loadAboutMe ( path: string): Observable <any> {
-//         return this.http.get<any>(path);
-//     }
-// }
+export class AboutMeService {
+
+    constructor(public http: HttpClient) { }
+
+    loadAboutMe(path: string): Observable<AboutMeContent> {
+        return this.http.get<AboutMeContent>(path);
+    }
+}
