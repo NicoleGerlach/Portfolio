@@ -40,41 +40,40 @@ export class LanguageService {
 
   constructor(private http: HttpClient) { }
 
-  private loadText<T>(path: string, subject: Subject<T>): void {
-    this.http.get<T>(path).subscribe((data) => subject.next(data));
-  }
-
-  loadTextsAboutMe(): void {
-    const path = this.currentLang === 'de'
-      ? 'assets/i18n/about-me/de.json'
-      : 'assets/i18n/about-me/en.json';
-    this.http.get<AboutMeContent>(path).subscribe(data => this.aboutContentSubject.next(data));
-  }
-
-  loadTextsWhyMe(): void {
-    const path = this.currentLang === 'de'
-      ? 'assets/i18n/why-me/de.json'
-      : 'assets/i18n/why-me/en.json';
-    this.http.get<WhyMeContent>(path).subscribe(data => this.whyMeContentSubject.next(data));
-  }
-
   // loadTextsAboutMe(): void {
-  //   const path = this.currentLang === 'de'
+  //   const pathAboutMe = this.currentLang === 'de'
   //     ? 'assets/i18n/about-me/de.json'
   //     : 'assets/i18n/about-me/en.json';
-  //   this.http.get<AboutMeContent>(path).subscribe((data) => {
+  //   this.http.get<AboutMeContent>(pathAboutMe).subscribe((data) => {
   //     this.aboutContentSubject.next(data);
   //   });
   // }
 
   // loadTextsWhyMe(): void {
-  //   const path = this.currentLang === 'de'
+  //   const pathWhyMe = this.currentLang === 'de'
   //     ? 'assets/i18n/why-me/de.json'
   //     : 'assets/i18n/why-me/en.json';
-  //   this.http.get<WhyMeContent>(path).subscribe((data) => {
+  //   this.http.get<WhyMeContent>(pathWhyMe).subscribe((data) => {
   //     this.whyMeContentSubject.next(data);
   //   });
   // }
+
+  private pathMap = {
+    aboutMe: { de: 'assets/i18n/about-me/de.json', en: 'assets/i18n/about-me/en.json' },
+    whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' }
+  } as const;
+
+  loadTextsAboutMe(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.aboutMe[lang] ?? this.pathMap.aboutMe.de;
+    this.http.get<AboutMeContent>(path).subscribe(data => this.aboutContentSubject.next(data));
+  }
+
+  loadTextsWhyMe(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.whyMe[lang] ?? this.pathMap.whyMe.de;
+    this.http.get<WhyMeContent>(path).subscribe(data => this.whyMeContentSubject.next(data));
+  }
 
   //   setLang(lang: 'de' | 'en'): void {
   //   if (this.currentLang !== lang) {
