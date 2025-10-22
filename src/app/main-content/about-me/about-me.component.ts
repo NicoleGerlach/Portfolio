@@ -23,7 +23,7 @@ export class AboutMeComponent implements OnInit {
 
   ngOnInit(): void {
     this.aboutMe$ = this.languageService.aboutContent$;
-    this.languageService.loadTexts();
+    this.languageService.loadTextsAboutMe();
     };
 
   toggleMenu() {
@@ -37,7 +37,8 @@ export class AboutMeComponent implements OnInit {
   setLang(lang: 'de' | 'en') {
     if (this.languageService.currentLang !== lang) {
     this.languageService.currentLang = lang;
-    this.languageService.loadTexts();
+    this.languageService.loadTextsAboutMe();
+    this.languageService.loadTextsWhyMe();
     }
     // this.closeMenu();
   }
