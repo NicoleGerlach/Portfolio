@@ -1,8 +1,18 @@
 {
-    "headline": "Brauchen Sie einen Teamplayer?",
+    "headline": "Teamplayer gesucht?",
     "notions": "Das sagen meine Kollegen über mich",
-    "name": "Davor Jezernik",
-    "projekt": "Projekt",
-    "projektName": "Join",
-    "feedback": "Mit Nicole zusammenzuarbeiten war eine große Bereicherung. Sie ist äußerst teamfähig und hat immer eine sehr angenehme, konstruktive Zusammenarbeit ermöglicht. Besonders beeindruckend war ihr Engagement: Trotz ihrer Rolle als Mama hat sie viel Zeit und Energie investiert, um unsere gemeinsamen Projekte erfolgreich voranzubringen. Nicole arbeitet zuverlässig, strukturiert und mit einem hohen Maß an Verantwortungsbewusstsein. Ich kann sie als Kollegin uneingeschränkt empfehlen."
+    "references": [
+        {
+            "name": "Davor Jezernik",
+            "project": "Projekt",
+            "projectName": "Join",
+            "feedback": "Mit Nicole zusammenzuarbeiten war eine große Bereicherung. Sie ist äußerst teamfähig und hat immer eine sehr angenehme, konstruktive Zusammenarbeit ermöglicht. Besonders beeindruckend war ihr Engagement: Trotz ihrer Rolle als Mama hat sie viel Zeit und Energie investiert, um unsere gemeinsamen Projekte erfolgreich voranzubringen. Nicole arbeitet zuverlässig, strukturiert und mit einem hohen Maß an Verantwortungsbewusstsein. Ich kann sie als Kollegin uneingeschränkt empfehlen."
+        },
+        {
+            "name": "Fourat Oueslati",
+            "project": "Projekt",
+            "projectName": "Join",
+            "feedback": "Nicole ist eine echte Kämpferin. Sie verliert nie den Fokus und gibt immer ihr Bestes. Probleme sieht sie nicht als Hindernis, sondern als Challenge. Oft hat sie uns mit neuen Ideen überrascht und sie denkt ständig outside the box. Sie weiß ganz genau wie man im Team arbeitet und bringt immer positive Energie mit."
+        }
+    ]
 }

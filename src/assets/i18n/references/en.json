@@ -1,0 +1,18 @@
+{
+    "headline": "Need a teamplayer?",
+    "notions": "Here what my colleagues said about me",
+    "references": [
+        {
+            "name": "Davor Jezernik",
+            "project": "Project",
+            "projectName": "Join",
+            "feedback": "Working with Nicole was a tremendous enrichment. She's an excellent team player and has always facilitated a very pleasant, constructive collaboration. Her commitment was particularly impressive: Despite her role as a mother, she invested a lot of time and energy into successfully advancing our joint projects. Nicole works reliably, in a structured manner, and with a high sense of responsibility. I can wholeheartedly recommend her as a colleague."
+        },
+        {
+            "name": "Fourat Oueslati",
+            "project": "Project",
+            "projectName": "Join",
+            "feedback": "Nicole is a true fighter. She never loses focus and always gives her best. She sees problems not as obstacles, but as challenges. She has often surprised us with new ideas and constantly thinks outside the box. She knows exactly how to work in a team and always brings positive energy."
+        }
+    ]
+}

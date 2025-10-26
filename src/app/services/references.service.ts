@@ -2,16 +2,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WhyMeContent } from '../interfaces/allInterfaces';
+import { ReferencesContent } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WhyMeService {
+export class ReferencesService {
 
   constructor(public http: HttpClient) { }
 
-  loadWhyMe(path: string): Observable<WhyMeContent> {
-          return this.http.get<WhyMeContent>(path);
-      }
+  loadReferences(path: string): Observable<ReferencesContent> {
+    return this.http.get<ReferencesContent>(path);
+  }
 }

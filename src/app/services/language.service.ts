@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
-// import { AboutMeContent, WhyMeContent } from '../interfaces/allInterfaces';
 
 export interface AboutMeContent {
   whyMe: string;
@@ -24,6 +23,19 @@ export interface WhyMeContent {
   skills: string;
 }
 
+export interface ReferenceCard {
+  name: string;
+  project: string;
+  projectName: string;
+  feedback: string;
+}
+
+export interface ReferencesContent {
+  headline: string;
+  notions: string;
+  references: ReferenceCard[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,30 +49,17 @@ export class LanguageService {
   private whyMeContentSubject = new Subject<WhyMeContent>();
   public whyMeContent$: Observable<WhyMeContent | null> = this.whyMeContentSubject.asObservable();
 
+  private referencesContentSubject = new Subject<ReferencesContent>();
+  public referencesContent$: Observable<ReferencesContent | null> = this.referencesContentSubject.asObservable();
+
 
   constructor(private http: HttpClient) { }
 
-  // loadTextsAboutMe(): void {
-  //   const pathAboutMe = this.currentLang === 'de'
-  //     ? 'assets/i18n/about-me/de.json'
-  //     : 'assets/i18n/about-me/en.json';
-  //   this.http.get<AboutMeContent>(pathAboutMe).subscribe((data) => {
-  //     this.aboutContentSubject.next(data);
-  //   });
-  // }
-
-  // loadTextsWhyMe(): void {
-  //   const pathWhyMe = this.currentLang === 'de'
-  //     ? 'assets/i18n/why-me/de.json'
-  //     : 'assets/i18n/why-me/en.json';
-  //   this.http.get<WhyMeContent>(pathWhyMe).subscribe((data) => {
-  //     this.whyMeContentSubject.next(data);
-  //   });
-  // }
-
   private pathMap = {
     aboutMe: { de: 'assets/i18n/about-me/de.json', en: 'assets/i18n/about-me/en.json' },
-    whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' }
+    whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' },
+    references: { de: 'assets/i18n/references/de.json', en: 'assets/i18n/references/en.json' },
+
   } as const;
 
   loadTextsAboutMe(): void {
@@ -74,6 +73,13 @@ export class LanguageService {
     const path = this.pathMap.whyMe[lang] ?? this.pathMap.whyMe.de;
     this.http.get<WhyMeContent>(path).subscribe(data => this.whyMeContentSubject.next(data));
   }
+
+  loadTextsReferences(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.references[lang] ?? this.pathMap.references.de;
+    this.http.get<ReferencesContent>(path).subscribe(data => this.referencesContentSubject.next(data));
+  }
+
 
   //   setLang(lang: 'de' | 'en'): void {
   //   if (this.currentLang !== lang) {

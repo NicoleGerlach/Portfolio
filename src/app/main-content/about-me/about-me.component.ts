@@ -39,6 +39,7 @@ export class AboutMeComponent implements OnInit {
     this.languageService.currentLang = lang;
     this.languageService.loadTextsAboutMe();
     this.languageService.loadTextsWhyMe();
+    this.languageService.loadTextsReferences();
     }
     // this.closeMenu();
   }
