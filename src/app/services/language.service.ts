@@ -23,6 +23,10 @@ export interface WhyMeContent {
   skills: string;
 }
 
+export interface MySkillsContent {
+  headline: string;
+}
+
 export interface ReferenceCard {
   name: string;
   project: string;
@@ -49,6 +53,9 @@ export class LanguageService {
   private whyMeContentSubject = new Subject<WhyMeContent>();
   public whyMeContent$: Observable<WhyMeContent | null> = this.whyMeContentSubject.asObservable();
 
+  private mySkillsContentSubject = new Subject<MySkillsContent>();
+  public mySkillsContent$: Observable<MySkillsContent | null> = this.mySkillsContentSubject.asObservable();
+
   private referencesContentSubject = new Subject<ReferencesContent>();
   public referencesContent$: Observable<ReferencesContent | null> = this.referencesContentSubject.asObservable();
 
@@ -58,6 +65,7 @@ export class LanguageService {
   private pathMap = {
     aboutMe: { de: 'assets/i18n/about-me/de.json', en: 'assets/i18n/about-me/en.json' },
     whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' },
+    mySkills: { de: 'assets/i18n/skills/de.json', en: 'assets/i18n/skills/en.json' },
     references: { de: 'assets/i18n/references/de.json', en: 'assets/i18n/references/en.json' },
 
   } as const;
@@ -73,6 +81,13 @@ export class LanguageService {
     const path = this.pathMap.whyMe[lang] ?? this.pathMap.whyMe.de;
     this.http.get<WhyMeContent>(path).subscribe(data => this.whyMeContentSubject.next(data));
   }
+
+  loadTextsSkills(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.mySkills[lang] ?? this.pathMap.mySkills.de;
+    this.http.get<MySkillsContent>(path).subscribe(data => this.mySkillsContentSubject.next(data));
+  }
+
 
   loadTextsReferences(): void {
     const lang = this.currentLang;
