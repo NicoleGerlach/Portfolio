@@ -1,19 +1,18 @@
-<section id="contactMe" class="margin-left-right-24">
-    <h2>Kontaktieren Sie mich</h2>
+<section id="contactMe" class="margin-left-right-24" *ngIf="contact$ | async as contact">
+    <h2>{{ contact.headline }}</h2>
     <div class="contact-option margin-left-right">
         <img src="assets/img/icon _phone_.svg">
-        <div>Tel.: 0162 465 8668</div>
+        <div>{{ contact.phone }}</div>
     </div>
     <div class="contact-option margin-left-right margin-bottom-32">
         <img src="assets/img/icon _email_.svg">
-        <div>E-Mail: contact{{ '@' }}gerlach-nicole.de</div>
+        <div>{{contact.mail}}</div>
     </div>
     <div class="contact-box margin-bottom-32">
-        <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis fugit eum cumque quia animi, odit eveniet
-            repellendus ipsum enim numquam in iste veniam libero id aliquid. Dolor harum autem deleniti.</span>
+        <span>{{ contact.text }}</span>
     </div>
     <div class="work-together margin-bottom-32">
-        <span>Lassen Sie uns zusammenarbeiten!</span>
+        <span>{{ contact.cooperation }}</span>
     </div>
     <form>
         <input class="field" placeholder="Vorname Name" type="text">
@@ -22,8 +21,7 @@
     </form>
     <div class="privacy-box">
         <img src="assets/img/Checkbox.svg">
-        <span>Ich habe die <span [ngStyle]="{color: '#F28A62'}">Datenschutzerklärung</span> gelesen und stimme der
-            Verarbeitungmeiner Datenwie beschrieben zu.</span>
+        <span>{{ contact.have }}<span [ngStyle]="{color: '#F28A62'}">{{ contact.prPolicy }}</span>{{ contact.read }}</span>
     </div>
     <div class="send-btn">
         <img src="assets/img/Btn_Send_Error.svg">

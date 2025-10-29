@@ -40,6 +40,17 @@ export interface ReferencesContent {
   references: ReferenceCard[];
 }
 
+export interface ContactContent {
+  headline: string;
+  phone: string;
+  mail: string;
+  text: string;
+  cooperation: string;
+  have: string;
+  prPolicy: string;
+  read: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -59,6 +70,8 @@ export class LanguageService {
   private referencesContentSubject = new Subject<ReferencesContent>();
   public referencesContent$: Observable<ReferencesContent | null> = this.referencesContentSubject.asObservable();
 
+  private contactContentSubject = new Subject<ContactContent>();
+  public contactContent$: Observable<ContactContent | null> = this.contactContentSubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -67,6 +80,7 @@ export class LanguageService {
     whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' },
     mySkills: { de: 'assets/i18n/skills/de.json', en: 'assets/i18n/skills/en.json' },
     references: { de: 'assets/i18n/references/de.json', en: 'assets/i18n/references/en.json' },
+    contact: { de: 'assets/i18n/contact/de.json', en: 'assets/i18n/contact/en.json' },
 
   } as const;
 
@@ -93,6 +107,12 @@ export class LanguageService {
     const lang = this.currentLang;
     const path = this.pathMap.references[lang] ?? this.pathMap.references.de;
     this.http.get<ReferencesContent>(path).subscribe(data => this.referencesContentSubject.next(data));
+  }
+
+    loadTextsContact(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.contact[lang] ?? this.pathMap.contact.de;
+    this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
   }
 
 

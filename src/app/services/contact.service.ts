@@ -1,17 +1,16 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WhyMeContent } from '../interfaces/allInterfaces';
+import { ContactContent } from './language.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WhyMeService {
+export class ContactService {
 
   constructor(public http: HttpClient) { }
 
-  loadWhyMe(path: string): Observable<WhyMeContent> {
-    return this.http.get<WhyMeContent>(path);
+  loadContact(path: string): Observable<ContactContent> {
+    return this.http.get<ContactContent>(path);
   }
 }
