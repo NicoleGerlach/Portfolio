@@ -1,6 +1,40 @@
+
 {
-    "projects": "Meine Projekte",
+    "headline": "Meine Projekte",
+    "technologies": "Technologie: ",
+    "duration": "Dauer: ",
     "about": "Über das Projekt",
     "organisation": "Wie ich meine Arbeit organisiert habe",
-    "groupWork": "Meine Gruppenarbeitserfahrung"
+    "groupWork": "Meine Gruppenarbeitserfahrung",
+    "projects": [
+        {
+            "proNumber": "1. Projekt",
+            "proName": "DA Bubble",
+            "proTechnologies": "Angular, Typescript",
+            "proDuration": "4 Wochen",
+            "img": "assets/img/DABubble.png",
+            "proDeclaration": "In Arbeit",
+            "proOrganisation": "In Arbeit",
+            "proGroupWork": "In Arbeit"
+        },
+        {
+            "proNumber": "2. Projekt",
+            "proName": "Pit Penguin",
+            "proTechnologies": "HTML, CSS, Javascript",
+            "proDuration": "3 Wochen",
+            "img": "assets/img/PitPenguin.png",
+            "proDeclaration": "Diese ist ein Jump-and-Run-Spiel, das nicht nur Kinderherzen glücklich macht. <br> Es geht darum alle Fisch-Münzen einzusammeln, den kleinen Schneehasen auszuweichen oder sie durch Sprünge unschädlich zu machen und genügend Giftflaschen dabei zu haben, um den Endgegner zu besiegen.",
+            "proOrganisation": "Das Spiel wurde mit OOP organisiert: klare Klassen wie Spieler und Gegner, damit sich die Logik sauber trennt. <br> Kollisionen und Sprünge wurden eindeutig definiert, damit der Jump’n’Run-Charakter zuverlässig auf Untergrund reagiert und Gegner korrekt getroffen werden. <br> Neben der Logik wurde auch die Grafik sorgfältig gestaltet, damit das Spiel optisch ansprechend aussieht und die Bewegungen flüssig wirken."
+        },
+        {
+            "proNumber": "3. Projekt",
+            "proName": "Join",
+            "proTechnologies": "HTML, CSS, Javascript, Git, Firebase",
+            "proDuration": "5 Wochen",
+            "img": "assets/img/Join.png",
+            "proDeclaration": "Diese App ist ein Projektmanagement-Tool, um den Status und die Verantwortlichkeit von Aufgaben zu visualisieren. <br> Es ermöglicht eine schnelle Übersicht über Prioritäten, Fortschritt und Ressourcenbedarf, sodass Teams effizienter arbeiten und regelmäßig Ergebnisse liefern können.",
+            "proOrganisation": "Durch klare Strukturen bleibt der Code sauber, lesbar und wartbar. <br> Das Projekt wurde in wiederverwendbare Komponenten zerlegt, die klar abgegrenzte Funktionen erfüllen und in unterschiedlichen Teilen des Projekts oder zukünftigen Projekten erneut genutzt werden können. <br> Konsistente Namenskonventionen, aussagekräftige Variablen und Funktionen spiegeln den Zweck und Kontext wieder.",
+            "proGroupWork": "In meinem zweiten Gruppenprojekt organisierten wir unsere Aufgaben über ein Kanbanboard, trafen uns regelmäßig zu Video-Calls und unterstützten uns gegenseitig bei Engpässen, um Transparenz, Zusammenarbeit und einen kontinuierlichen Arbeitsfluss sicherzustellen. <br> Es wurden gegenseitige Code-Reviews an kleinen Abschnitten durchgeführt, anschließend einzelne Module und schließlich das Gesamtsystem getestet, wobei auch außenstehende Personen Tests durchführten, um mögliche Fehlstellen zu finden."
+        }
+    ]
 }

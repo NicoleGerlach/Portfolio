@@ -1,22 +1,31 @@
 
-import { Component} from '@angular/core';
-import { JoinComponent } from './join/join.component';
-import { PitPenguinComponent } from './pit-penguin/pit-penguin.component';
-import { DABubbleComponent } from './dabubble/dabubble.component';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { LanguageService, ProjectContent } from '../../services/language.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-my-projects',
   standalone: true,
-  imports: [CommonModule, DABubbleComponent, JoinComponent, PitPenguinComponent],
+  imports: [CommonModule, NgIf, NgClass],
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss'
 })
-export class MyProjectsComponent {
+export class MyProjectsComponent implements OnInit {
+  project$!: Observable<ProjectContent | null>;
 
   currentProject: 'first' | 'second' | 'third' = 'first';
+  currentProjectIndex: number = 0;
 
-  showProject(project: 'first' | 'second' | 'third') {
-    this.currentProject = project;
+  constructor(public languageService: LanguageService) { }
+
+  ngOnInit(): void {
+    this.project$ = this.languageService.projectContent$;
+    this.languageService.loadTextsProjects();
+  }
+
+  showProject(index: number): void {
+    this.currentProjectIndex = index;
+    this.currentProject = index === 0 ? 'first' : index === 1 ? 'second' : 'third';    
   }
 }

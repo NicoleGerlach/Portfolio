@@ -1,0 +1,39 @@
+{
+    "headline": "My projects",
+    "technologies": "Technologies: ",
+    "duration": "Duration: ",
+    "about": "About the project",
+    "organisation": "How I have organised my work process",
+    "groupWork": "My group work expirience",
+    "projects": [
+        {
+            "proNumber": "1. Project",
+            "proName": "DA Bubble",
+            "proTechnologies": "Angular, Typescript",
+            "proDuration": "4 weeks",
+            "img": "assets/img/DABubble.png",
+            "proDeclaration": "In progress",
+            "proOrganisation": "In progress",
+            "proGroupWork": "In progress"
+        },
+        {
+            "proNumber": "2. Project",
+            "proName": "Pit Penguin",
+            "proTechnologies": "HTML, CSS, Javascript",
+            "proDuration": "3 weeks",
+            "img": "assets/img/PitPenguin.png",
+            "proDeclaration": "This is a jump-and-run game that's not just for kids. The goal is to collect all the fish coins, avoid the little snow bunnies or neutralize them by jumping, and have enough poison bottles to defeat the final boss.",
+            "proOrganisation": "The game was organized using object-oriented programming (OOP): clear classes like player and enemy ensure a clean separation of logic. Collisions and jumps were clearly defined so that the platforming character reacts reliably to the terrain and enemies are hit correctly. In addition to the logic, the graphics were also carefully designed to make the game visually appealing and the movements fluid."
+        },
+        {
+            "proNumber": "3. Project",
+            "proName": "Join",
+            "proTechnologies": "HTML, CSS, Javascript, Git, Firebase",
+            "proDuration": "5 weeks",
+            "img": "assets/img/Join.png",
+            "proDeclaration": "This app is a project management tool for visualizing the status and accountability of tasks. It provides a quick overview of priorities, progress, and resource requirements, enabling teams to work more efficiently and deliver results regularly.",
+            "proOrganisation": "Clear structures keep the code clean, readable, and maintainable. The project has been broken down into reusable components that fulfill clearly defined functions and can be reused in different parts of the project or in future projects. Consistent naming conventions, meaningful variables, and functions reflect the purpose and context.",
+            "proGroupWork": "In my second group project, we organized our tasks using a Kanban board, met regularly via video calls, and supported each other through bottlenecks to ensure transparency, collaboration, and a continuous workflow. We conducted mutual code reviews on small sections, then tested individual modules and finally the entire system, with external parties also performing tests to identify potential flaws."
+        }
+    ]
+}

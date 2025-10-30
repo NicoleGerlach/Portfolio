@@ -1,3 +1,9 @@
+// section {
+//     background-color: #2D383F;
+//     padding: 0 24px 38px;
+//     border-radius: 0 30px 30px;
+// }
+
 .projects {
     display: flex;
 
@@ -19,4 +25,57 @@
     .card-background {
         background-color: #2D383F;
     }
+}
+
+.project-detail {
+    background-color: #2D383F;
+    padding: 0 24px 38px;
+    border-radius: 0 30px 30px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #F28A62;
+    margin: 0;
+    padding: 29px 0 16px;
+}
+
+.technologies {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.project-img {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 30px;
+
+    img {
+        max-width: 100%;
+        border-radius: 30px;
+    }
+}
+
+.project-explanation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.headline {
+    font-size: 18px;
+    color: #F28A62;
+}
+
+.description {
+    margin: 16px 0 24px 0;
+    font-size: 16px;
+}
+
+.live-test {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
 }

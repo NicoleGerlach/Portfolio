@@ -40,7 +40,9 @@ export class AboutMeComponent implements OnInit {
     this.languageService.loadTextsAboutMe();
     this.languageService.loadTextsWhyMe();
     this.languageService.loadTextsSkills();
+    this.languageService.loadTextsProjects();
     this.languageService.loadTextsReferences();
+    this.languageService.loadTextsContact();
     }
     // this.closeMenu();
   }
