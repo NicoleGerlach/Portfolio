@@ -1,46 +1,45 @@
-
 <section id="projects" *ngIf="project$ | async as project">
   <h2>{{ project.headline }}</h2>
   <div class="projects" *ngIf="project.projects?.length">
-    <span *ngFor="let p of project.projects; let i = index"
-          (click)="showProject(i)"
-          [class.card-background]="currentProjectIndex === i"
-          class="project-list">
+    <span *ngFor="let p of project.projects; let i = index" (click)="showProject(i)"
+      [class.card-background]="currentProjectIndex === i" class="project-list">
       {{ p.proNumber }}
     </span>
   </div>
   <div class="project-detail" *ngIf="project.projects?.length">
-    <ng-container *ngFor="let ref of project.projects; let idx = index" >
+    <ng-container *ngFor="let ref of project.projects; let idx = index">
       <ng-container *ngIf="idx === currentProjectIndex">
         <h3>{{ ref.proName }}</h3>
         <div class="technologies">
           <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
           <span>{{ project.duration }} {{ ref.proDuration }}</span>
         </div>
-        <div class="project-img">
-          <img [src]="ref.img" alt="{{ ref.proName }}">
-        </div>
-        <div class="margin-bottom-32">
-          <div class="project-explanation">
-            <img src="assets/img/Ellipse_small.svg">
-            <span class="headline">{{ project.about }}</span>
+        <div class="neu">
+          <div class="project-img">
+            <img [src]="ref.img" alt="{{ ref.proName }}">
           </div>
-          <div class="description">
-            <span [innerHTML]="ref.proDeclaration"></span>
-          </div>
-          <div class="project-explanation">
-            <img src="assets/img/Ellipse_small.svg">
-            <span class="headline">{{ project.organisation }}</span>
-          </div>
-          <div class="description">
-            <span>{{ ref.proOrganisation }}</span>
-          </div>
-          <div class="project-explanation" *ngIf="ref?.proGroupWork">
-            <img src="assets/img/Ellipse_small.svg">
-            <span class="headline">{{ project.groupWork }}</span>
-          </div>
-          <div class="description">
-            <span>{{ ref.proGroupWork }}</span>
+          <div class="margin-bottom-32">
+            <div class="project-explanation">
+              <img src="assets/img/Ellipse_small.svg">
+              <span class="headline">{{ project.about }}</span>
+            </div>
+            <div class="description">
+              <span [innerHTML]="ref.proDeclaration"></span>
+            </div>
+            <div class="project-explanation">
+              <img src="assets/img/Ellipse_small.svg">
+              <span class="headline">{{ project.organisation }}</span>
+            </div>
+            <div class="description">
+              <span>{{ ref.proOrganisation }}</span>
+            </div>
+            <div class="project-explanation" *ngIf="ref?.proGroupWork">
+              <img src="assets/img/Ellipse_small.svg">
+              <span class="headline">{{ project.groupWork }}</span>
+            </div>
+            <div class="description">
+              <span>{{ ref.proGroupWork }}</span>
+            </div>
           </div>
         </div>
         <div class="live-test">
