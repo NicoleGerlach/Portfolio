@@ -67,6 +67,9 @@ export interface ContactContent {
   mail: string;
   text: string;
   cooperation: string;
+  phName: string;
+  phMail: string;
+  phMessage: string;
   have: string;
   prPolicy: string;
   read: string;
@@ -141,6 +144,12 @@ export class LanguageService {
   }
 
   loadTextsContact(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.contact[lang] ?? this.pathMap.contact.de;
+    this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
+  }
+
+  loadPlaceholders(): void {
     const lang = this.currentLang;
     const path = this.pathMap.contact[lang] ?? this.pathMap.contact.de;
     this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
