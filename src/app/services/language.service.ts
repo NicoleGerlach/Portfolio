@@ -75,6 +75,10 @@ export interface ContactContent {
   read: string;
 }
 
+export interface LegalNoticeContent {
+  headline: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -100,6 +104,9 @@ export class LanguageService {
   private contactContentSubject = new Subject<ContactContent>();
   public contactContent$: Observable<ContactContent | null> = this.contactContentSubject.asObservable();
 
+  private legalNoticeContentSubject = new Subject<LegalNoticeContent>();
+  public legalNoticeContent$: Observable<LegalNoticeContent | null> = this.legalNoticeContentSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   private pathMap = {
@@ -109,7 +116,7 @@ export class LanguageService {
     references: { de: 'assets/i18n/references/de.json', en: 'assets/i18n/references/en.json' },
     project: { de: 'assets/i18n/projects/de.json', en: 'assets/i18n/projects/en.json' },
     contact: { de: 'assets/i18n/contact/de.json', en: 'assets/i18n/contact/en.json' },
-
+    legalNotice: { de: 'assets/i18n/legal-notice/de.json', en: 'assets/i18n/legal-notice/en.json' },
   } as const;
 
   loadTextsAboutMe(): void {
@@ -153,6 +160,12 @@ export class LanguageService {
     const lang = this.currentLang;
     const path = this.pathMap.contact[lang] ?? this.pathMap.contact.de;
     this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
+  }
+
+    loadTextsLegalNotice(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.legalNotice[lang] ?? this.pathMap.legalNotice.de;
+    this.http.get<LegalNoticeContent>(path).subscribe(data => this.legalNoticeContentSubject.next(data));
   }
 
 

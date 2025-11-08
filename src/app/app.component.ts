@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,9 @@ import { MainContentComponent } from './main-content/main-content.component';
     RouterLink,
     RouterOutlet,
     MainContentComponent,
-    FooterComponent],
+    HeaderComponent,
+    FooterComponent, 
+    LegalNoticeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

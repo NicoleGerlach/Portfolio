@@ -43,6 +43,7 @@ export class AboutMeComponent implements OnInit {
     this.languageService.loadTextsProjects();
     this.languageService.loadTextsReferences();
     this.languageService.loadTextsContact();
+    this.languageService.loadTextsLegalNotice();
     }
     // this.closeMenu();
   }

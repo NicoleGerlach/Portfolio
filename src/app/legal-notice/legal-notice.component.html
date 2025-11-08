@@ -1,0 +1,6 @@
+<section *ngIf="legalNotice$ | async as legalNotice">
+    <button>
+        <img src="./../../assets/img/Arrow_back.svg">
+    </button>
+    <h2>{{ legalNotice.headline }}</h2>
+</section>
