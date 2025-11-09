@@ -1,8 +1,27 @@
-section{
-    border: solid 1px red;
+section {
 }
 
 button {
     background: none;
     border: none;
+}
+
+.notice-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+h3 {
+    color: #F28A62;
+    font-size: 23px;
+}
+
+h4 {
+    color: #F28A62;
+    font-size: 19px;
+}
+
+.box-headline {
+    color: #F28A62;
 }

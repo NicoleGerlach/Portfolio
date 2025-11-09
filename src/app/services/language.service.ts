@@ -77,6 +77,26 @@ export interface ContactContent {
 
 export interface LegalNoticeContent {
   headline: string;
+  impressum: string;
+  name: string;
+  address: string;
+  city: string;
+  first: string;
+  notice: string;
+  noticeText: string;
+  dataCollection: string;
+  responsible: string;
+  responsibleText: string;
+  capture: string;
+  captureText: string;
+  use: string;
+  useText: string;
+  rights: string;
+  rightsText: string;
+  second: string;
+  secondText: string;
+  provider: string;
+  providerText: string;
 }
 
 @Injectable({

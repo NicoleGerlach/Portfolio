@@ -1,6 +1,32 @@
-<section *ngIf="legalNotice$ | async as legalNotice">
-    <button>
+<section id="#legalNotice" *ngIf="legalNotice$ | async as legalNotice">
+    <a href="#contactMe">
         <img src="./../../assets/img/Arrow_back.svg">
-    </button>
+    </a>
     <h2>{{ legalNotice.headline }}</h2>
+    <div class="notice-box">
+        <h3>{{ legalNotice.impressum }}</h3>
+        <span>{{ legalNotice.name }}</span>
+        <span>{{ legalNotice.address }}</span>
+        <span>{{ legalNotice.city }}</span>
+    </div>
+    <div class="notice-box">
+        <h3>{{ legalNotice.first }}</h3>
+        <h4>{{ legalNotice.notice }}</h4>
+        <span>{{ legalNotice.noticeText }}</span>
+        <h4>{{ legalNotice.dataCollection }}</h4>
+        <span class="box-headline">{{ legalNotice.responsible }}</span>
+        <span>{{ legalNotice.responsibleText }}</span>
+        <span class="box-headline">{{ legalNotice.capture }}</span>
+        <span>{{ legalNotice.captureText }}</span>
+        <span class="box-headline">{{ legalNotice.use }}</span>
+        <span>{{ legalNotice.useText }}</span>
+        <span class="box-headline">{{ legalNotice.rights }}</span>
+        <span>{{ legalNotice.rightsText }}</span>
+        <h3>{{ legalNotice.second }}</h3>
+        <span>{{ legalNotice.secondText }}</span>
+        <span class="box-headline">{{ legalNotice.provider }}</span>
+        <span>{{ legalNotice.providerText }}</span>
+
+
+    </div>
 </section>
