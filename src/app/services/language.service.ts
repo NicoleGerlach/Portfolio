@@ -133,6 +133,7 @@ export interface LegalNoticeContent {
   listThree: string;
   listFour: string;
   restrictionTextTwo: string;
+  dataCollectionWebsite: string;
   inquiry: string;
   inquiryText: string;
   inquiryTextTwo: string;
