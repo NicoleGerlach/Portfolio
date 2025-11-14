@@ -117,6 +117,27 @@ export interface LegalNoticeContent {
   recipientText: string;
   revocation: string;
   revocationText: string;
+  contradiction: string;
+  contradictionText: string;
+  contradictionTextTwo: string;
+  complaintRight: string;
+  complaintRightText: string;
+  dataTransfer: string;
+  dataTransferText: string;
+  information: string;
+  informationText: string;
+  restriction: string;
+  restrictionText: string;
+  listOne: string;
+  listTwo: string;
+  listThree: string;
+  listFour: string;
+  restrictionTextTwo: string;
+  inquiry: string;
+  inquiryText: string;
+  inquiryTextTwo: string;
+  inquiryTextThree: string;
+  inquiryTextFour: string;
 }
 
 @Injectable({
