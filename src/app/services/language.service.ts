@@ -89,14 +89,34 @@ export interface LegalNoticeContent {
   responsibleText: string;
   capture: string;
   captureText: string;
+  captureTextTwo: string;
   use: string;
   useText: string;
   rights: string;
   rightsText: string;
+  rightsTextTwo: string;
   second: string;
   secondText: string;
   provider: string;
   providerText: string;
+  providerTextTwo: string;
+  third: string;
+  dataProtection: string;
+  dataProtectionText: string;
+  dataProtectionTextTwo: string;
+  responsibility: string;
+  responsibilityText: string;
+  phone: string;
+  mail: string;
+  responsibilityTextTwo: string;
+  memoryDuration: string;
+  memoryDurationText: string;
+  legalBasis: string;
+  legalBasisText: string;
+  recipient: string;
+  recipientText: string;
+  revocation: string;
+  revocationText: string;
 }
 
 @Injectable({
@@ -182,7 +202,7 @@ export class LanguageService {
     this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
   }
 
-    loadTextsLegalNotice(): void {
+  loadTextsLegalNotice(): void {
     const lang = this.currentLang;
     const path = this.pathMap.legalNotice[lang] ?? this.pathMap.legalNotice.de;
     this.http.get<LegalNoticeContent>(path).subscribe(data => this.legalNoticeContentSubject.next(data));
