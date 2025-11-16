@@ -2,8 +2,9 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LanguageService, ContactContent } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
+import { ContactContent } from '../../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-contact-me',

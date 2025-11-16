@@ -1,145 +1,8 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-
-export interface AboutMeContent {
-  whyMe: string;
-  skills: string;
-  projects: string;
-  contact: string;
-  nameSmall: string;
-  professionSmall: string;
-  name: string;
-  profession: string;
-}
-
-export interface WhyMeContent {
-  whyMe: string;
-  me: string;
-  located: string;
-  dots: string;
-  motivation: string;
-  skills: string;
-}
-
-export interface MySkillsContent {
-  headline: string;
-}
-
-export interface ReferencesContent {
-  headline: string;
-  notions: string;
-  references: ReferenceCard[],
-}
-
-export interface ReferenceCard {
-  name: string;
-  project: string;
-  projectName: string;
-  feedback: string;
-}
-
-export interface ProjectContent {
-  headline: string,
-  technologies: string,
-  duration: string,
-  about: string,
-  organisation: string,
-  groupWork: string,
-  projects: ProjectCard[],
-}
-
-export interface ProjectCard {
-  proNumber: string,
-  proName: string,
-  proTechnologies: string,
-  proDuration: string,
-  img: string,
-  proDeclaration: string,
-  proOrganisation: string,
-  proGroupWork: string,
-}
-
-export interface ContactContent {
-  headline: string;
-  phone: string;
-  mail: string;
-  text: string;
-  cooperation: string;
-  phName: string;
-  phMail: string;
-  phMessage: string;
-  have: string;
-  prPolicy: string;
-  read: string;
-}
-
-export interface LegalNoticeContent {
-  headline: string;
-  impressum: string;
-  name: string;
-  address: string;
-  city: string;
-  first: string;
-  notice: string;
-  noticeText: string;
-  dataCollection: string;
-  responsible: string;
-  responsibleText: string;
-  capture: string;
-  captureText: string;
-  captureTextTwo: string;
-  use: string;
-  useText: string;
-  rights: string;
-  rightsText: string;
-  rightsTextTwo: string;
-  second: string;
-  secondText: string;
-  provider: string;
-  providerText: string;
-  providerTextTwo: string;
-  third: string;
-  dataProtection: string;
-  dataProtectionText: string;
-  dataProtectionTextTwo: string;
-  responsibility: string;
-  responsibilityText: string;
-  phone: string;
-  mail: string;
-  responsibilityTextTwo: string;
-  memoryDuration: string;
-  memoryDurationText: string;
-  legalBasis: string;
-  legalBasisText: string;
-  recipient: string;
-  recipientText: string;
-  revocation: string;
-  revocationText: string;
-  contradiction: string;
-  contradictionText: string;
-  contradictionTextTwo: string;
-  complaintRight: string;
-  complaintRightText: string;
-  dataTransfer: string;
-  dataTransferText: string;
-  information: string;
-  informationText: string;
-  restriction: string;
-  restrictionText: string;
-  listOne: string;
-  listTwo: string;
-  listThree: string;
-  listFour: string;
-  restrictionTextTwo: string;
-  dataCollectionWebsite: string;
-  inquiry: string;
-  inquiryText: string;
-  inquiryTextTwo: string;
-  inquiryTextThree: string;
-  inquiryTextFour: string;
-}
+import { Observable, BehaviorSubject } from 'rxjs';
+import { AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, ProjectContent, ContactContent, LegalNoticeContent } from '../interfaces/all-interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -148,25 +11,25 @@ export class LanguageService {
 
   currentLang: 'de' | 'en' = 'de';
 
-  private aboutContentSubject = new Subject<AboutMeContent>();
+  private aboutContentSubject = new BehaviorSubject<AboutMeContent | null>(null);
   public aboutContent$: Observable<AboutMeContent | null> = this.aboutContentSubject.asObservable();
 
-  private whyMeContentSubject = new Subject<WhyMeContent>();
+  private whyMeContentSubject = new BehaviorSubject<WhyMeContent | null>(null);
   public whyMeContent$: Observable<WhyMeContent | null> = this.whyMeContentSubject.asObservable();
 
-  private mySkillsContentSubject = new Subject<MySkillsContent>();
+  private mySkillsContentSubject = new BehaviorSubject<MySkillsContent | null>(null);
   public mySkillsContent$: Observable<MySkillsContent | null> = this.mySkillsContentSubject.asObservable();
 
-  private referencesContentSubject = new Subject<ReferencesContent>();
+  private referencesContentSubject = new BehaviorSubject<ReferencesContent | null>(null);
   public referencesContent$: Observable<ReferencesContent | null> = this.referencesContentSubject.asObservable();
 
-  private projectContentSubject = new Subject<ProjectContent>();
+  private projectContentSubject = new BehaviorSubject<ProjectContent | null>(null);
   public projectContent$: Observable<ProjectContent | null> = this.projectContentSubject.asObservable();
 
-  private contactContentSubject = new Subject<ContactContent>();
+  private contactContentSubject = new BehaviorSubject<ContactContent | null>(null);
   public contactContent$: Observable<ContactContent | null> = this.contactContentSubject.asObservable();
 
-  private legalNoticeContentSubject = new Subject<LegalNoticeContent>();
+  private legalNoticeContentSubject = new BehaviorSubject<LegalNoticeContent | null>(null);
   public legalNoticeContent$: Observable<LegalNoticeContent | null> = this.legalNoticeContentSubject.asObservable();
 
   constructor(private http: HttpClient) { }
@@ -199,7 +62,6 @@ export class LanguageService {
     this.http.get<MySkillsContent>(path).subscribe(data => this.mySkillsContentSubject.next(data));
   }
 
-
   loadTextsReferences(): void {
     const lang = this.currentLang;
     const path = this.pathMap.references[lang] ?? this.pathMap.references.de;
@@ -228,16 +90,9 @@ export class LanguageService {
     const lang = this.currentLang;
     const path = this.pathMap.legalNotice[lang] ?? this.pathMap.legalNotice.de;
     this.http.get<LegalNoticeContent>(path).subscribe(data => this.legalNoticeContentSubject.next(data));
+    console.log("loadTextsLegalNotice funktioniert");
+    
   }
 
-
-  //   setLang(lang: 'de' | 'en'): void {
-  //   if (this.currentLang !== lang) {
-  //     console.log('Lang wechseln:', this.currentLang, '->', lang);
-  //     this.currentLang = lang;
-  //     this.loadTextsAboutMe();
-  //     this.loadTextsWhyMe();
-  //   }
-  // }
 }
 

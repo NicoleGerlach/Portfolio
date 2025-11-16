@@ -1,8 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgClass, NgIf } from '@angular/common';
-import { LanguageService, ProjectContent } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
+import { ProjectContent } from '../../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-my-projects',

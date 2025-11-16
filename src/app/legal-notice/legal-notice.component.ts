@@ -1,7 +1,9 @@
+
 import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService, LegalNoticeContent } from '../services/language.service';
+import { LanguageService } from '../services/language.service';
 import { Observable } from 'rxjs';
+import { LegalNoticeContent } from '../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-legal-notice',
@@ -19,6 +21,7 @@ export class LegalNoticeComponent implements OnInit {
   ngOnInit(): void {
     this.legalNotice$ = this.languageService.legalNoticeContent$;
     this.languageService.loadTextsLegalNotice();
+    console.log("ngOnInit-legal notice funktioniert");  
   }
 
 }

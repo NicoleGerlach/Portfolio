@@ -1,8 +1,9 @@
 
 import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService, ReferencesContent } from '../../services/language.service';
+import { LanguageService} from '../../services/language.service';
 import { Observable } from 'rxjs';
+import { ReferencesContent } from '../../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-references',

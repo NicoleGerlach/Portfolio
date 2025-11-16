@@ -1,8 +1,9 @@
 
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService, AboutMeContent } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
+import { AboutMeContent } from '../../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-about-me',
@@ -37,6 +38,9 @@ export class AboutMeComponent implements OnInit {
   setLang(lang: 'de' | 'en') {
     if (this.languageService.currentLang !== lang) {
     this.languageService.currentLang = lang;
+
+    localStorage.setItem('lang', lang);
+    
     this.languageService.loadTextsAboutMe();
     this.languageService.loadTextsWhyMe();
     this.languageService.loadTextsSkills();
@@ -45,7 +49,9 @@ export class AboutMeComponent implements OnInit {
     this.languageService.loadTextsContact();
     this.languageService.loadTextsLegalNotice();
     }
-    // this.closeMenu();
+    console.log("setLang funktioniert");
+    
+    this.closeMenu();
   }
 
   getLangClasses(): { 'lang-de': boolean; 'lang-en': boolean } {

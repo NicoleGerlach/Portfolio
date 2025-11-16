@@ -1,7 +1,8 @@
 import { CommonModule, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { LanguageService, MySkillsContent } from '../../services/language.service';
+import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
+import { MySkillsContent } from '../../interfaces/all-interfaces';
 
 @Component({
   selector: 'app-my-skills',
