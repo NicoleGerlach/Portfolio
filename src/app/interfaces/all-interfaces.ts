@@ -71,7 +71,7 @@ export interface ContactContent {
   read: string;
 }
 
-export interface LegalNoticeContent {
+export interface PrivacyPolicyContent {
   headline: string;
   impressum: string;
   name: string;

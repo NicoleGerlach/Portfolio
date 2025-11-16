@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, ProjectContent, ContactContent, LegalNoticeContent } from '../interfaces/all-interfaces';
+import { AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, ProjectContent, ContactContent, PrivacyPolicyContent } from '../interfaces/all-interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,8 @@ export class LanguageService {
   private contactContentSubject = new BehaviorSubject<ContactContent | null>(null);
   public contactContent$: Observable<ContactContent | null> = this.contactContentSubject.asObservable();
 
-  private legalNoticeContentSubject = new BehaviorSubject<LegalNoticeContent | null>(null);
-  public legalNoticeContent$: Observable<LegalNoticeContent | null> = this.legalNoticeContentSubject.asObservable();
+  private privacyPolicySubject = new BehaviorSubject<PrivacyPolicyContent | null>(null);
+  public privacyPolicyContent$: Observable<PrivacyPolicyContent | null> = this.privacyPolicySubject.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -41,7 +41,7 @@ export class LanguageService {
     references: { de: 'assets/i18n/references/de.json', en: 'assets/i18n/references/en.json' },
     project: { de: 'assets/i18n/projects/de.json', en: 'assets/i18n/projects/en.json' },
     contact: { de: 'assets/i18n/contact/de.json', en: 'assets/i18n/contact/en.json' },
-    legalNotice: { de: 'assets/i18n/legal-notice/de.json', en: 'assets/i18n/legal-notice/en.json' },
+    privacyPolicy: { de: 'assets/i18n/privacy-policy/de.json', en: 'assets/i18n/privacy-policy/en.json' },
   } as const;
 
   loadTextsAboutMe(): void {
@@ -86,11 +86,11 @@ export class LanguageService {
     this.http.get<ContactContent>(path).subscribe(data => this.contactContentSubject.next(data));
   }
 
-  loadTextsLegalNotice(): void {
+  loadTextsPrivacyPolicy(): void {
     const lang = this.currentLang;
-    const path = this.pathMap.legalNotice[lang] ?? this.pathMap.legalNotice.de;
-    this.http.get<LegalNoticeContent>(path).subscribe(data => this.legalNoticeContentSubject.next(data));
-    console.log("loadTextsLegalNotice funktioniert");
+    const path = this.pathMap.privacyPolicy[lang] ?? this.pathMap.privacyPolicy.de;
+    this.http.get<PrivacyPolicyContent>(path).subscribe(data => this.privacyPolicySubject.next(data));
+    console.log("loadTextsPrivacyPolicy funktioniert");
     
   }
 

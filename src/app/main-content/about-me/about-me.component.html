@@ -1,4 +1,3 @@
-
 <section id="aboutMe" *ngIf="aboutMe$ | async as aboutMe">
     <div class="logo-box">
         <div class="logo">
@@ -17,7 +16,8 @@
             <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
             <ul class="menu-list">
                 <li><a href="#whyMe" (click)="closeMenu()">{{ aboutMe.whyMe }}</a></li>
-                <li><a href="#skills" (click)="closeMenu()">{{ aboutMe.skills}}</a></li>
+                <!-- <li><a href="#skills" (click)="closeMenu()">{{ aboutMe.skills}}</a></li> -->
+                <li><a [routerLink]="['/main-content']" [fragment]="'skills'" (click)="closeMenu()">{{ aboutMe.skills}}</a></li>
                 <li><a href="#projects" (click)="closeMenu()">{{ aboutMe.projects}}</a></li>
                 <li><a href="#contactMe" (click)="closeMenu()">{{ aboutMe.contact}}</a></li>
                 <div class="languages" [ngClass]="getLangClasses()">

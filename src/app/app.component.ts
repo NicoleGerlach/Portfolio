@@ -6,7 +6,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
     MainContentComponent,
     HeaderComponent,
     FooterComponent,
-    LegalNoticeComponent],
+    PrivacyPolicyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

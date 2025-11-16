@@ -4,11 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { AboutMeContent } from '../../interfaces/all-interfaces';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [NgClass, CommonModule],
+  imports: [NgClass, CommonModule, RouterLink],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
@@ -47,7 +48,7 @@ export class AboutMeComponent implements OnInit {
     this.languageService.loadTextsProjects();
     this.languageService.loadTextsReferences();
     this.languageService.loadTextsContact();
-    this.languageService.loadTextsLegalNotice();
+    this.languageService.loadTextsPrivacyPolicy();
     }
     console.log("setLang funktioniert");
     
