@@ -1,1 +1,30 @@
-<p>header works!</p>
+
+<header *ngIf="header$ | async as header">
+        <div class="logo-box">
+        <div class="logo">
+            <img class="logo-pic" src="assets/img/Logo.svg">
+            <span class="name-small">{{ header.nameSmall }}</span>
+            <span class="profession-small">{{ header.professionSmall }}</span>
+        </div>
+        <div class="hamburger-menu" (click)="toggleMenu()" [class.open]="menuOpen">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div class="menu-box" [class.d-none]="!menuOpen">
+            <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
+            <ul class="menu-list">
+                <li><a (click)="scrollToWithFragment('whyMe', $event)">{{ header.whyMe }}</a></li>
+                <li><a (click)="scrollToWithFragment('skills', $event)">{{ header.skills }}</a></li>
+                <li><a (click)="scrollToWithFragment('projects', $event)">{{ header.projects }}</a></li>
+                <li><a (click)="scrollToWithFragment('contactMe', $event)">{{ header.contact }}</a></li>
+                <div class="languages" [ngClass]="getLangClasses()">
+                    <span class="german" (click)="setLang('de')">DE</span>
+                    <span class="english" (click)="setLang('en')">EN</span>
+                </div>
+            </ul>
+        </div>
+    </div>
+</header>

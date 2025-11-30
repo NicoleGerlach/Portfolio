@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { WhyMeContent } from '../interfaces/allInterfaces';
+import { WhyMeContent } from '../interfaces/all-interfaces'; 
 
 @Injectable({
   providedIn: 'root'

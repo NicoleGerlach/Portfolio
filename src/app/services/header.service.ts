@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ContactContent } from '../interfaces/all-interfaces'; 
+import { HeaderContent } from '../interfaces/all-interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class HeaderService {
 
   constructor(public http: HttpClient) { }
 
-  loadContact(path: string): Observable<ContactContent> {
-    return this.http.get<ContactContent>(path);
+  loadHeader(path: string): Observable<HeaderContent> {
+    return this.http.get<HeaderContent>(path);
   }
 }

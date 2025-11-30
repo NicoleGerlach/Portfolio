@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, ProjectContent, ContactContent, PrivacyPolicyContent } from '../interfaces/all-interfaces';
+import { HeaderContent, AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, ProjectContent, ContactContent, PrivacyPolicyContent } from '../interfaces/all-interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,9 @@ import { AboutMeContent, WhyMeContent, MySkillsContent, ReferencesContent, Proje
 export class LanguageService {
 
   currentLang: 'de' | 'en' = 'de';
+
+  private headerContentSubject = new BehaviorSubject<HeaderContent | null>(null);
+  public headerContent$: Observable<HeaderContent | null> = this.headerContentSubject.asObservable();
 
   private aboutContentSubject = new BehaviorSubject<AboutMeContent | null>(null);
   public aboutContent$: Observable<AboutMeContent | null> = this.aboutContentSubject.asObservable();
@@ -35,6 +38,7 @@ export class LanguageService {
   constructor(private http: HttpClient) { }
 
   private pathMap = {
+    header: { de: 'assets/i18n/header/de.json', en: 'assets/i18n/header/en.json' },
     aboutMe: { de: 'assets/i18n/about-me/de.json', en: 'assets/i18n/about-me/en.json' },
     whyMe: { de: 'assets/i18n/why-me/de.json', en: 'assets/i18n/why-me/en.json' },
     mySkills: { de: 'assets/i18n/skills/de.json', en: 'assets/i18n/skills/en.json' },
@@ -43,6 +47,12 @@ export class LanguageService {
     contact: { de: 'assets/i18n/contact/de.json', en: 'assets/i18n/contact/en.json' },
     privacyPolicy: { de: 'assets/i18n/privacy-policy/de.json', en: 'assets/i18n/privacy-policy/en.json' },
   } as const;
+
+  loadTextsHeader(): void {
+    const lang = this.currentLang;
+    const path = this.pathMap.header[lang] ?? this.pathMap.header.de;
+    this.http.get<HeaderContent>(path).subscribe(data => this.headerContentSubject.next(data));
+  }
 
   loadTextsAboutMe(): void {
     const lang = this.currentLang;
@@ -91,7 +101,7 @@ export class LanguageService {
     const path = this.pathMap.privacyPolicy[lang] ?? this.pathMap.privacyPolicy.de;
     this.http.get<PrivacyPolicyContent>(path).subscribe(data => this.privacyPolicySubject.next(data));
     console.log("loadTextsPrivacyPolicy funktioniert");
-    
+
   }
 
 }

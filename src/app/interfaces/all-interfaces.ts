@@ -1,11 +1,14 @@
 
-  export interface AboutMeContent {
+export interface HeaderContent {
   whyMe: string;
   skills: string;
   projects: string;
   contact: string;
   nameSmall: string;
   professionSmall: string;
+}
+
+  export interface AboutMeContent {
   name: string;
   profession: string;
 }

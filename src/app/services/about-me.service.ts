@@ -2,18 +2,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { AboutMeContent } from "../interfaces/allInterfaces";
-
-// export interface AboutMeContent {
-//     whyMe: string;
-//     skills: string;
-//     projects: string;
-//     contact: string;
-//     nameSmall: string;
-//     professionSmall: string;
-//     name: string;
-//     profession: string;
-// }
+import { AboutMeContent } from "../interfaces/all-interfaces"; 
 
 @Injectable({
     providedIn: 'root'
