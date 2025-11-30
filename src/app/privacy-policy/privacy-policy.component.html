@@ -1,7 +1,7 @@
 <section id="#privacyPolicy" *ngIf="privacyPolicy$ | async as privacyPolicy">
-    <a href="#contactMe">
+    <button (click)="goBack()">
         <img src="assets/img/Arrow_back.svg">
-    </a>
+    </button>
     <h2>{{ privacyPolicy.headline }}</h2>
     <div class="notice-box">
         <h3>{{ privacyPolicy.impressum }}</h3>

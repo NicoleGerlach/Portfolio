@@ -4,12 +4,12 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { AboutMeContent } from '../../interfaces/all-interfaces';
-import { RouterLink } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [NgClass, CommonModule, RouterLink],
+  imports: [NgClass, CommonModule],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })
@@ -21,7 +21,10 @@ export class AboutMeComponent implements OnInit {
   hover = false;
   fontColorBlack = true;
 
-  constructor(public languageService: LanguageService) { }
+  constructor(
+    public languageService: LanguageService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.aboutMe$ = this.languageService.aboutContent$;
@@ -61,4 +64,17 @@ export class AboutMeComponent implements OnInit {
       'lang-en': this.languageService.currentLang === 'en',
     }
   }
+
+scrollToWithFragment(sectionId: string, event: MouseEvent) {
+    event.preventDefault(); // verhindert normales Verhalten
+    // Erst scrollen wir programmgesteuert, dann setzen wir das Fragment
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Fragment in der URL setzen (führt zur Aktualisierung der Adresszeile)
+      this.router.navigate([], { fragment: sectionId });
+    }
+    this.closeMenu();
+  }
+
 }

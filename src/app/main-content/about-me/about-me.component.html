@@ -15,11 +15,10 @@
         <div class="menu-box" [class.d-none]="!menuOpen">
             <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
             <ul class="menu-list">
-                <li><a href="#whyMe" (click)="closeMenu()">{{ aboutMe.whyMe }}</a></li>
-                <!-- <li><a href="#skills" (click)="closeMenu()">{{ aboutMe.skills}}</a></li> -->
-                <li><a [routerLink]="['/main-content']" [fragment]="'skills'" (click)="closeMenu()">{{ aboutMe.skills}}</a></li>
-                <li><a href="#projects" (click)="closeMenu()">{{ aboutMe.projects}}</a></li>
-                <li><a href="#contactMe" (click)="closeMenu()">{{ aboutMe.contact}}</a></li>
+                <li><a (click)="scrollToWithFragment('whyMe', $event)">{{ aboutMe.whyMe }}</a></li>
+                <li><a (click)="scrollToWithFragment('skills', $event)">{{ aboutMe.skills }}</a></li>
+                <li><a (click)="scrollToWithFragment('projects', $event)">{{ aboutMe.projects }}</a></li>
+                <li><a (click)="scrollToWithFragment('contactMe', $event)">{{ aboutMe.contact }}</a></li>
                 <div class="languages" [ngClass]="getLangClasses()">
                     <span class="german" (click)="setLang('de')">DE</span>
                     <span class="english" (click)="setLang('en')">EN</span>

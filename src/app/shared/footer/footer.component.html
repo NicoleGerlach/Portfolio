@@ -1,4 +1,5 @@
-<section>
+
+<footer id="footer" class="footer-box">
     <div class="footer">
         <div class="logo">
             <img class="logo-pic" src="assets/img/Logo_Footer.svg">
@@ -11,8 +12,8 @@
             <img src="assets/img/Linkedin_button_mobile.svg">
         </div>
         <div class="impressum">
-            <span>Legal notice</span>
+            <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}">Legal notice</a>
             <div>&copy; Nicole Gerlach 2025</div>
         </div>
     </div>
-</section>
+</footer>

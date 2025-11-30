@@ -2,11 +2,9 @@
     background-color: #F28A62;
 }
 
-section {
+.footer-box {
     padding: 30px 30px;
 }
-
-.footer {}
 
 .logo {
     display: flex;
@@ -32,4 +30,9 @@ section {
     font-size: 14px;
     display: flex;
     gap: 32px;
+}
+
+a {
+    color: #F8F5EC;
+    text-decoration: none;
 }
