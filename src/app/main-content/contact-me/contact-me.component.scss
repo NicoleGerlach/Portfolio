@@ -73,9 +73,12 @@ textarea::placeholder {
 }
 
 .arrow-up {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 76px 0 104px 0;
+    background-color: unset;
+    border: unset;
 
     .arrow-up-img:hover {
         cursor: pointer;

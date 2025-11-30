@@ -1,5 +1,4 @@
-
-.icons{
+.icons {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +6,10 @@
 }
 
 .lets-talk-btn {
+    width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    background-color: unset;
+    border: unset;
 }

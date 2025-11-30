@@ -4,6 +4,8 @@
 //     border-radius: 0 30px 30px;
 // }
 
+
+
 .projects {
     display: flex;
 
@@ -29,7 +31,7 @@
 
 .project-detail {
     background-color: #2D383F;
-    padding: 0 24px 38px;
+    padding: 0 20px 38px;
     border-radius: 0 30px 30px;
 }
 
@@ -78,4 +80,13 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 16px;
+}
+
+.btn-test-git {
+    background-color: unset;
+    border: unset;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
