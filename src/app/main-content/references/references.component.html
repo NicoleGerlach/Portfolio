@@ -11,6 +11,10 @@
                 <span class="name">{{ ref.name }}</span>
                 <span class="project">{{ ref.project }} <span [ngStyle]="{color: '#F28A62'}">{{ ref.projectName }}</span></span>
                 <span class="feedback">{{ ref.feedback }}</span>
+                <button (click)="toggleFeedback()">{{ref.button}}</button>
+                <div [class.d-none]="!feedbackOpen">
+                    <span class="fedback-big">{{ ref.feedback }}</span>
+                </div>
             </div>
         </div>
     </div>

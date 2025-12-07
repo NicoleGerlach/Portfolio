@@ -14,12 +14,21 @@ import { ReferencesContent } from '../../interfaces/all-interfaces';
 })
 export class ReferencesComponent implements OnInit {
   references$!: Observable<ReferencesContent | null>;
+  feedbackOpen = false;
 
   constructor (public languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.references$ = this.languageService.referencesContent$;
     this.languageService.loadTextsReferences();
+  }
+
+ toggleFeedback() {
+    this.feedbackOpen = !this.feedbackOpen;
+  }
+
+  closeFeedback() {
+    this.feedbackOpen = false;
   }
 
 }
