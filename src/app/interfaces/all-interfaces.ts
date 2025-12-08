@@ -38,6 +38,7 @@ export interface ReferenceCard {
   projectName: string;
   feedback: string;
   button: string;
+  buttonBack: string;
 }
 
 export interface ProjectContent {
