@@ -29,4 +29,9 @@ export class MyProjectsComponent implements OnInit {
     this.currentProjectIndex = index;
     this.currentProject = index === 0 ? 'first' : index === 1 ? 'second' : 'third';    
   }
+
+  openExternal(url: string) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    console.log('lifeTest URL:', url);
+  }
 }

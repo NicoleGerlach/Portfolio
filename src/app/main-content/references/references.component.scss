@@ -7,7 +7,7 @@
     display: flex;
     overflow-x: scroll;
     gap: 24px;
-    margin-left: 24px;
+    padding-left: 24px;
 }
 
 // ::-webkit-scrollbar {display: none;}
@@ -15,11 +15,13 @@
 .feedback-card {
     position: relative;
     width: 288px;
+    min-width: 260px;
     box-sizing: border-box;
 }
 
 .background-elipse {
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
     height: auto;
@@ -32,7 +34,9 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    margin: 50px 0 0 50px;
+    // margin: 50px 0 0 50px;
+    width: -webkit-fill-available;
+    margin: 42px 40px 0 56px;
 
     .name {
         margin-bottom: 8px;
@@ -43,9 +47,9 @@
     }
 
     .feedback {
-        width: 219px;
-        height: 95px;
-        line-height: 120%;
+        // width: 219px;
+        // height: 95px;
+        line-height: 110%;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
@@ -60,7 +64,7 @@
     color: #F28A62;
     font-family: 'Josefin Sans';
     font-size: 14px;
-    margin: 20px 0;
+    margin: 14px 0;
     display: flex;
     padding: unset;
 
@@ -75,12 +79,14 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     top: 0;
     left: 0;
-    margin: 0 12px;
+    padding: 0 14px;
     background-color: #042639;
+    box-sizing: border-box;
+    gap: 14px;
 }
 
 .btn-close {
@@ -90,6 +96,7 @@
     color: #F28A62;
     font-family: 'Josefin Sans';
     font-size: 14px;
+    padding: unset;
 
     &:hover {
         cursor: pointer;

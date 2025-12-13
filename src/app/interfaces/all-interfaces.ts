@@ -39,6 +39,7 @@ export interface ReferenceCard {
   feedback: string;
   button: string;
   buttonBack: string;
+  open?: boolean;
 }
 
 export interface ProjectContent {
@@ -60,6 +61,8 @@ export interface ProjectCard {
   proDeclaration: string,
   proOrganisation: string,
   proGroupWork: string,
+  lifeTest: string,
+  gitHub: string,
 }
 
 export interface ContactContent {
