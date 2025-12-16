@@ -162,3 +162,10 @@ header {
 .d-none {
     display: none;
 }
+
+
+@media (min-width: 900px) {
+    header {
+        // display: none;
+    }
+}

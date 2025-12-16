@@ -1,0 +1,15 @@
+<section>
+    <div>
+       <div></div>
+       <div *ngIf="header$ | async as header">
+        <span (click)="headerService.scrollToWithFragment('whyMe', $event)">{{ header.whyMe }}</span>
+        <span (click)="headerService.scrollToWithFragment('skills', $event)">{{ header.skills }}</span>
+        <span (click)="headerService.scrollToWithFragment('projects', $event)">{{ header.projects }}</span>
+        <span (click)="headerService.scrollToWithFragment('contactMe', $event)">{{ header.contact }}</span>
+       </div>
+       <div [ngClass]="headerService.getLangClasses()">
+        <span (click)="headerService.setLang('de')">DE</span>
+        <span (click)="headerService.setLang('en')">EN</span>
+       </div>
+    </div>
+</section>

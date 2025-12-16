@@ -20,16 +20,22 @@ section {
     }
 
     .bw-pic {
-        // position: absolute;
         width: 255px;
         height: auto;
-
     }
 }
 
+.icons {
+    width: 30px;
+    display: none;
+    flex-direction: column;
+}
+
 .name {
+    height: 93px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     margin-top: 8px;
     // gap: 8px;
@@ -65,4 +71,30 @@ section {
 
 .d-none {
     display: none;
+}
+
+@media (min-width: 900px) {
+    section {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 63px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
 }

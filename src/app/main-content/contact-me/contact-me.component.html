@@ -16,9 +16,9 @@
         <span>{{ contact.cooperation }}</span>
     </div>
     <form>
-        <input class="field" [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text">
-        <input class="field" [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email">
-        <textarea class="field" [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage"></textarea>
+        <input class="field" [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text" required>
+        <input class="field" [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email" required>
+        <textarea class="field" [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage" required></textarea>
     </form>
     <div class="privacy-box">
         <img src="assets/img/Checkbox.svg">

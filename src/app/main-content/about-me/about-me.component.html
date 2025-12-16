@@ -2,14 +2,24 @@
     <div class="pic">
         <img class="bw-pic" src="assets/img/BW_Pic.png">
     </div>
-    <div class="name">
-        <span class="fullname">{{ aboutMe.name }}</span>
-        <span class="profession">{{ aboutMe.profession }}</span>
+    <div class="content">
+        <div class="icons">
+            <img src="assets/img/Logo.svg">
+            <div class="social-media">
+                <img src="assets/img/Email_button_header.svg">
+                <img src="assets/img/Github_button_header.svg">
+                <img src="assets/img/Linkedin_button_header.svg">
+            </div>
+        </div>
+        <div class="name">
+            <span class="fullname">{{ aboutMe.name }}</span>
+            <span class="profession">{{ aboutMe.profession }}</span>
+        </div>
+        <button class="arrow-down">
+            <a href="#whyMe">
+                <img class="arrow-down-img" (mouseover)="hover = true" (mouseout)="hover = false"
+                    [src]="hover ? 'assets/img/Arrow_down_hover.svg' : 'assets/img/Arrow_down.svg'">
+            </a>
+        </button>
     </div>
-    <button class="arrow-down">
-        <a href="#whyMe">
-            <img class="arrow-down-img" (mouseover)="hover = true" (mouseout)="hover = false"
-                [src]="hover ? 'assets/img/Arrow_down_hover.svg' : 'assets/img/Arrow_down.svg'">
-        </a>
-    </button>
 </section>

@@ -96,6 +96,7 @@ body {
   margin: 0;
   font-family: 'Josefin Sans';
   font-weight: 400;
+  line-height: 120%;
   // margin: 0 24px;
 }
 
@@ -105,6 +106,7 @@ h2 {
   color: #F28A62;
   margin-top: 80px;
   text-align: center;
+  line-height: 120%;
 }
 
 .margin-left-right-24 {
@@ -117,4 +119,19 @@ h2 {
 
 .margin-bottom-32 {
   margin-bottom: 32px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 4px;
+    padding-right: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F8F5EC;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: unset;
 }
