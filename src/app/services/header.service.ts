@@ -44,6 +44,7 @@ export class HeaderService {
       this.languageService.loadTextsReferences();
       this.languageService.loadTextsContact();
       this.languageService.loadTextsPrivacyPolicy();
+      this.languageService.loadTextsHeader();
     }
     console.log("setLang funktioniert");
 
