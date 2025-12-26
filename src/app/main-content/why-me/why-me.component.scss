@@ -5,4 +5,25 @@ section {
 .local {
     display: flex;
     align-items: center;
+    gap: clamp(8px, 1.2vw + 4px, 24px);
+}
+
+.local-elipse {
+    position: absolute;
+    padding: 25px 25px 0 25px;
+}
+
+.d-none {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .local-pic,
+    .local-elipse {
+        display: flex;
+    }
+
+    .local-pic-small {
+        display: none;
+    }
 }

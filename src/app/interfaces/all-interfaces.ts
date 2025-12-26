@@ -8,7 +8,7 @@ export interface HeaderContent {
   professionSmall: string;
 }
 
-  export interface AboutMeContent {
+export interface AboutMeContent {
   name: string;
   profession: string;
 }
@@ -24,6 +24,16 @@ export interface WhyMeContent {
 
 export interface MySkillsContent {
   headline: string;
+  angular: string;
+  typeScript: string;
+  javaScript: string;
+  html: string;
+  css: string;
+  restApi: string;
+  firebase: string;
+  git: string;
+  materialDesign: string;
+  scrum: string;
 }
 
 export interface ReferencesContent {

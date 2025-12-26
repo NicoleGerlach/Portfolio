@@ -9,7 +9,12 @@
 .projects {
     display: flex;
 
-    .project-list {
+    .card-background {
+        background-color: #2D383F;
+    }
+}
+
+.project-list {
         width: 90px;
         height: 39px;
         display: flex;
@@ -18,14 +23,9 @@
         border-top-right-radius: 20px;
         box-sizing: border-box;
         padding-left: 12px;
-    }
-
+    
     &:hover {
         cursor: pointer;
-    }
-
-    .card-background {
-        background-color: #2D383F;
     }
 }
 

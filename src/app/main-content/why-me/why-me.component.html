@@ -2,13 +2,13 @@
 <section id="whyMe" class="margin-left-right-24" *ngIf="whyMe$ | async as whyMe">
   <h2 class="margin-bottom-32">{{ whyMe.whyMe }}</h2>
   <div class="local margin-bottom-32">
-    <img src="assets/img/Local.svg">
-
+    <img class="local-pic d-none" src="assets/img/Local.svg">
+    <img class="local-elipse d-none" src="assets/img/Ellipse 20.svg">
+    <img class="local-pic-small" src="assets/img/Loval_Small.svg">
     <span>
       <span [ngStyle]="{color: '#F28A62'}">{{ whyMe.me }}</span> {{ whyMe.located }}
       <span [ngStyle]="{color: '#F28A62'}">{{ whyMe.dots }}</span>
     </span>
-
   </div>
   <span>
     {{ whyMe.motivation }} <br>
