@@ -9,6 +9,7 @@
 .icon-box {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-size: 18px;
     color: #F28A62;
     text-align: center;
@@ -35,6 +36,7 @@
 
 @media (min-width: 900px) {
     .skills {
+        max-width: 20px;
         display: flex;
         justify-content: center;
     }

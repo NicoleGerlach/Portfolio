@@ -13,11 +13,29 @@ section {
     padding: 25px 25px 0 25px;
 }
 
+.located {
+    font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
+}
+
+.motivation {
+    font-size: clamp(1rem, 0.917rem + 0.333vw, 1.125rem);
+}
+
 .d-none {
     display: none;
 }
 
 @media (min-width: 900px) {
+    .content {
+        display: flex;
+        gap: 50px;
+    }
+
+    .local {
+        min-width: fit-content;
+        justify-content: unset;
+    }
+
     .local-pic,
     .local-elipse {
         display: flex;
@@ -25,5 +43,24 @@ section {
 
     .local-pic-small {
         display: none;
+    }
+
+    .located {
+        max-width: 275px;
+    }
+
+    .located::after {
+        content: "";
+        display: inline-block;
+        height: 30px;
+        /* gewünschter Abstand zwischen der ersten Zeile/Block und dem Rest */
+    }
+
+    .btn-talk {
+        display: flex;
+        cursor: pointer;
+        background: unset;
+        border: unset;
+        padding: 24px 0 0 68%;
     }
 }

@@ -1,13 +1,12 @@
-// section {
-//     background-color: #2D383F;
-//     padding: 0 24px 38px;
-//     border-radius: 0 30px 30px;
-// }
-
-
+section {
+    width: 100vw;
+}
 
 .projects {
+    height: clamp(2.438rem, 1.146rem + 5.167vw, 4.375rem);
     display: flex;
+    padding-left: clamp(0rem, -4.167rem + 16.667vw, 6.25rem);
+    font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
 
     .card-background {
         background-color: #2D383F;
@@ -15,23 +14,30 @@
 }
 
 .project-list {
-        width: 90px;
-        height: 39px;
-        display: flex;
-        align-items: center;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        box-sizing: border-box;
-        padding-left: 12px;
-    
+    // width: 90px;
+    // height: 39px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-sizing: border-box;
+    padding-left: clamp(0.75rem, 0rem + 3vw, 1.875rem);
+    padding-right: clamp(0.75rem, 0rem + 3vw, 1.875rem);
+
     &:hover {
         cursor: pointer;
     }
 }
 
+.wide,
+.tech-box {
+    display: none;
+}
+
 .project-detail {
     background-color: #2D383F;
-    padding: 0 20px 38px;
+    padding-left: clamp(1.25rem, -3.75rem + 16vw, 6.25rem);
+    padding-bottom: 38px;
     border-radius: 0 30px 30px;
 }
 
@@ -88,5 +94,66 @@ h3 {
 
     &:hover {
         cursor: pointer;
+    }
+}
+
+@media (min-width: 900px) {
+    .wide {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    h3 {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 40px 0 34px;
+        gap: 56px;
+    }
+
+    .content-project {
+        max-width: 420px;
+        margin: unset;
+    }
+
+    .project-detail {
+        border-radius: unset;
+    }
+
+    .project-img {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        padding: 24px 30px;
+
+    }
+
+    .technologies {
+        display: none;
+    }
+
+    .tech-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tech-img {
+        height: 36px;
+        display: flex;
+        gap: 32px;
+        padding: 12px 0 16px;
+    }
+
+    .tech-img>img {
+        border-radius: unset !important;
     }
 }

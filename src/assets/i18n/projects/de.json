@@ -1,6 +1,7 @@
+
 {
     "headline": "Meine Projekte",
-    "technologies": "Technologie: ",
+    "technologies": "Technologies: ",
     "duration": "Dauer: ",
     "about": "Über das Projekt",
     "organisation": "Wie ich meine Arbeit organisiert habe",
@@ -10,6 +11,7 @@
             "proNumber": "1. Projekt",
             "proName": "DA Bubble",
             "proTechnologies": "Angular, Typescript",
+            "proTechImg": [],
             "proDuration": "4 Wochen",
             "img": "assets/img/DABubble.png",
             "proDeclaration": "In Arbeit",
@@ -20,6 +22,11 @@
             "proNumber": "2. Projekt",
             "proName": "Pit Penguin",
             "proTechnologies": "HTML, CSS, Javascript",
+            "proTechImg": [
+                {"src": "assets/img/HTML.svg"},
+                {"src": "assets/img/CSS.svg"},
+                {"src": "assets/img/JavaScript.svg"}
+            ],
             "proDuration": "3 Wochen",
             "img": "assets/img/PitPenguin.png",
             "proDeclaration": "Diese ist ein Jump-and-Run-Spiel, das nicht nur Kinderherzen glücklich macht. <br> Es geht darum alle Fisch-Münzen einzusammeln, den kleinen Schneehasen auszuweichen oder sie durch Sprünge unschädlich zu machen und genügend Giftflaschen dabei zu haben, um den Endgegner zu besiegen.",
@@ -31,6 +38,13 @@
             "proNumber": "3. Projekt",
             "proName": "Join",
             "proTechnologies": "HTML, CSS, Javascript, Git, Firebase",
+            "proTechImg": [
+                {"src": "assets/img/HTML.svg"},
+                {"src": "assets/img/CSS.svg"},
+                {"src": "assets/img/JavaScript.svg"},
+                {"src": "assets/img/Git.svg"},
+                {"src": "assets/img/Firebase.svg"}
+            ],
             "proDuration": "5 Wochen",
             "img": "assets/img/Join.png",
             "proDeclaration": "Diese App ist ein Projektmanagement-Tool, um den Status und die Verantwortlichkeit von Aufgaben zu visualisieren. <br> Es ermöglicht eine schnelle Übersicht über Prioritäten, Fortschritt und Ressourcenbedarf, sodass Teams effizienter arbeiten und regelmäßig Ergebnisse liefern können.",

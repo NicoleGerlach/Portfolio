@@ -1,10 +1,10 @@
-
 <section id="projects" *ngIf="project$ | async as project">
   <h2>{{ project.headline }}</h2>
   <div class="projects" *ngIf="project.projects?.length">
     <span *ngFor="let p of project.projects; let i = index" (click)="showProject(i)"
       [class.card-background]="currentProjectIndex === i" class="project-list">
-      {{ p.proNumber }}
+      <span class="wide">{{ p.proName }}</span>
+      <span class="mobile">{{ p.proNumber }}</span>
     </span>
   </div>
   <div class="project-detail" *ngIf="project.projects?.length">
@@ -15,11 +15,19 @@
           <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
           <span>{{ project.duration }} {{ ref.proDuration }}</span>
         </div>
-        <div class="neu">
+        <div class="content">
           <div class="project-img">
+
+            <div class="tech-box" *ngIf="ref.proTechImg?.length">
+              <span>{{ project.technologies }}</span>
+              <div class="tech-img">
+                <img *ngFor="let p of ref.proTechImg" [src]="p.src">
+              </div>
+            </div>
+            
             <img [src]="ref.img" alt="{{ ref.proName }}">
           </div>
-          <div class="margin-bottom-32">
+          <div class="margin-bottom-32 content-project">
             <div class="project-explanation">
               <img src="assets/img/Ellipse_small.svg">
               <span class="headline">{{ project.about }}</span>

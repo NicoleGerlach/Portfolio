@@ -65,6 +65,7 @@ export interface ProjectContent {
 export interface ProjectCard {
   proNumber: string,
   proName: string,
+  proTechImg: TechImg[],
   proTechnologies: string,
   proDuration: string,
   img: string,
@@ -73,6 +74,10 @@ export interface ProjectCard {
   proGroupWork: string,
   lifeTest: string,
   gitHub: string,
+}
+
+export interface TechImg {
+  src: string,
 }
 
 export interface ContactContent {
