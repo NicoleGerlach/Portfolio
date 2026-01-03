@@ -1,3 +1,4 @@
+
 .headline-feedback {
     display: flex;
     flex-direction: column;
@@ -5,8 +6,12 @@
     margin-left: 24px;
 }
 
+h2 {
+    display: flex;
+}
+
 .feedback-container {
-    height: 310px;
+    height: clamp(19.375rem, -0.313rem + 45vi, 25rem);
     display: flex;
     overflow-x: scroll;
     gap: 24px;
@@ -15,8 +20,11 @@
 
 .feedback-card {
     position: relative;
-    width: 288px;
-    min-width: 275px;
+    width: clamp(18rem, -6.5rem + 56vi, 25rem);
+    min-width: 288px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
 
@@ -35,9 +43,7 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    // margin: 50px 0 0 50px;
-    width: -webkit-fill-available;
-    margin: 42px 40px 0 56px;
+    width: clamp(11.25rem, -15rem + 60vi, 18.75rem);
 
     .name {
         margin-bottom: 8px;
@@ -48,8 +54,6 @@
     }
 
     .feedback {
-        // width: 219px;
-        // height: 95px;
         display: -webkit-box;
         -webkit-line-clamp: 5;
         -webkit-box-orient: vertical;
@@ -84,7 +88,7 @@
     top: 0;
     left: 0;
     padding: 0 14px;
-    background-color: #042639;
+    background-color: rgb(4, 38, 57, 0.95);
     box-sizing: border-box;
     gap: 14px;
 }
@@ -105,6 +109,14 @@
 
 }
 
+.fs16-18 {
+    font-size: clamp(1rem, 0.563rem + 1vi, 1.125rem);
+}
+
+.fs24-26 {
+    font-size: clamp(1.5rem, 1.063rem + 1vi, 1.625rem);
+}
+
 .d-none {
     display: none;
 }
@@ -123,4 +135,61 @@
 
 ::-webkit-scrollbar-track {
     background: #042639;
+}
+
+@media (min-width: 900px) {
+
+    .headline-feedback,
+    h2 {
+        display: none;
+    }
+
+    .headline-wide {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 32px;
+        line-height: 120%;
+        color: #F28A62;
+        margin: 80px 60px 56px;
+    }
+
+    .feedback-container {
+        justify-content: center;
+        height: 406px;
+    }
+
+    .feedback-box {
+        width: 300px;
+        text-align: center;
+        margin: unset;
+        align-items: center;
+    }
+
+    .background-elipse {
+        display: none;
+    }
+
+    .background-elipse-wide {
+        display: flex;
+        position: absolute;
+    }
+
+    .project,
+    .feedback,
+    .btn-feedback,
+    .btn-close {
+        font-size: 18px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .feedback-big {
+        font-size: 18px;
+        background-color: rgb(4, 38, 57, 0.95);
+        padding: 0 50px;
+        align-items: center;
+    }
 }

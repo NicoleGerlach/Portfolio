@@ -39,6 +39,7 @@ export interface MySkillsContent {
 export interface ReferencesContent {
   headline: string;
   notions: string;
+  headlineWide: string;
   references: ReferenceCard[],
 }
 

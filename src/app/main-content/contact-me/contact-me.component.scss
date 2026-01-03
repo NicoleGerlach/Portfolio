@@ -1,3 +1,21 @@
+.content {
+    margin-left: clamp(1.5rem, -6.213rem + 24.681vw, 16rem);
+    margin-right: clamp(1.5rem, -6.213rem + 24.681vw, 16rem);
+}
+
+.arrow-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 76px 0 104px 0;
+    background-color: unset;
+    border: unset;
+
+    .arrow-top-img:hover {
+        cursor: pointer;
+    }
+}
+
 .contact-option {
     display: flex;
     align-items: center;
@@ -24,6 +42,12 @@ form {
 
 .field:focus::placeholder {
     color: transparent;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 input {
@@ -72,19 +96,63 @@ textarea::placeholder {
     cursor: not-allowed;
 }
 
-.arrow-up {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 76px 0 104px 0;
-    background-color: unset;
-    border: unset;
-
-    .arrow-up-img:hover {
-        cursor: pointer;
-    }
-}
-
 a {
     text-decoration: none;
+}
+
+.arrow-up {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    section {
+        position: relative;
+    }
+
+    .arrow-up {
+        position: absolute;
+        top: 12px;
+        right: clamp(5rem, -5rem + 16vw, 7rem);
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        background-color: unset;
+        border: unset;
+
+        .arrow-up-img:hover {
+            cursor: pointer;
+        }
+    }
+
+    .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .contact-data {
+        order: 2;
+    }
+
+    .contact-box {
+        margin-bottom: unset;
+    }
+
+    .inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 21px;
+    }
+
+    form textarea.field {
+        grid-column: 1 / -1;
+    }
+
+    .send-btn {
+        margin-bottom: 180px;
+    }
+
+    .arrow-top {
+        display: none;
+    }
 }

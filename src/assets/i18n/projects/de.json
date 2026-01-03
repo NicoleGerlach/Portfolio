@@ -27,7 +27,7 @@
                 {"src": "assets/img/CSS.svg"},
                 {"src": "assets/img/JavaScript.svg"}
             ],
-            "proDuration": "3 Wochen",
+            "proDuration": "5 Wochen",
             "img": "assets/img/PitPenguin.png",
             "proDeclaration": "Diese ist ein Jump-and-Run-Spiel, das nicht nur Kinderherzen glücklich macht. <br> Es geht darum alle Fisch-Münzen einzusammeln, den kleinen Schneehasen auszuweichen oder sie durch Sprünge unschädlich zu machen und genügend Giftflaschen dabei zu haben, um den Endgegner zu besiegen.",
             "proOrganisation": "Das Spiel wurde mit OOP organisiert: klare Klassen wie Spieler und Gegner, damit sich die Logik sauber trennt. <br> Kollisionen und Sprünge wurden eindeutig definiert, damit der Jump’n’Run-Charakter zuverlässig auf Untergrund reagiert und Gegner korrekt getroffen werden. <br> Neben der Logik wurde auch die Grafik sorgfältig gestaltet, damit das Spiel optisch ansprechend aussieht und die Bewegungen flüssig wirken.",
@@ -45,7 +45,7 @@
                 {"src": "assets/img/Git.svg"},
                 {"src": "assets/img/Firebase.svg"}
             ],
-            "proDuration": "5 Wochen",
+            "proDuration": "8 Wochen",
             "img": "assets/img/Join.png",
             "proDeclaration": "Diese App ist ein Projektmanagement-Tool, um den Status und die Verantwortlichkeit von Aufgaben zu visualisieren. <br> Es ermöglicht eine schnelle Übersicht über Prioritäten, Fortschritt und Ressourcenbedarf, sodass Teams effizienter arbeiten und regelmäßig Ergebnisse liefern können.",
             "proOrganisation": "Durch klare Strukturen bleibt der Code sauber, lesbar und wartbar. <br> Das Projekt wurde in wiederverwendbare Komponenten zerlegt, die klar abgegrenzte Funktionen erfüllen und in unterschiedlichen Teilen des Projekts oder zukünftigen Projekten erneut genutzt werden können. <br> Konsistente Namenskonventionen, aussagekräftige Variablen und Funktionen spiegeln den Zweck und Kontext wieder.",

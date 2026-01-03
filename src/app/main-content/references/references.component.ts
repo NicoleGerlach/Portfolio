@@ -13,6 +13,7 @@ import { ReferencesContent } from '../../interfaces/all-interfaces';
   styleUrl: './references.component.scss'
 })
 export class ReferencesComponent implements OnInit {
+
   references$!: Observable<ReferencesContent | null>;
   feedbackOpen = false;
 

@@ -17,20 +17,25 @@
         </div>
         <div class="content">
           <div class="project-img">
-
             <div class="tech-box" *ngIf="ref.proTechImg?.length">
               <span>{{ project.technologies }}</span>
               <div class="tech-img">
                 <img *ngFor="let p of ref.proTechImg" [src]="p.src">
               </div>
             </div>
-            
             <img [src]="ref.img" alt="{{ ref.proName }}">
           </div>
           <div class="margin-bottom-32 content-project">
             <div class="project-explanation">
               <img src="assets/img/Ellipse_small.svg">
-              <span class="headline">{{ project.about }}</span>
+
+              <span class="headline">{{ project.about }}
+              </span>
+              <div class="duration-wide">
+                <span>{{ project.duration }}</span>
+                <span>{{ ref.proDuration }}</span>
+
+              </div>
             </div>
             <div class="description">
               <span [innerHTML]="ref.proDeclaration"></span>
