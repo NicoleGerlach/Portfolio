@@ -15,7 +15,6 @@ import { ReferencesContent } from '../../interfaces/all-interfaces';
 export class ReferencesComponent implements OnInit {
 
   references$!: Observable<ReferencesContent | null>;
-  // feedbackOpen = false;
   currentIndex: number | null = null;
 
   constructor(public languageService: LanguageService) { }
@@ -26,13 +25,11 @@ export class ReferencesComponent implements OnInit {
   }
 
   toggleFeedback(index: number) {
-    // ref.open = !ref.open;
     this.currentIndex = index;
     document.body.style.overflow = 'hidden';
   }
 
   closeFeedback() {
-    // ref.open = false;
     this.currentIndex = null;
     document.body.style.overflow = 'unset';
   }
