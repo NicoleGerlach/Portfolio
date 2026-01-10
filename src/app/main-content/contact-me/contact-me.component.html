@@ -47,7 +47,7 @@
                         contact.prPolicy}}</a>{{
                     contact.read}}</span>
             </div>
-            <button class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
+            <button type="submit" class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
                 <img [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
             </button>
         </form>

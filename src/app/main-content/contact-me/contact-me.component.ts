@@ -27,6 +27,8 @@ export class ContactMeComponent implements OnInit {
   isChecked = false;
   submitImg = 'assets/img/Btn_Send_Error.svg';
 
+  mailTest = true;
+
   constructor(public languageService: LanguageService) { }
 
   ngOnInit(): void {
@@ -40,8 +42,19 @@ export class ContactMeComponent implements OnInit {
 
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
-    this.checkboxImg = this.checkboxImg === 'assets/img/Checkbox.svg' ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg'
+    this.checkboxImg = this.checkboxImg === 'assets/img/Checkbox.svg' ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg'  
   }
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && this.isChecked) {
