@@ -1,5 +1,5 @@
 
-import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { CommonModule, } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
@@ -8,14 +8,15 @@ import { ReferencesContent } from '../../interfaces/all-interfaces';
 @Component({
   selector: 'app-references',
   standalone: true,
-  imports: [CommonModule, NgIf, NgClass],
+  imports: [CommonModule],
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
 export class ReferencesComponent implements OnInit {
 
   references$!: Observable<ReferencesContent | null>;
-  feedbackOpen = false;
+  // feedbackOpen = false;
+  currentIndex: number | null = null;
 
   constructor(public languageService: LanguageService) { }
 
@@ -24,13 +25,15 @@ export class ReferencesComponent implements OnInit {
     this.languageService.loadTextsReferences();
   }
 
-  toggleFeedback(ref: any) {
-    ref.open = !ref.open;
+  toggleFeedback(index: number) {
+    // ref.open = !ref.open;
+    this.currentIndex = index;
     document.body.style.overflow = 'hidden';
   }
 
-  closeFeedback(ref: any) {
-    ref.open = false;
+  closeFeedback() {
+    // ref.open = false;
+    this.currentIndex = null;
     document.body.style.overflow = 'unset';
   }
 
