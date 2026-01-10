@@ -9,5 +9,8 @@
     "phMessage": "Your message",
     "have": "I've read the ",
     "prPolicy": "privacy policy",
-    "read": " and agree to the processing of my data as outlined."
+    "read": " and agree to the processing of my data as outlined.",
+    "nameInput": "A valid name is required",
+    "emailInput": "A valid email address is required",
+    "messageInput": "Please enter at least 10 characters."
 }

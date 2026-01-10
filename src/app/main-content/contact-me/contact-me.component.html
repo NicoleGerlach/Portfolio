@@ -1,48 +1,60 @@
-
 <section id="contactMe" *ngIf="contact$ | async as contact">
     <button class="arrow-up">
         <img class="arrow-up-img" (click)="scrollToTop()" (mouseover)="hover = true" (mouseout)="hover = false"
             [src]="hover ? 'assets/img/Arrow_up_hover.svg' : 'assets/img/Arrow_up.svg'">
     </button>
-<div class="content">
-    <h2>{{ contact.headline }}</h2>
-    <div class="contact">
-        <div class="contact-data">
-            <div class="contact-option margin-left-right">
-                <img src="assets/img/icon _phone_.svg">
-                <div>{{ contact.phone }}</div>
+    <div class="content">
+        <h2>{{ contact.headline }}</h2>
+        <div class="contact">
+            <div class="contact-data">
+                <div class="contact-option margin-left-right">
+                    <img src="assets/img/icon _phone_.svg">
+                    <div>{{ contact.phone }}</div>
+                </div>
+                <div class="contact-option margin-left-right margin-bottom-32">
+                    <img src="assets/img/icon _email_.svg">
+                    <div>{{contact.mail}}</div>
+                </div>
             </div>
-            <div class="contact-option margin-left-right margin-bottom-32">
-                <img src="assets/img/icon _email_.svg">
-                <div>{{contact.mail}}</div>
+            <div class="contact-box margin-bottom-32">
+                <span>{{ contact.text }}</span>
             </div>
         </div>
-        <div class="contact-box margin-bottom-32">
-            <span>{{ contact.text }}</span>
+        <div class="work-together margin-bottom-32">
+            <span>{{ contact.cooperation }}</span>
         </div>
-    </div>
-    <div class="work-together margin-bottom-32">
-        <span>{{ contact.cooperation }}</span>
-    </div>
-    <form>
-        <div class="inputs">
-            <input class="field" [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text" required>
-            <input class="field" [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email" required>
-        </div>
-        <textarea class="field" [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage" required></textarea>
-    </form>
-    <div class="privacy-box">
-        <img src="assets/img/Checkbox.svg">
-        <span>{{ contact.have }}<a href="privacyPolicy" [ngStyle]="{color: '#F28A62'}">{{ contact.prPolicy }}</a>{{
-            contact.read
-            }}</span>
-    </div>
-    <div class="send-btn">
-        <img src="assets/img/Btn_Send_Error.svg">
-    </div>
-    <button class="arrow-top">
-        <img class="arrow-up-img" (click)="scrollToTop()" (mouseover)="hover = true" (mouseout)="hover = false"
-            [src]="hover ? 'assets/img/Arrow_up_hover.svg' : 'assets/img/Arrow_up.svg'">
-    </button>
+
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <div class="inputs">
+                <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
+                    [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text" id="name" required>
+                <span class="required" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
+                <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
+                    [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email" id="email" required
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                <span class="required" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
+            </div>
+            <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message"
+                class="field" [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage" id="message"
+                required></textarea>
+            <span class="required" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
+                }}</span>
+            <div class="privacy-box">
+                <button class="checkbox" (click)="toggleCheckbox()">
+                    <img [src]="checkboxImg">
+                </button>
+                <span>{{ contact.have }}<a href="privacyPolicy" [ngStyle]="{color: '#F28A62'}">{{
+                        contact.prPolicy}}</a>{{
+                    contact.read}}</span>
+            </div>
+            <button class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
+                <img [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
+            </button>
+        </form>
+
+        <button class="arrow-top">
+            <img class="arrow-up-img" (click)="scrollToTop()" (mouseover)="hover = true" (mouseout)="hover = false"
+                [src]="hover ? 'assets/img/Arrow_up_hover.svg' : 'assets/img/Arrow_up.svg'">
+        </button>
     </div>
 </section>

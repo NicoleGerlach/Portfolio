@@ -5,11 +5,12 @@ import { RouterLink } from '@angular/router';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ContactContent } from '../../interfaces/all-interfaces';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [CommonModule, RouterLink, NgClass, NgIf],
+  imports: [CommonModule, RouterLink, NgClass, NgIf, FormsModule],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
@@ -17,6 +18,14 @@ import { ContactContent } from '../../interfaces/all-interfaces';
 export class ContactMeComponent implements OnInit {
   contact$!: Observable<ContactContent | null>;
   hover = false;
+  contactData = {
+    name: "",
+    email: "",
+    message: "",
+  }
+  checkboxImg = 'assets/img/Checkbox.svg';
+  isChecked = false;
+  submitImg = 'assets/img/Btn_Send_Error.svg';
 
   constructor(public languageService: LanguageService) { }
 
@@ -27,5 +36,16 @@ export class ContactMeComponent implements OnInit {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  toggleCheckbox() {
+    this.isChecked = !this.isChecked;
+    this.checkboxImg = this.checkboxImg === 'assets/img/Checkbox.svg' ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg'
+  }
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.valid && this.isChecked) {
+          console.log("Funktioniert", this.contactData);
+    }
   }
 }

@@ -22,7 +22,6 @@ export class HeaderService {
     return this.http.get<HeaderContent>(path);
   }
 
-
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
@@ -34,9 +33,7 @@ export class HeaderService {
   setLang(lang: 'de' | 'en') {
     if (this.languageService.currentLang !== lang) {
       this.languageService.currentLang = lang;
-
       localStorage.setItem('lang', lang);
-
       this.languageService.loadTextsAboutMe();
       this.languageService.loadTextsWhyMe();
       this.languageService.loadTextsSkills();
@@ -46,8 +43,6 @@ export class HeaderService {
       this.languageService.loadTextsPrivacyPolicy();
       this.languageService.loadTextsHeader();
     }
-    console.log("setLang funktioniert");
-
     this.closeMenu();
   }
 

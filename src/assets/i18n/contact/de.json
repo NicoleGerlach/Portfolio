@@ -10,5 +10,8 @@
     "phMessage": "Nachricht",
     "have": "Ich habe die ",
     "prPolicy": "Datenschutzerklärung",
-    "read": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+    "read": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "nameInput": "Gültiger Name notwendig",
+    "emailInput": "Gültige E-Mail Adresse notwendig",
+    "messageInput": "Bitte mindestens 10 Zeichen eingeben."
 }
