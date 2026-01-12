@@ -1,70 +1,80 @@
-<section id="projects" *ngIf="project$ | async as project">
+
+@if (project$ | async; as project) {
+<section id="projects">
   <h2>{{ project.headline }}</h2>
-  <div class="projects" *ngIf="project.projects?.length">
-    <span *ngFor="let p of project.projects; let i = index" (click)="showProject(i)"
-      [class.card-background]="currentProjectIndex === i" class="project-list">
+  @if (project.projects.length) {
+  <div class="projects">
+    @for (p of project.projects; track p; let i = $index) {
+    <span (click)="showProject(i)" [class.card-background]="currentProjectIndex === i" class="project-list">
       <span class="wide">{{ p.proName }}</span>
       <span class="mobile">{{ p.proNumber }}</span>
     </span>
+    }
   </div>
-  <div class="project-detail" *ngIf="project.projects?.length">
-    <ng-container *ngFor="let ref of project.projects; let idx = index">
-      <ng-container *ngIf="idx === currentProjectIndex">
-        <h3>{{ ref.proName }}</h3>
-        <div class="technologies">
-          <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
-          <span>{{ project.duration }} {{ ref.proDuration }}</span>
-        </div>
-        <div class="content">
-          <div class="project-img">
-            <div class="tech-box" *ngIf="ref.proTechImg?.length">
-              <span>{{ project.technologies }}</span>
-              <div class="tech-img">
-                <img *ngFor="let p of ref.proTechImg" [src]="p.src">
-              </div>
-            </div>
-            <img [src]="ref.img" alt="{{ ref.proName }}">
-          </div>
-          <div class="margin-bottom-32 content-project">
-            <div class="project-explanation">
-              <img src="assets/img/Ellipse_small.svg">
-
-              <span class="headline">{{ project.about }}
-              </span>
-              <div class="duration-wide">
-                <span>{{ project.duration }}</span>
-                <span>{{ ref.proDuration }}</span>
-
-              </div>
-            </div>
-            <div class="description">
-              <span [innerHTML]="ref.proDeclaration"></span>
-            </div>
-            <div class="project-explanation">
-              <img src="assets/img/Ellipse_small.svg">
-              <span class="headline">{{ project.organisation }}</span>
-            </div>
-            <div class="description">
-              <span>{{ ref.proOrganisation }}</span>
-            </div>
-            <div class="project-explanation" *ngIf="ref?.proGroupWork">
-              <img src="assets/img/Ellipse_small.svg">
-              <span class="headline">{{ project.groupWork }}</span>
-            </div>
-            <div class="description">
-              <span>{{ ref.proGroupWork }}</span>
-            </div>
+  } @if(project.projects.length) {
+  <div class="project-detail">
+    @for (ref of project.projects; track ref; let idx = $index) { @if (idx === currentProjectIndex) {
+    <h3>{{ ref.proName }}</h3>
+    <div class="technologies">
+      <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
+      <span>{{ project.duration }} {{ ref.proDuration }}</span>
+    </div>
+    <div class="content">
+      <div class="project-img">
+        @if (ref.proTechImg.length) {
+        <div class="tech-box">
+          <span>{{ project.technologies }}</span>
+          <div class="tech-img">
+            @for (p of ref.proTechImg; track p) {
+            <img [src]="p.src" />
+            }
           </div>
         </div>
-        <div class="live-test" *ngIf="project.projects?.length">
-          <button class="btn-test-git" (click)="openExternal(ref.lifeTest)">
-            <img src="assets/img/Btn_LifeTest.svg">
-          </button>
-          <button class="btn-test-git" (click)="openExternal(ref.gitHub)">
-            <img src="assets/img/Btn_GitHub.svg">
-          </button>
+        }
+        <img [src]="ref.img" alt="{{ ref.proName }}" />
+      </div>
+      <div class="margin-bottom-32 content-project">
+        <div class="project-explanation">
+          <img src="assets/img/Ellipse_small.svg" />
+          <span class="headline">{{ project.about }} </span>
+          <div class="duration-wide">
+            <span>{{ project.duration }}</span>
+            <span>{{ ref.proDuration }}</span>
+          </div>
         </div>
-      </ng-container>
-    </ng-container>
+        <div class="description">
+          <span [innerHTML]="ref.proDeclaration"></span>
+        </div>
+        <div class="project-explanation">
+          <img src="assets/img/Ellipse_small.svg" />
+          <span class="headline">{{ project.organisation }}</span>
+        </div>
+        <div class="description">
+          <span>{{ ref.proOrganisation }}</span>
+        </div>
+        @if (ref?.proGroupWork) {
+        <div class="project-explanation">
+          <img src="assets/img/Ellipse_small.svg" />
+          <span class="headline">{{ project.groupWork }}</span>
+        </div>
+        }
+        <div class="description">
+          <span>{{ ref.proGroupWork }}</span>
+        </div>
+      </div>
+    </div>
+    @if (project.projects.length) {
+    <div class="live-test">
+      <button type="button" class="btn-test-git" (click)="openExternal(ref.lifeTest)">
+        <img src="assets/img/Btn_LifeTest.svg" />
+      </button>
+      <button type="button" class="btn-test-git" (click)="openExternal(ref.gitHub)">
+        <img src="assets/img/Btn_GitHub.svg" />
+      </button>
+    </div>
+    } } }
   </div>
+  }
+  <div></div>
 </section>
+}

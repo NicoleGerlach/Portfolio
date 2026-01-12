@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ProjectContent } from '../../interfaces/all-interfaces';
@@ -8,7 +8,7 @@ import { ProjectContent } from '../../interfaces/all-interfaces';
 @Component({
   selector: 'app-my-projects',
   standalone: true,
-  imports: [CommonModule, NgIf, NgClass],
+  imports: [CommonModule],
   templateUrl: './my-projects.component.html',
   styleUrl: './my-projects.component.scss'
 })
