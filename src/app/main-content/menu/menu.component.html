@@ -1,8 +1,8 @@
-
+@if (header$ | async; as header) {
 <section>
     <div class="content">
        <img src="assets/img/Logo_Footer.svg">
-       <div class="menu-bar" *ngIf="header$ | async as header">
+       <div class="menu-bar">
         <span (click)="headerService.scrollToWithFragment('whyMe', $event)">{{ header.whyMe }}</span>
         <span (click)="headerService.scrollToWithFragment('skills', $event)">{{ header.skills }}</span>
         <span (click)="headerService.scrollToWithFragment('projects', $event)">{{ header.projects }}</span>
@@ -14,3 +14,4 @@
        </div>
     </div>
 </section>
+}

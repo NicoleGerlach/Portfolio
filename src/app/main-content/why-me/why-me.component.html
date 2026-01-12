@@ -1,4 +1,5 @@
-<section id="whyMe" class="margin-left-right-24" *ngIf="whyMe$ | async as whyMe">
+@if (whyMe$ | async; as whyMe) {
+<section id="whyMe" class="margin-left-right-24">
   <h2 class="margin-bottom-32">{{ whyMe.whyMe }}</h2>
   <div class="content">
     <div class="local margin-bottom-32">
@@ -14,11 +15,10 @@
       {{ whyMe.motivation }} <br>
       <br>
       {{ whyMe.skills }}
-      <button class="btn-talk d-none">
-        <a href="#contact">
-          <img src="assets/img/Btn_LetsTalk.svg">
-        </a>
-      </button>
+      <a class="btn-talk d-none" href="#contact">
+        <img src="assets/img/Btn_LetsTalk.svg">
+      </a>
     </span>
   </div>
 </section>
+}

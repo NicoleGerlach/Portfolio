@@ -1,6 +1,6 @@
-
-<header *ngIf="header$ | async as header">
-        <div class="logo-box">
+@if (header$ | async; as header) {
+<header>
+    <div class="logo-box">
         <div class="logo">
             <img class="logo-pic" src="assets/img/Logo.svg">
             <span class="name-small">{{ header.nameSmall }}</span>
@@ -28,3 +28,4 @@
         </div>
     </div>
 </header>
+}

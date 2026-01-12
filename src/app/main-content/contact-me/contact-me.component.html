@@ -1,4 +1,5 @@
-<section id="contactMe" *ngIf="contact$ | async as contact">
+@if (contact$ | async; as contact) {
+<section id="contactMe">
     <button class="arrow-up">
         <img class="arrow-up-img" (click)="scrollToTop()" (mouseover)="hover = true" (mouseout)="hover = false"
             [src]="hover ? 'assets/img/Arrow_up_hover.svg' : 'assets/img/Arrow_up.svg'">
@@ -23,7 +24,6 @@
         <div class="work-together margin-bottom-32">
             <span>{{ contact.cooperation }}</span>
         </div>
-
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div class="inputs">
                 <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
@@ -43,18 +43,20 @@
                 <button class="checkbox" (click)="toggleCheckbox()">
                     <img [src]="checkboxImg">
                 </button>
-                <span>{{ contact.have }}<a href="privacyPolicy" [ngStyle]="{color: '#F28A62'}">{{
-                        contact.prPolicy}}</a>{{
-                    contact.read}}</span>
+                <span>{{ contact.have }}
+                    <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}"
+                        [ngStyle]="{color: '#F28A62'}">{{contact.prPolicy}}</a>
+                    {{contact.read}}</span>
             </div>
             <button type="submit" class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
-                <img [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
+                <img
+                    [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
             </button>
         </form>
-
         <button class="arrow-top">
             <img class="arrow-up-img" (click)="scrollToTop()" (mouseover)="hover = true" (mouseout)="hover = false"
                 [src]="hover ? 'assets/img/Arrow_up_hover.svg' : 'assets/img/Arrow_up.svg'">
         </button>
     </div>
 </section>
+}

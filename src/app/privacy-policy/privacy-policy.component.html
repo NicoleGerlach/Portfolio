@@ -1,3 +1,4 @@
+@if (privacyPolicy$ | async; as privacyPolicy) {
 <section id="#privacyPolicy" *ngIf="privacyPolicy$ | async as privacyPolicy">
     <button (click)="goBack()">
         <img src="assets/img/Arrow_back.svg">
@@ -78,3 +79,4 @@
         <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
     </div>
 </section>
+}
