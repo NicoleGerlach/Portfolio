@@ -16,6 +16,11 @@
     }
 }
 
+.arrow-top:hover img,
+.arrow-top:focus-visible img {
+  content: url('../../../assets/img/Arrow_up_hover.svg');
+}
+
 .contact-option {
     display: flex;
     align-items: center;
@@ -82,26 +87,18 @@ textarea::placeholder {
 .privacy-box {
     display: flex;
     align-items: center;
+    margin-top: 16px;
     gap: 5px;
 }
 
-.checkbox {
-    background-color: unset;
-    border: unset;
-    cursor: pointer;
-}
-
 .send-btn {
-    width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
-    background-color: unset;
-    border: unset;
 }
 
 .send-btn img {
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 a {
@@ -110,10 +107,6 @@ a {
 
 .arrow-up {
     display: none;
-}
-
-.required {
-    color: #F28A62;
 }
 
 @media (min-width: 900px) {

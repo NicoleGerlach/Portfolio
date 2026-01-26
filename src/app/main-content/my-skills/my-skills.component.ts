@@ -1,4 +1,4 @@
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
@@ -7,7 +7,7 @@ import { MySkillsContent } from '../../interfaces/all-interfaces';
 @Component({
   selector: 'app-my-skills',
   standalone: true,
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })

@@ -1,8 +1,7 @@
-
 @if (project$ | async; as project) {
 <section id="projects">
   <h2>{{ project.headline }}</h2>
-  @if (project.projects.length) {
+  @if (project.projects?.length) {
   <div class="projects">
     @for (p of project.projects; track p; let i = $index) {
     <span (click)="showProject(i)" [class.card-background]="currentProjectIndex === i" class="project-list">
@@ -11,9 +10,11 @@
     </span>
     }
   </div>
-  } @if(project.projects.length) {
+  } @if(project.projects?.length) {
+    
   <div class="project-detail">
-    @for (ref of project.projects; track ref; let idx = $index) { @if (idx === currentProjectIndex) {
+    @for (ref of project.projects ?? []; track ref; let idx = $index) { @if (idx ===
+    currentProjectIndex) {
     <h3>{{ ref.proName }}</h3>
     <div class="technologies">
       <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
@@ -21,11 +22,11 @@
     </div>
     <div class="content">
       <div class="project-img">
-        @if (ref.proTechImg.length) {
+        @if (ref.proTechImg?.length) {
         <div class="tech-box">
           <span>{{ project.technologies }}</span>
           <div class="tech-img">
-            @for (p of ref.proTechImg; track p) {
+            @for (p of ref.proTechImg ?? []; track p) {
             <img [src]="p.src" />
             }
           </div>
@@ -36,6 +37,7 @@
       <div class="margin-bottom-32 content-project">
         <div class="project-explanation">
           <img src="assets/img/Ellipse_small.svg" />
+
           <span class="headline">{{ project.about }} </span>
           <div class="duration-wide">
             <span>{{ project.duration }}</span>
@@ -63,18 +65,20 @@
         </div>
       </div>
     </div>
-    @if (project.projects.length) {
+    @if (project.projects?.length) {
     <div class="live-test">
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.lifeTest)">
-        <img src="assets/img/Btn_LifeTest.svg" />
-      </button>
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.gitHub)">
-        <img src="assets/img/Btn_GitHub.svg" />
-      </button>
+      <!-- <div class="button-box"> -->
+        <button type="button" class="btn-test-git" (click)="openExternal(ref.lifeTest)">
+          <img src="assets/img/Btn_LifeTest.svg" />
+        </button>
+        <button type="button" class="btn-test-git" (click)="openExternal(ref.gitHub)">
+          <img src="assets/img/Btn_GitHub.svg" />
+        </button>
+      <!-- </div> -->
     </div>
     } } }
   </div>
+
   }
-  <div></div>
 </section>
 }

@@ -1,5 +1,5 @@
 
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [NgClass, CommonModule],
+  imports: [CommonModule],
   templateUrl: './about-me.component.html',
   styleUrls: ['./about-me.component.scss']
 })

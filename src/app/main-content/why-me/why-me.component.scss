@@ -1,66 +1,66 @@
 section {
-    max-width: 860px;
+  padding: 1em 2em 3em;
 }
 
 .local {
-    display: flex;
-    align-items: center;
-    gap: clamp(8px, 1.2vw + 4px, 24px);
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw + 4px, 24px);
 }
 
 .local-elipse {
-    position: absolute;
-    padding: 25px 25px 0 25px;
+  position: absolute;
+  padding: 25px 25px 0 25px;
 }
 
 .located {
-    font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
+  font-size: clamp(1.125rem, 0.625rem + 2vw, 1.875rem);
 }
 
 .motivation {
-    font-size: clamp(1rem, 0.917rem + 0.333vw, 1.125rem);
+  font-size: clamp(1rem, 0.917rem + 0.333vw, 1.125rem);
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 900px) {
-    .content {
-        display: flex;
-        gap: 50px;
-    }
+  .content {
+    display: flex;
+    gap: 50px;
+  }
 
-    .local {
-        min-width: fit-content;
-        justify-content: unset;
-    }
+  .local {
+    min-width: fit-content;
+    justify-content: unset;
+  }
 
-    .local-pic,
-    .local-elipse {
-        display: flex;
-    }
+  .local-pic,
+  .local-elipse {
+    display: flex;
+  }
 
-    .local-pic-small {
-        display: none;
-    }
+  .local-pic-small {
+    display: none;
+  }
 
-    .located {
-        max-width: 275px;
-    }
+  .located {
+    max-width: 275px;
+  }
 
-    .located::after {
-        content: "";
-        display: inline-block;
-        height: 30px;
-        /* gewünschter Abstand zwischen der ersten Zeile/Block und dem Rest */
-    }
+  .located::after {
+    content: "";
+    display: inline-block;
+    height: 30px;
+    /* gewünschter Abstand zwischen der ersten Zeile/Block und dem Rest */
+  }
 
-    .btn-talk {
-        display: flex;
-        cursor: pointer;
-        background: unset;
-        border: unset;
-        padding: 24px 0 0 68%;
-    }
+  .btn-talk {
+    display: flex;
+    cursor: pointer;
+    background: unset;
+    border: unset;
+    padding: 24px 0 0 68%;
+  }
 }

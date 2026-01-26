@@ -1,5 +1,5 @@
 
-import { CommonModule, } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
@@ -29,7 +29,7 @@ export class ReferencesComponent implements OnInit {
     document.body.style.overflow = 'hidden';
   }
 
-  closeFeedback() {
+  closeFeedback(): void {
     this.currentIndex = null;
     document.body.style.overflow = 'unset';
   }

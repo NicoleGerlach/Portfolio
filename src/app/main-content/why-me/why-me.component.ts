@@ -1,5 +1,5 @@
 
-import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
@@ -8,7 +8,7 @@ import { WhyMeContent } from '../../interfaces/all-interfaces';
 @Component({
   selector: 'app-why-me',
   standalone: true,
-  imports: [CommonModule, NgIf, NgClass],
+  imports: [CommonModule],
   templateUrl: './why-me.component.html',
   styleUrl: './why-me.component.scss'
 })

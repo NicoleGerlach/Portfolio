@@ -17,7 +17,7 @@
             <img src="assets/img/Linkedin_button_footer.svg">
         </div>
         <div class="impressum">
-            <span>Legal notice</span>
+            <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}">Legal notice</a>
             <div>&copy; Nicole Gerlach 2025</div>
         </div>
     </div>

@@ -1,109 +1,109 @@
-section {
-    width: 85vw;
-}
+
+// section {
+//   height: calc(100vh - 104px);
+// }
 
 .pic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 23px;
 
-    .bw-pic {
-        width: clamp(255px, 40vw, 535px);
-        ;
-        height: auto;
-    }
+  .bw-pic {
+    width: clamp(255px, 40vw, 535px);
+    height: auto;
+  }
 }
 
 .icons {
-    width: 30px;
-    display: none;
-    flex-direction: column;
+  width: 30px;
+  display: none;
+  flex-direction: column;
 }
 
 .name {
-    height: 93px;
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 8px;
+  color: #f8f5ec;
+  gap: clamp(0.5rem, -0.725rem + 3.922vw, 2.25rem);
+
+  .fullname {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    margin-top: 8px;
-    color: #F8F5EC;
-    gap: clamp(0.5rem, -0.725rem + 3.922vw, 2.25rem);
+    align-items: center;
+    font-family: "Anta";
+    font-size: clamp(2.313rem, 0.868rem + 4.622vw, 4.375rem);
+    height: 48px;
+  }
 
-    .fullname {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Anta';
-        font-size: clamp(2.313rem, 0.868rem + 4.622vw, 4.375rem);
-        height: 48px;
-    }
-
-    .profession {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: clamp(1.25rem, 0.55rem + 2.241vw, 2.25rem);
-        text-transform: uppercase;
-        font-family: 'Josefin Sans';
-    }
+  .profession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.25rem, 0.55rem + 2.241vw, 2.25rem);
+    text-transform: uppercase;
+    font-family: "Josefin Sans";
+  }
 }
 
 .arrow-down {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: clamp(1.5rem, -1.826rem + 10.644vw, 6.25rem);
-    position: relative;
-    background-color: unset;
-    border: unset;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(1.5rem, -1.826rem + 10.644vw, 6.25rem);
+  position: relative;
+  background-color: unset;
+  border: unset;
 
-    .arrow-down-img:hover {
-        cursor: pointer;
-    }
+  .arrow-down-img:hover {
+    cursor: pointer;
+  }
 }
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 900px) {
-    section {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 63px;
-    }
+  .content-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 63px;
+  }
 
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 36px;
-    }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+  }
 
-    .name {
-        margin: unset;
-    }
+  .name {
+    margin: unset;
+  }
 
-    .logo {
-        display: block;
-        margin: 0 auto;
-    }
+  .logo {
+    display: block;
+    margin: 0 auto;
+  }
 
-    .icons {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
-    }
+  .icons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
-    .social-media {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }

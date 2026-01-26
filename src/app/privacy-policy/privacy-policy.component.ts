@@ -1,5 +1,4 @@
-
-import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { Observable } from 'rxjs';
@@ -9,9 +8,9 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-privacy-policy',
   standalone: true,
-  imports: [CommonModule, NgClass, NgIf, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrl: './privacy-policy.component.scss',
 })
 export class PrivacyPolicyComponent implements OnInit {
   privacyPolicy$!: Observable<PrivacyPolicyContent | null>;
@@ -47,11 +46,10 @@ export class PrivacyPolicyComponent implements OnInit {
   private scrollToFooterWithRetries(retries = 10) {
     const el = document.getElementById('footer');
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth'});
+      el.scrollIntoView({ behavior: 'smooth' });
     }
     if (retries > 0) {
       setTimeout(() => this.scrollToFooterWithRetries(retries - 1), 50);
     }
   }
-
 }

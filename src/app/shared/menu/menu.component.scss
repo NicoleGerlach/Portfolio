@@ -1,0 +1,130 @@
+.menu-bubble {
+  // padding: 1em;
+  // position: relative;
+
+position: absolute;
+// top: clamp(6.375rem, -3.317rem + 24.231vw, 10.313rem);
+top: 17.2%;
+left: 0;
+width: 100%;
+// background-color: #042639;
+// height: 409px;
+display: flex;
+align-items: center;
+  
+  .bubble-shape {
+    margin: 0 auto;
+    display: block;
+    // max-width: 354px;
+    // max-height: 370px;
+    height: clamp(19rem, 0.077rem + 47.308vw, 26.688rem);
+  }
+  .menu-bar {
+    height: 60%;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      width: 100%;
+      list-style: none;
+      font-size: clamp(1.188rem, 0.919rem + 0.811vw, 1.375rem);
+      text-align: center;
+    }
+    .languages {
+      width: fit-content;
+      button {
+        font-size: clamp(1.188rem, 0.919rem + 0.811vw, 1.375rem);
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+.desktop-content {
+  display: none;
+}
+
+.languages {
+  display: flex;
+  gap: 14px;
+}
+
+span {
+  cursor: pointer;
+}
+
+.languages span {
+  width: 39px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.lang-de {
+  .german {
+    background-image: url(./../../../assets/img/Ellipse_languages.svg);
+    background-repeat: no-repeat;
+    color: #f8f5ec;
+  }
+
+  .english {
+    background-image: none;
+    color: black;
+  }
+}
+
+.lang-en {
+  .german {
+    background-image: none;
+    color: black;
+  }
+
+  .english {
+    background-image: url(./../../../assets/img/Ellipse_languages.svg);
+    background-repeat: no-repeat;
+    color: #f8f5ec;
+  }
+}
+
+@media (min-width: 900px) {
+  .desktop-content {
+    height: 104px;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f28a62;
+    .menu-bar {
+      display: flex;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: clamp(1.25rem, 0.625rem + 1.111vw, 1.625rem);
+      padding-left: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
+      padding-right: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
+      li {
+        list-style-type: none;
+      }
+      .languages {
+        list-style-type: none;
+        button {
+          font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}

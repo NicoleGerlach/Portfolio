@@ -1,31 +1,47 @@
+<!-- @if (header$ | async; as header) {
+<header>
+  <div class="logo-box">
+    <div class="logo">
+      <img class="logo-pic" src="assets/img/Logo.svg" />
+      <span class="name-small">{{ header.nameSmall }}</span>
+      <span class="profession-small">{{ header.professionSmall }}</span>
+    </div>
+    <div
+      class="hamburger-menu"
+      (click)="toggleMenu()"
+      [class.open]="headerService.menuOpen"
+    >
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+ <app-menu 
+ [isHamburger]="true"
+ />
+</header>
+} -->
+
 @if (header$ | async; as header) {
 <header>
-    <div class="logo-box">
-        <div class="logo">
-            <img class="logo-pic" src="assets/img/Logo.svg">
-            <span class="name-small">{{ header.nameSmall }}</span>
-            <span class="profession-small">{{ header.professionSmall }}</span>
-        </div>
-        <div class="hamburger-menu" (click)="headerService.toggleMenu()" [class.open]="headerService.menuOpen">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+  <div class="logo-box">
+    <div class="logo">
+      <img class="logo-pic" src="assets/img/Logo.svg" />
+      <span class="name-small">{{ header.nameSmall }}</span>
+      <span class="profession-small">{{ header.professionSmall }}</span>
     </div>
-    <div class="menu-container">
-        <div class="menu-box" [class.d-none]="!headerService.menuOpen">
-            <img class="menu-box-pic" src="assets/img/Ellipse_menu.svg">
-            <ul class="menu-list">
-                <li><a (click)="headerService.scrollToWithFragment('whyMe', $event)">{{ header.whyMe }}</a></li>
-                <li><a (click)="headerService.scrollToWithFragment('skills', $event)">{{ header.skills }}</a></li>
-                <li><a (click)="headerService.scrollToWithFragment('projects', $event)">{{ header.projects }}</a></li>
-                <li><a (click)="headerService.scrollToWithFragment('contactMe', $event)">{{ header.contact }}</a></li>
-                <div class="languages" [ngClass]="headerService.getLangClasses()">
-                    <span class="german" (click)="headerService.setLang('de')">DE</span>
-                    <span class="english" (click)="headerService.setLang('en')">EN</span>
-                </div>
-            </ul>
-        </div>
+    <div class="hamburger-menu" (click)="toggleMenu()" [class.open]="getMenuClass()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
+  </div>
+  <app-menu class="app-menu-overlay"
+    [isHamburger]="true"
+    [menuContent]="header"
+    [menuClass]="getMenuClass()"
+    (navigate)="onNavigate($event)"
+    (changeLang)="onLang($event)"
+  />
 </header>
 }

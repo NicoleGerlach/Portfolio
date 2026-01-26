@@ -1,82 +1,85 @@
 @if (privacyPolicy$ | async; as privacyPolicy) {
-<section id="#privacyPolicy" *ngIf="privacyPolicy$ | async as privacyPolicy">
-    <button (click)="goBack()">
-        <img src="assets/img/Arrow_back.svg">
-    </button>
-    <h2>{{ privacyPolicy.headline }}</h2>
-    <div class="notice-box">
-        <h3>{{ privacyPolicy.impressum }}</h3>
-        <span>{{ privacyPolicy.name }}</span>
-        <span>{{ privacyPolicy.address }}</span>
-        <span>{{ privacyPolicy.city }}</span>
-    </div>
-    <div class="notice-box">
-        <h3>{{ privacyPolicy.first }}</h3>
-        <h4>{{ privacyPolicy.notice }}</h4>
-        <span>{{ privacyPolicy.noticeText }}</span>
-        <h4>{{ privacyPolicy.dataCollection }}</h4>
-        <span class="box-headline">{{ privacyPolicy.responsible }}</span>
-        <span>{{ privacyPolicy.responsibleText }}</span>
-        <span class="box-headline">{{ privacyPolicy.capture }}</span>
-        <span>{{ privacyPolicy.captureText }}</span>
-        <span>{{ privacyPolicy.captureTextTwo }}</span>
-        <span class="box-headline">{{ privacyPolicy.use }}</span>
-        <span>{{ privacyPolicy.useText }}</span>
-        <span class="box-headline">{{ privacyPolicy.rights }}</span>
-        <span>{{ privacyPolicy.rightsText }}</span>
-        <span>{{ privacyPolicy.rightsTextTwo }}</span>
-        <h3>{{ privacyPolicy.second }}</h3>
-        <span>{{ privacyPolicy.secondText }}</span>
-        <span class="box-headline">{{ privacyPolicy.provider }}</span>
-        <span>{{ privacyPolicy.providerText }}</span>
-        <a href="https://all-inkl.com/datenschutzinformationen/"
-            target="_blank">https://all-inkl.com/datenschutzinformationen/.</a>
-        <span>{{ privacyPolicy.providerTextTwo }}</span>
-        <h3>{{ privacyPolicy.third }}</h3>
-        <h4>{{ privacyPolicy.dataProtection }}</h4>
-        <span>{{ privacyPolicy.dataProtectionText }}</span>
-        <span>{{ privacyPolicy.dataProtectionTextTwo }}</span>
-        <h4>{{ privacyPolicy.responsible }}</h4>
-        <span>{{ privacyPolicy.responsibilityText }}</span>
-        <span>{{ privacyPolicy.name }}</span>
-        <span>{{ privacyPolicy.address }}</span>
-        <span>{{ privacyPolicy.city }}</span>
-        <span>{{ privacyPolicy.phone }}</span>
-        <span>{{ privacyPolicy.mail }}</span>
-        <span>{{ privacyPolicy.responsibilityTextTwo }}</span>
-        <h4>{{ privacyPolicy.memoryDuration }}</h4>
-        <span>{{ privacyPolicy.memoryDurationText }}</span>
-        <h4>{{ privacyPolicy.legalBasis }}</h4>
-        <span>{{ privacyPolicy.legalBasisText }}</span>
-        <h4>{{ privacyPolicy.recipient }}</h4>
-        <span>{{ privacyPolicy.recipientText }}</span>
-        <h4>{{ privacyPolicy.revocation }}</h4>
-        <span>{{ privacyPolicy.revocationText }}</span>
-        <h4>{{ privacyPolicy.contradiction }}</h4>
-        <span>{{ privacyPolicy.contradictionText }}</span>
-        <span>{{ privacyPolicy.contradictionTextTwo }}</span>
-        <h4>{{ privacyPolicy.complaintRight }}</h4>
-        <span>{{ privacyPolicy.complaintRightText }}</span>
-        <h4>{{ privacyPolicy.dataTransfer }}</h4>
-        <span>{{ privacyPolicy.dataTransferText }}</span>
-        <h4>{{ privacyPolicy.information }}</h4>
-        <span>{{ privacyPolicy.informationText }}</span>
-        <h4>{{ privacyPolicy.restriction }}</h4>
-        <span>{{ privacyPolicy.restrictionText }}</span>
-        <ul>
-            <li>{{ privacyPolicy.listOne }}</li>
-            <li>{{ privacyPolicy.listTwo }}</li>
-            <li>{{ privacyPolicy.listThree }}</li>
-            <li>{{ privacyPolicy.listFour }}</li>
-        </ul>
-        <span>{{ privacyPolicy.restrictionTextTwo }}</span>
-        <h3>{{ privacyPolicy.dataCollectionWebsite }}</h3>
-        <h4>{{ privacyPolicy.inquiry }}</h4>
-        <span>{{ privacyPolicy.inquiryText}}</span>
-        <span>{{ privacyPolicy.inquiryTextTwo }}</span>
-        <span>{{ privacyPolicy.inquiryTextThree }}</span>
-        <span>{{ privacyPolicy.inquiryTextFour }}</span>
-        <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
-    </div>
+<section id="#privacyPolicy">
+  <button type="button" (click)="goBack()">
+    <img src="assets/img/Arrow_back.svg" />
+  </button>
+  <h2>{{ privacyPolicy.headline }}</h2>
+  <div class="notice-box">
+    <h3>{{ privacyPolicy.impressum }}</h3>
+    <span>{{ privacyPolicy.name }}</span>
+    <span>{{ privacyPolicy.address }}</span>
+    <span>{{ privacyPolicy.city }}</span>
+  </div>
+  <div class="notice-box">
+    <h3>{{ privacyPolicy.first }}</h3>
+    <h4>{{ privacyPolicy.notice }}</h4>
+    <span>{{ privacyPolicy.noticeText }}</span>
+    <h4>{{ privacyPolicy.dataCollection }}</h4>
+    <span class="box-headline">{{ privacyPolicy.responsible }}</span>
+    <span>{{ privacyPolicy.responsibleText }}</span>
+    <span class="box-headline">{{ privacyPolicy.capture }}</span>
+    <span>{{ privacyPolicy.captureText }}</span>
+    <span>{{ privacyPolicy.captureTextTwo }}</span>
+    <span class="box-headline">{{ privacyPolicy.use }}</span>
+    <span>{{ privacyPolicy.useText }}</span>
+    <span class="box-headline">{{ privacyPolicy.rights }}</span>
+    <span>{{ privacyPolicy.rightsText }}</span>
+    <span>{{ privacyPolicy.rightsTextTwo }}</span>
+    <h3>{{ privacyPolicy.second }}</h3>
+    <span>{{ privacyPolicy.secondText }}</span>
+    <span class="box-headline">{{ privacyPolicy.provider }}</span>
+    <span>{{ privacyPolicy.providerText }}</span>
+    <a href="https://all-inkl.com/datenschutzinformationen/" target="_blank"
+      >https://all-inkl.com/datenschutzinformationen/.</a
+    >
+    <span>{{ privacyPolicy.providerTextTwo }}</span>
+    <h3>{{ privacyPolicy.third }}</h3>
+    <h4>{{ privacyPolicy.dataProtection }}</h4>
+    <span>{{ privacyPolicy.dataProtectionText }}</span>
+    <span>{{ privacyPolicy.dataProtectionTextTwo }}</span>
+    <h4>{{ privacyPolicy.responsible }}</h4>
+    <span>{{ privacyPolicy.responsibilityText }}</span>
+    <span>{{ privacyPolicy.name }}</span>
+    <span>{{ privacyPolicy.address }}</span>
+    <span>{{ privacyPolicy.city }}</span>
+    <span>{{ privacyPolicy.phone }}</span>
+    <span>{{ privacyPolicy.mail }}</span>
+    <span>{{ privacyPolicy.responsibilityTextTwo }}</span>
+    <h4>{{ privacyPolicy.memoryDuration }}</h4>
+    <span>{{ privacyPolicy.memoryDurationText }}</span>
+    <h4>{{ privacyPolicy.legalBasis }}</h4>
+    <span>{{ privacyPolicy.legalBasisText }}</span>
+    <h4>{{ privacyPolicy.recipient }}</h4>
+    <span>{{ privacyPolicy.recipientText }}</span>
+    <h4>{{ privacyPolicy.revocation }}</h4>
+    <span>{{ privacyPolicy.revocationText }}</span>
+    <h4>{{ privacyPolicy.contradiction }}</h4>
+    <span>{{ privacyPolicy.contradictionText }}</span>
+    <span>{{ privacyPolicy.contradictionTextTwo }}</span>
+    <h4>{{ privacyPolicy.complaintRight }}</h4>
+    <span>{{ privacyPolicy.complaintRightText }}</span>
+    <h4>{{ privacyPolicy.dataTransfer }}</h4>
+    <span>{{ privacyPolicy.dataTransferText }}</span>
+    <h4>{{ privacyPolicy.information }}</h4>
+    <span>{{ privacyPolicy.informationText }}</span>
+    <h4>{{ privacyPolicy.restriction }}</h4>
+    <span>{{ privacyPolicy.restrictionText }}</span>
+    <ul>
+      <li>{{ privacyPolicy.listOne }}</li>
+      <li>{{ privacyPolicy.listTwo }}</li>
+      <li>{{ privacyPolicy.listThree }}</li>
+      <li>{{ privacyPolicy.listFour }}</li>
+    </ul>
+    <span>{{ privacyPolicy.restrictionTextTwo }}</span>
+    <h3>{{ privacyPolicy.dataCollectionWebsite }}</h3>
+    <h4>{{ privacyPolicy.inquiry }}</h4>
+    <span>{{ privacyPolicy.inquiryText }}</span>
+    <span>{{ privacyPolicy.inquiryTextTwo }}</span>
+    <span>{{ privacyPolicy.inquiryTextThree }}</span>
+    <span>{{ privacyPolicy.inquiryTextFour }}</span>
+    <a href="https://www.e-recht24.de" target="_blank"
+      >https://www.e-recht24.de</a
+    >
+  </div>
 </section>
 }

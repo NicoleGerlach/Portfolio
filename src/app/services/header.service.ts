@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,16 +6,16 @@ import { LanguageService } from './language.service';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeaderService {
   menuOpen = false;
 
-
-  constructor(public http: HttpClient,
+  constructor(
+    public http: HttpClient,
     public languageService: LanguageService,
     private router: Router
-  ) { }
+  ) {}
 
   loadHeader(path: string): Observable<HeaderContent> {
     return this.http.get<HeaderContent>(path);
@@ -33,7 +32,9 @@ export class HeaderService {
   setLang(lang: 'de' | 'en') {
     if (this.languageService.currentLang !== lang) {
       this.languageService.currentLang = lang;
+
       localStorage.setItem('lang', lang);
+
       this.languageService.loadTextsAboutMe();
       this.languageService.loadTextsWhyMe();
       this.languageService.loadTextsSkills();
@@ -43,6 +44,8 @@ export class HeaderService {
       this.languageService.loadTextsPrivacyPolicy();
       this.languageService.loadTextsHeader();
     }
+    console.log('setLang funktioniert');
+
     this.closeMenu();
   }
 
@@ -50,19 +53,15 @@ export class HeaderService {
     return {
       'lang-de': this.languageService.currentLang === 'de',
       'lang-en': this.languageService.currentLang === 'en',
-    }
+    };
   }
 
-  scrollToWithFragment(sectionId: string, event: MouseEvent) {
-    event.preventDefault(); // verhindert normales Verhalten
-    // Erst scrollen wir programmgesteuert, dann setzen wir das Fragment
+  scrollToWithFragment(sectionId: string) {
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Fragment in der URL setzen (führt zur Aktualisierung der Adresszeile)
       this.router.navigate([], { fragment: sectionId });
     }
     this.closeMenu();
   }
-
 }

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ProjectContent } from '../../interfaces/all-interfaces';

@@ -60,13 +60,13 @@ export interface ProjectContent {
   about: string,
   organisation: string,
   groupWork: string,
-  projects: ProjectCard[],
+  projects?: ProjectCard[],
 }
 
 export interface ProjectCard {
   proNumber: string,
   proName: string,
-  proTechImg: TechImg[],
+  proTechImg?: TechImg[],
   proTechnologies: string,
   proDuration: string,
   img: string,
@@ -93,9 +93,6 @@ export interface ContactContent {
   have: string;
   prPolicy: string;
   read: string;
-  nameInput: string;
-  emailInput: string;
-  messageInput: string;
 }
 
 export interface PrivacyPolicyContent {

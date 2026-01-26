@@ -1,22 +1,23 @@
 @if (whyMe$ | async; as whyMe) {
-<section id="whyMe" class="margin-left-right-24">
+<section id="whyMe">
   <h2 class="margin-bottom-32">{{ whyMe.whyMe }}</h2>
   <div class="content">
     <div class="local margin-bottom-32">
-      <img class="local-pic d-none" src="assets/img/Local.svg">
-      <img class="local-elipse d-none" src="assets/img/Ellipse 20.svg">
-      <img class="local-pic-small" src="assets/img/Loval_Small.svg">
+      <img class="local-pic d-none" src="assets/img/Local.svg" />
+      <img class="local-elipse d-none" src="assets/img/Ellipse 20.svg" />
+      <img class="local-pic-small" src="assets/img/Loval_Small.svg" />
       <div class="located">
-        <span [ngStyle]="{color: '#F28A62'}">{{ whyMe.me }}</span> {{ whyMe.located }}
-        <span [ngStyle]="{color: '#F28A62'}">{{ whyMe.dots }}</span>
+        <span [ngStyle]="{ color: '#F28A62' }">{{ whyMe.me }}</span>
+        {{ whyMe.located }}
+        <span [ngStyle]="{ color: '#F28A62' }">{{ whyMe.dots }}</span>
       </div>
     </div>
     <span class="motivation">
-      {{ whyMe.motivation }} <br>
-      <br>
+      {{ whyMe.motivation }} <br />
+      <br />
       {{ whyMe.skills }}
-      <a class="btn-talk d-none" href="#contact">
-        <img src="assets/img/Btn_LetsTalk.svg">
+      <a href="#contact" class="btn-talk d-none">
+        <img src="assets/img/Btn_LetsTalk.svg" />
       </a>
     </span>
   </div>

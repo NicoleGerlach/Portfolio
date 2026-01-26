@@ -1,10 +1,20 @@
-
-<section>
-    <app-about-me></app-about-me>
-    <app-menu></app-menu>
-    <app-why-me id="whyMe"></app-why-me>
-    <app-my-skills id="skills"></app-my-skills>
-    <app-my-projects id="projects"></app-my-projects>
-    <app-references class="references"></app-references>
-    <app-contact-me id="contact"></app-contact-me>
-</section>
+<!-- Section hier weglassen. Dieser Teil wird von <main> in der AppComponent umrahmt
+    Stattdessen: Jede Komponente mit Section einrahmen!
+    -->
+<!-- <section> -->
+@if(header$ | async; as menuContent) {
+<app-about-me />
+<app-menu
+  [isHamburger]="false"
+  [menuContent]="menuContent"
+  (navigate)="onNavigate($event)"
+  (changeLang)="onLang($event)"
+>
+</app-menu>
+<app-why-me id="whyMe"></app-why-me>
+<app-my-skills id="skills"></app-my-skills>
+<app-my-projects id="projects"></app-my-projects>
+<app-references class="references"></app-references>
+<app-contact-me id="contact"></app-contact-me>
+}
+<!-- </section> -->
