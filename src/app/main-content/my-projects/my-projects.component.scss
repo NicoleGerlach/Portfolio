@@ -69,6 +69,7 @@ h3 {
 .headline {
     font-size: clamp(1.125rem, 0.5rem + 2vw, 1.75rem);
     color: #F28A62;
+    line-height: 1;
 }
 
 .duration-wide {
@@ -109,11 +110,11 @@ h3 {
     }
 
     .content {
-        display: flex;
-        flex-direction: row-reverse;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         justify-content: flex-end;
-        padding: 40px 100px 34px 0;
+        padding: 40px 0 34px 0;
         gap: 56px;
     }
 
@@ -129,7 +130,7 @@ h3 {
 
     .duration-wide {
         display: flex;
-        padding-left: 24px;
+        padding-left: 18px;
         font-size: 18px;
         gap: 8px;
     }
@@ -143,7 +144,7 @@ h3 {
         flex-direction: column;
         width: 453px;
         padding: unset;
-
+        order: 2;
     }
 
     .technologies {

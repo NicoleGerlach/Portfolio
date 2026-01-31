@@ -20,6 +20,7 @@
       <span>{{ project.technologies }} {{ ref.proTechnologies }}</span>
       <span>{{ project.duration }} {{ ref.proDuration }}</span>
     </div>
+
     <div class="content">
       <div class="project-img">
         @if (ref.proTechImg?.length) {
@@ -28,6 +29,7 @@
           <div class="tech-img">
             @for (p of ref.proTechImg ?? []; track p) {
             <img [src]="p.src" />
+            
             }
           </div>
         </div>
@@ -37,7 +39,6 @@
       <div class="margin-bottom-32 content-project">
         <div class="project-explanation">
           <img src="assets/img/Ellipse_small.svg" />
-
           <span class="headline">{{ project.about }} </span>
           <div class="duration-wide">
             <span>{{ project.duration }}</span>
@@ -65,6 +66,7 @@
         </div>
       </div>
     </div>
+
     @if (project.projects?.length) {
     <div class="live-test">
       <!-- <div class="button-box"> -->

@@ -18,7 +18,7 @@
 
 .arrow-top:hover img,
 .arrow-top:focus-visible img {
-  content: url('../../../assets/img/Arrow_up_hover.svg');
+    content: url('../../../assets/img/Arrow_up_hover.svg');
 }
 
 .contact-option {
@@ -91,14 +91,21 @@ textarea::placeholder {
     gap: 5px;
 }
 
+.checkbox {
+    background-color: unset;
+    border: unset;
+}
+
 .send-btn {
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
+    background-color: unset;
+    border: unset;
 }
 
 .send-btn img {
-    cursor: not-allowed;
+    cursor: pointer;
 }
 
 a {

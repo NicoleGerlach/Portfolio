@@ -1,26 +1,3 @@
-<!-- @if (header$ | async; as header) {
-<header>
-  <div class="logo-box">
-    <div class="logo">
-      <img class="logo-pic" src="assets/img/Logo.svg" />
-      <span class="name-small">{{ header.nameSmall }}</span>
-      <span class="profession-small">{{ header.professionSmall }}</span>
-    </div>
-    <div
-      class="hamburger-menu"
-      (click)="toggleMenu()"
-      [class.open]="headerService.menuOpen"
-    >
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div>
- <app-menu 
- [isHamburger]="true"
- />
-</header>
-} -->
 
 @if (header$ | async; as header) {
 <header>

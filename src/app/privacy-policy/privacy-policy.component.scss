@@ -1,3 +1,11 @@
+section {
+    margin: 0 clamp(1.25rem, -4.734rem + 19.149vw, 12.5rem);
+}
+
+.headline {
+    font-size: clamp(1.5rem, 0.503rem + 3.191vw, 3.375rem);
+}
+
 button {
     background: none;
     border: none;
@@ -11,14 +19,29 @@ button {
 
 h3 {
     color: #F28A62;
-    font-size: 23px;
+    font-size: clamp(1.25rem, 1.117rem + 0.426vw, 1.5rem);
+    margin: 16px 0;
+    line-height: 1;
 }
 
 h4 {
     color: #F28A62;
-    font-size: 19px;
+    font-size: clamp(0.875rem, 0.709rem + 0.532vw, 1.188rem);
+    margin: unset;
 }
 
 .box-headline {
     color: #F28A62;
 }
+
+span,
+ul {
+    font-size: clamp(0.875rem, 0.709rem + 0.532vw, 1.188rem);
+}
+
+a {
+    text-decoration: none;
+    color: #F28A62;
+    margin: 8px 0;
+}
+

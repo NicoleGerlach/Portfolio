@@ -93,6 +93,10 @@ export interface ContactContent {
   have: string;
   prPolicy: string;
   read: string;
+  nameInput: string;
+  emailInput: string;
+  messageInput: string;
+
 }
 
 export interface PrivacyPolicyContent {
