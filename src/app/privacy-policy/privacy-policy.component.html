@@ -1,5 +1,13 @@
 
 @if (privacyPolicy$ | async; as privacyPolicy) {
+@if (header$ | async; as menuContent) {
+  <header>
+    <app-menu [menuContent]="menuContent"
+    (navigate)="onNavigate($event)"
+    (changeLang)="onLang($event)"
+    />
+  </header>
+
 <section id="privacyPolicy">
   <button type="button" (click)="goBack()">
     <img src="assets/img/Arrow_back.svg" />
@@ -30,9 +38,8 @@
     <span>{{ privacyPolicy.secondText }}</span>
     <span class="box-headline">{{ privacyPolicy.provider }}</span>
     <span>{{ privacyPolicy.providerText }}</span>
-    <a href="https://all-inkl.com/datenschutzinformationen/" target="_blank"
-      >https://all-inkl.com/datenschutzinformationen</a
-    >
+    <a href="https://all-inkl.com/datenschutzinformationen/"
+      target="_blank">https://all-inkl.com/datenschutzinformationen</a>
     <span>{{ privacyPolicy.providerTextTwo }}</span>
     <h3>{{ privacyPolicy.third }}</h3>
     <h4>{{ privacyPolicy.dataProtection }}</h4>
@@ -78,9 +85,8 @@
     <span>{{ privacyPolicy.inquiryTextTwo }}</span>
     <span>{{ privacyPolicy.inquiryTextThree }}</span>
     <span>{{ privacyPolicy.inquiryTextFour }}</span>
-    <a href="https://www.e-recht24.de" target="_blank"
-      >https://www.e-recht24.de</a
-    >
+    <a href="https://www.e-recht24.de" target="_blank">https://www.e-recht24.de</a>
   </div>
 </section>
+}
 }

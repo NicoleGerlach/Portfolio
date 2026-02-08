@@ -35,6 +35,8 @@ align-items: center;
       list-style: none;
       font-size: clamp(1.188rem, 0.919rem + 0.811vw, 1.375rem);
       text-align: center;
+      cursor: pointer;
+      color: black;
     }
     .languages {
       width: fit-content;
@@ -71,25 +73,33 @@ span {
   .german {
     background-image: url(./../../../assets/img/Ellipse_languages.svg);
     background-repeat: no-repeat;
-    color: #f8f5ec;
+    color: #F8F5EC;
+  }
+
+  .german:hover {
+    color: #F8F5EC;
   }
 
   .english {
     background-image: none;
-    color: black;
+    color: #042639;
+  }
+
+  .english:hover {
+    color: #F8F5EC;
   }
 }
 
 .lang-en {
   .german {
     background-image: none;
-    color: black;
+    color: #F8F5EC;
   }
 
   .english {
     background-image: url(./../../../assets/img/Ellipse_languages.svg);
     background-repeat: no-repeat;
-    color: #f8f5ec;
+    color: #042639;
   }
 }
 
@@ -112,6 +122,8 @@ span {
       padding-right: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
       li {
         list-style-type: none;
+        cursor: pointer;
+        color: #042639;
       }
       .languages {
         list-style-type: none;

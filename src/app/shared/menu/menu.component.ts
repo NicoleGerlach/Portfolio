@@ -24,7 +24,6 @@ export class MenuComponent {
     this.navigate.emit(section);
   }
 
-
   onLang(lang: 'de' | 'en') {
     this.changeLang.emit(lang);
   }
