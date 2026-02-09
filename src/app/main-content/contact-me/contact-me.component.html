@@ -1,21 +1,5 @@
 @if (contact$ | async; as contact) {
 <section id="contactMe">
-  <!-- <button
-  type="button"
-  class="arrow-up"
-  (click)="scrollToTop()"
-  aria-label="Nach oben scrollen"
->
-  <img
-    class="arrow-up-img"
-    [src]="
-      hover
-        ? 'assets/img/Arrow_up_hover.svg'
-        : 'assets/img/Arrow_up.svg'
-    "
-    alt=""
-  />
-</button> -->
   <div class="content">
     <h2>{{ contact.headline }}</h2>
     <div class="contact">
@@ -37,19 +21,21 @@
       <span>{{ contact.cooperation }}</span>
     </div>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
       <div class="inputs">
         <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
           [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text" id="name" required>
-        <span class="required" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
+        <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
         <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
           [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email" id="email" required
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-        <span class="required" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
+        <span class="required email" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
       </div>
+
       <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message" class="field"
         [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage" id="message" required>
       </textarea>
-      <span class="required" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
+      <span class="required message" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
         }}</span>
       <div class="privacy-box">
         <button class="checkbox" (click)="toggleCheckbox()">

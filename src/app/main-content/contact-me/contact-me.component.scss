@@ -55,6 +55,26 @@ form {
     gap: 24px;
 }
 
+.required {
+    position: absolute;
+    color: #F28A62;
+}
+
+.name {
+    margin-top: 63px;
+    margin-left: 24px;
+}
+
+.email {
+    margin-top: 63px;
+    margin-left: 373px;
+}
+
+.message {
+    margin-top: 288px;
+    margin-left: 24px;
+}
+
 input {
     background-color: #042639;
     text-align: start;
@@ -87,7 +107,7 @@ textarea::placeholder {
 .privacy-box {
     display: flex;
     align-items: center;
-    margin-top: 16px;
+    // margin-top: 16px;
     gap: 5px;
 }
 

@@ -16,6 +16,7 @@ export class ReferencesComponent implements OnInit {
 
   references$!: Observable<ReferencesContent | null>;
   currentIndex: number | null = null;
+  hover = false;
 
   constructor(public languageService: LanguageService) { }
 

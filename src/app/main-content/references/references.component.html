@@ -7,38 +7,23 @@
   <span class="headline-wide d-none">{{ references.headlineWide }}</span>
   @if (references.notions.length) {
     <div class="feedback-container">
-      @if (currentIndex === null) { @for (ref of references.references; track
-      ref; let i = $index) {
+      @if (currentIndex === null) { @for (ref of references.references; track ref; let i = $index) {
       <div class="feedback-card">
         <img class="background-elipse" src="assets/img/Ellipse_Feedback.svg" />
-        <img
-          class="background-elipse-wide d-none"
-          src="assets/img/Ellipse_Feedback_Wide.svg"
-        />
+        <img class="background-elipse-hover" src="assets/img/Ellipse_Feedback_hover.svg">
+        <img class="background-elipse-wide d-none" src="assets/img/Ellipse_Feedback_Wide.svg"/>
         <div class="feedback-box">
           <span class="name fs24-26">{{ ref.name }}</span>
-          <span class="project fs16-18"
-            >{{ ref.project }}
-            <span [ngStyle]="{ color: '#F28A62' }">{{
-              ref.projectName
-            }}</span></span
-          >
+          <span class="project fs16-18">{{ ref.project }}
+            <span [ngStyle]="{ color: '#F28A62' }">{{ ref.projectName }}</span></span>
           <span class="feedback fs16-18">{{ ref.feedback }}</span>
-          <button
-            type="button"
-            (click)="toggleFeedback(i)"
-            class="btn-feedback"
-          >
-            {{ ref.button }}
-          </button>
+          <button type="button" (click)="toggleFeedback(i)" class="btn-feedback">{{ ref.button }}</button>
         </div>
       </div>
       } } @else {
       <div class="feedback-big fs16-18">
         <span>{{ references.references[currentIndex].feedback }}</span>
-        <button type="button" (click)="closeFeedback()" class="btn-close">
-          {{ references.references[currentIndex].buttonBack }}
-        </button>
+        <button type="button" (click)="closeFeedback()" class="btn-close">{{ references.references[currentIndex].buttonBack }}</button>
       </div>
       }
     </div>

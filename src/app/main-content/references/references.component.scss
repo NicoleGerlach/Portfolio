@@ -23,20 +23,36 @@ h2 {
 .feedback-card {
   position: relative;
   width: clamp(18rem, -6.5rem + 56vi, 25rem);
-  min-width: 288px;
+  min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.background-elipse {
+.feedback-card img {
   position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
   height: auto;
   z-index: 0;
-  pointer-events: none;
+  display: block;
+  transition: opacity 1s ease;
+}
+
+.background-elipse {
+  display: none;
+  opacity: 0;
+}
+
+.background-elipse-hover {
+  display: none;
+  opacity: 0;
+}
+
+.background-elipse-wide {
+  display: block;
+  opacity: 1;
 }
 
 .feedback-box {
@@ -45,8 +61,7 @@ h2 {
   display: flex;
   flex-direction: column;
   width: clamp(11.25rem, -15rem + 60vi, 18.75rem);
-
-
+  margin-left: clamp(0.25rem, -3.268rem + 8.04vw, 1.25rem);
 
   .name {
     margin-bottom: 8px;
@@ -94,6 +109,7 @@ h2 {
   padding: 0 14px;
   background-color: rgb(4, 38, 57, 0.95);
   gap: 14px;
+  z-index: 1;
 }
 
 .btn-close {
@@ -158,7 +174,7 @@ h2 {
 
   .feedback-container {
     justify-content: center;
-    height: 406px;
+    height: 410px;
   }
 
   .feedback-box {
@@ -168,13 +184,27 @@ h2 {
     align-items: center;
   }
 
+  .feedback-card:hover .background-elipse {
+    opacity: 0;
+  }
+
+  .feedback-card:hover .background-elipse-hover {
+    opacity: 1;
+  }
+
   .background-elipse {
-    display: none;
+    display: block;
+    opacity: 1;
+  }
+
+  .background-elipse-hover {
+    display: block;
+    opacity: 0;
   }
 
   .background-elipse-wide {
-    display: flex;
-    position: absolute;
+    display: none;
+    opacity: 0;
   }
 
   .project,

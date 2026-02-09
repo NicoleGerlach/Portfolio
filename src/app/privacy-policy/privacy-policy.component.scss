@@ -4,6 +4,8 @@ section {
 
 .headline {
     font-size: clamp(1.5rem, 0.503rem + 3.191vw, 3.375rem);
+    margin-top: clamp(1.125rem, -0.438rem + 5vw, 4.063rem);
+    margin-bottom: clamp(2rem, 0.936rem + 3.404vw, 4rem);
 }
 
 button {
@@ -20,7 +22,7 @@ button {
 h3 {
     color: #F28A62;
     font-size: clamp(1.25rem, 1.117rem + 0.426vw, 1.5rem);
-    margin: 16px 0;
+    margin: 34px 0 12px 0;
     line-height: 1;
 }
 
@@ -45,3 +47,12 @@ a {
     margin: 8px 0;
 }
 
+.bottom {
+    margin-bottom: clamp(4.688rem, 3.856rem + 2.66vw, 6.25rem);
+}
+
+@media (min-width: 900px) {
+    button {
+        display: none;
+    }
+}

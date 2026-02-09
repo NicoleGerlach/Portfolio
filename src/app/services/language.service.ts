@@ -100,8 +100,6 @@ export class LanguageService {
     const lang = this.currentLang;
     const path = this.pathMap.privacyPolicy[lang] ?? this.pathMap.privacyPolicy.de;
     this.http.get<PrivacyPolicyContent>(path).subscribe(data => this.privacyPolicySubject.next(data));
-    console.log("loadTextsPrivacyPolicy funktioniert");
-
   }
 
 }
