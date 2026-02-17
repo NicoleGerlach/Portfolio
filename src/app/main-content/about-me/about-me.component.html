@@ -5,13 +5,14 @@
     <div class="pic">
       <img class="bw-pic" src="assets/img/Application_Pic.png" />
     </div>
+
     <div class="content">
       <div class="icons">
         <img class="logo" src="assets/img/Logo.svg" />
         <div class="social-media">
-          <img (mouseover)="hover = true" (mouseout)="hover = false" [src]="hover ? 'assets/img/Email_button_header.svg' : 'assets/img/Email_button_mobile.svg'" />
-          <img (mouseover)="hover = true" (mouseout)="hover = false" [src]="hover ? 'assets/img/Github_button_header.svg' : 'assets/img/Email_button_mobile.svg'" />
-          <img (mouseover)="hover = true" (mouseout)="hover = false" [src]="hover ? 'assets/img/Linkedin_button_header.svg' : 'assets/img/Linkedin_button_mobile.svg'" />
+          <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false" [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_header.svg'" />
+          <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false" [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_header.svg'" />
+          <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false" [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_header.svg'" />
         </div>
       </div>
       <div class="name">
@@ -21,16 +22,17 @@
       <a href="#whyMe" class="arrow-down">
         <img
           class="arrow-down-img"
-          (mouseover)="hover = true"
-          (mouseout)="hover = false"
+          (mouseover)="hoverArrow = true"
+          (mouseout)="hoverArrow = false"
           [src]="
-            hover
+            hoverArrow
               ? 'assets/img/Arrow_down_hover.svg'
               : 'assets/img/Arrow_down.svg'
           "
         />
       </a>
     </div>
+
   </div>
 </section>
 }

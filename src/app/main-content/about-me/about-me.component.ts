@@ -17,7 +17,10 @@ import { Router } from '@angular/router';
 export class AboutMeComponent implements OnInit {
   aboutMe$!: Observable<AboutMeContent | null>;
 
-  hover = false;
+  hoverEmail = false;
+  hoverGithub = false;
+  hoverLinkedin = false;
+  hoverArrow = false;
   fontColorBlack = true;
 
   constructor(
