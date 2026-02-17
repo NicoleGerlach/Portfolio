@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HeaderContent } from '../interfaces/all-interfaces';
 import { LanguageService } from './language.service';
 import { Router } from '@angular/router';
+import { NavigationService } from './navigation.service';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,8 @@ export class HeaderService {
   constructor(
     public http: HttpClient,
     public languageService: LanguageService,
-    private router: Router
+    private router: Router,
+    private navigationService: NavigationService
   ) {}
 
   loadHeader(path: string): Observable<HeaderContent> {
@@ -56,12 +58,16 @@ export class HeaderService {
     };
   }
 
+  // scrollToWithFragment(sectionId: string) {
+  //   const el = document.getElementById(sectionId);
+  //   if (el) {
+  //     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //     this.router.navigate([], { fragment: sectionId });
+  //   }
+  //   this.closeMenu();
+  // }
+
   scrollToWithFragment(sectionId: string) {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      this.router.navigate([], { fragment: sectionId });
-    }
-    this.closeMenu();
+    this.navigationService.scrollToWithFragment(sectionId);
   }
 }

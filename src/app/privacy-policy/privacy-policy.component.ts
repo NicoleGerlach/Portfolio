@@ -6,6 +6,7 @@ import { HeaderContent, PrivacyPolicyContent } from '../interfaces/all-interface
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../services/header.service';
 import { MenuComponent } from '../shared/menu/menu.component';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -23,7 +24,8 @@ export class PrivacyPolicyComponent implements OnInit {
     public languageService: LanguageService,
     private route: ActivatedRoute,
     private router: Router,
-    private headerService: HeaderService
+    private headerService: HeaderService,
+    private navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -60,7 +62,7 @@ export class PrivacyPolicyComponent implements OnInit {
 
   onNavigate(section: string) {
     this.router.navigate(['/'], { fragment: section }).then(() => {
-      this.scrollToSection(section);
+      this.navigationService.scrollToWithFragment(section);
     });
   }
 

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { HeaderContent } from '../../interfaces/all-interfaces';
 import { HeaderService } from '../../services/header.service';
 import { MenuComponent } from '../menu/menu.component';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     private headerService: HeaderService,
+    private navigationService: NavigationService,
     private router: Router
   ) {}
 
@@ -37,7 +39,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onNavigate(section: string) {
-    this.headerService.scrollToWithFragment(section);
+    this.navigationService.scrollToWithFragment(section);
   }
 
   onLang(lang: 'de' | 'en') {
