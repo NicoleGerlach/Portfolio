@@ -2,8 +2,6 @@ import { CommonModule, NgClass } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HeaderContent } from '../../interfaces/all-interfaces';
 import { LanguageService } from '../../services/language.service';
-import { Router } from '@angular/router';
-import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-menu',
@@ -21,22 +19,11 @@ export class MenuComponent {
 
   constructor(
     private languageService: LanguageService,
-    private router: Router,
-    private navigationService: NavigationService
   ) { }
 
-  // onNavigate(section: string, event: MouseEvent) {
-  //   event.preventDefault();
-  //   this.navigate.emit(section);
-  // }
-
   onNavigate(section: string, event: MouseEvent) {
-    this.router.navigate(['/'], { fragment: section }).then(() => {
-      // event.preventDefault();
-      // this.navigate.emit(section);
-      this.navigationService.scrollToWithFragment(section);
-    });
-    this.navigationService.closeMenu();
+    event.preventDefault();
+    this.navigate.emit(section);
   }
 
   onLang(lang: 'de' | 'en') {

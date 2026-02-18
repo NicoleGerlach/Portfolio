@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { HeaderContent } from '../interfaces/all-interfaces';
 import { HeaderService } from '../services/header.service';
 import { LanguageService } from '../services/language.service';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-main-content',
@@ -33,7 +34,8 @@ export class MainContentComponent implements OnInit {
 
   constructor(
     private headerService: HeaderService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -41,7 +43,7 @@ export class MainContentComponent implements OnInit {
   }
 
   onNavigate(section: string) {
-    this.headerService.scrollToWithFragment(section);
+    this.navigationService.navigateToSection(section);
   }
 
   onLang(lang: 'de' | 'en') {

@@ -8,7 +8,7 @@
       <span class="profession-small">{{ header.professionSmall }}</span>
     </div>
     
-    <div class="hamburger-menu" (click)="toggleMenu()" [class.open]="getMenuClass()">
+    <div class="hamburger-menu" (click)="navigationService.toggleMenu()" [class.open]="menuOpen$ | async">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
@@ -17,7 +17,7 @@
   <app-menu class="app-menu-overlay"
     [isHamburger]="true"
     [menuContent]="header"
-    [menuClass]="getMenuClass()"
+    [menuClass]="(menuOpen$ | async) ?? false"
     (navigate)="onNavigate($event)"
     (changeLang)="onLang($event)"
   />

@@ -17,11 +17,12 @@ import { NavigationService } from '../../services/navigation.service';
 })
 export class HeaderComponent implements OnInit {
   header$!: Observable<HeaderContent | null>;
+  menuOpen$ = this.navigationService.menuOpen$;
 
   constructor(
     private languageService: LanguageService,
     private headerService: HeaderService,
-    private navigationService: NavigationService,
+    public navigationService: NavigationService,
     private router: Router
   ) {}
 
@@ -30,16 +31,8 @@ export class HeaderComponent implements OnInit {
     this.languageService.loadTextsHeader();
   }
 
-  toggleMenu(): void {
-    this.headerService.toggleMenu();
-  }
-
-  getMenuClass(): boolean {
-    return this.headerService.menuOpen; 
-  }
-
   onNavigate(section: string) {
-    this.navigationService.scrollToWithFragment(section);
+    this.navigationService.navigateToSection(section);
   }
 
   onLang(lang: 'de' | 'en') {

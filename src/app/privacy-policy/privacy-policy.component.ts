@@ -61,19 +61,7 @@ export class PrivacyPolicyComponent implements OnInit {
   }
 
   onNavigate(section: string) {
-    this.router.navigate(['/'], { fragment: section }).then(() => {
-      this.navigationService.scrollToWithFragment(section);
-    });
-  }
-
-  private scrollToSection(section: string, retries = 20) {
-    const el = document.getElementById(section);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    if (retries > 0) {
-      setTimeout(() => this.scrollToSection(section, retries -1), 50);
-    }
+    this.navigationService.navigateToSection(section);
   }
 
   onLang(lang: 'de' | 'en') {

@@ -10,45 +10,37 @@ import { NavigationService } from './navigation.service';
   providedIn: 'root',
 })
 export class HeaderService {
-  menuOpen = false;
 
   constructor(
     public http: HttpClient,
     public languageService: LanguageService,
     private router: Router,
     private navigationService: NavigationService
-  ) {}
+  ) { }
 
   loadHeader(path: string): Observable<HeaderContent> {
     return this.http.get<HeaderContent>(path);
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
-
-  closeMenu() {
-    this.menuOpen = false;
-  }
-
   setLang(lang: 'de' | 'en') {
     if (this.languageService.currentLang !== lang) {
       this.languageService.currentLang = lang;
-
       localStorage.setItem('lang', lang);
-
-      this.languageService.loadTextsAboutMe();
-      this.languageService.loadTextsWhyMe();
-      this.languageService.loadTextsSkills();
-      this.languageService.loadTextsProjects();
-      this.languageService.loadTextsReferences();
-      this.languageService.loadTextsContact();
-      this.languageService.loadTextsPrivacyPolicy();
-      this.languageService.loadTextsHeader();
+      this.loadAllTexts();
     }
     console.log('setLang funktioniert');
+    this.navigationService.closeMenu();
+  }
 
-    this.closeMenu();
+  loadAllTexts() {
+    this.languageService.loadTextsAboutMe();
+    this.languageService.loadTextsWhyMe();
+    this.languageService.loadTextsSkills();
+    this.languageService.loadTextsProjects();
+    this.languageService.loadTextsReferences();
+    this.languageService.loadTextsContact();
+    this.languageService.loadTextsPrivacyPolicy();
+    this.languageService.loadTextsHeader();
   }
 
   getLangClasses(): { 'lang-de': boolean; 'lang-en': boolean } {
@@ -56,18 +48,5 @@ export class HeaderService {
       'lang-de': this.languageService.currentLang === 'de',
       'lang-en': this.languageService.currentLang === 'en',
     };
-  }
-
-  // scrollToWithFragment(sectionId: string) {
-  //   const el = document.getElementById(sectionId);
-  //   if (el) {
-  //     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  //     this.router.navigate([], { fragment: sectionId });
-  //   }
-  //   this.closeMenu();
-  // }
-
-  scrollToWithFragment(sectionId: string) {
-    this.navigationService.scrollToWithFragment(sectionId);
   }
 }
