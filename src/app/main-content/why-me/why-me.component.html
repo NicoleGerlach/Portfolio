@@ -17,7 +17,7 @@
       <br />
       {{ whyMe.skills }}
       <a href="#contact" class="btn-talk d-none">
-        <img src="assets/img/Btn_LetsTalk.svg" />
+        <img (mouseover)="hover = true" (mouseout)="hover = false" [src]="hover ? 'assets/img/Btn_LetsTalk_Hover.svg' : 'assets/img/Btn_LetsTalk.svg'">
       </a>
     </span>
   </div>

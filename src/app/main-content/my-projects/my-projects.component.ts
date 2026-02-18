@@ -14,7 +14,8 @@ import { ProjectContent } from '../../interfaces/all-interfaces';
 })
 export class MyProjectsComponent implements OnInit {
   project$!: Observable<ProjectContent | null>;
-
+  hoverLifetest = false;
+  hoverGithub = false;
   currentProject: 'first' | 'second' | 'third' = 'first';
   currentProjectIndex: number = 0;
 

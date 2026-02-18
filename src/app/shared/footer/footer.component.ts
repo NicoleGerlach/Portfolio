@@ -9,5 +9,8 @@ import { RouterModule } from "@angular/router";
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  hoverEmail = false;
+  hoverGithub = false;
+  hoverLinkedin = false;
 
 }

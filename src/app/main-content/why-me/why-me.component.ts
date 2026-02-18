@@ -14,6 +14,7 @@ import { WhyMeContent } from '../../interfaces/all-interfaces';
 })
 export class WhyMeComponent implements OnInit {
   whyMe$!: Observable<WhyMeContent | null>;
+  hover =false;
 
   constructor (public languageService: LanguageService) {}
 
