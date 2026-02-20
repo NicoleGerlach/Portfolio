@@ -1,11 +1,12 @@
 
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ContactContent } from '../../interfaces/all-interfaces';
 import { RouterLink } from "@angular/router";
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
@@ -16,6 +17,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 
 export class ContactMeComponent implements OnInit {
+  http = inject(HttpClient);
   contact$!: Observable<ContactContent | null>;
   hover = false;
   contactData = {
@@ -26,8 +28,6 @@ export class ContactMeComponent implements OnInit {
   checkboxImg = 'assets/img/Checkbox.svg';
   isChecked = false;
   submitImg = 'assets/img/Btn_Send_Error.svg';
-
-  mailTest = true;
 
   constructor(public languageService: LanguageService) { }
 
@@ -46,7 +46,7 @@ export class ContactMeComponent implements OnInit {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://gerlach-nicole.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -57,9 +57,42 @@ export class ContactMeComponent implements OnInit {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && this.isChecked) {
-          console.log("Funktioniert", this.contactData);
+    if (ngForm.submitted && ngForm.form.valid && this.isChecked) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            console.log(this.contactData);
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid) {
+
+      ngForm.resetForm();
+      this.toggleCheckbox();
     }
   }
+
+  // onSubmit(ngForm: NgForm) {
+  //   if (ngForm.valid && this.isChecked) {
+  //         console.log("Funktioniert", this.contactData);
+
+  //   }
+  //   ngForm.resetForm();
+  //   this.toggleCheckbox();
+  // }
+
+  // onSubmit(ngForm: NgForm) {
+  //   if (ngForm.form.valid && this.isChecked) {
+  //     console.log("Funktioniert", this.contactData);
+  //     // hier echte Verarbeitung/POST einfügen
+  //   } else {
+  //     // Optional: Fehlermeldung oder UI-Feedback
+  //     console.warn("Formular unvollständig oder Checkbox nicht aktiviert.");
+  //   }
+  // }
 
 }

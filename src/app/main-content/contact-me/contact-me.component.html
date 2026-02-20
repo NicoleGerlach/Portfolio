@@ -20,7 +20,8 @@
     <div class="work-together margin-bottom-32">
       <span>{{ contact.cooperation }}</span>
     </div>
-    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+
+    <!-- <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
       <div class="inputs">
         <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
@@ -50,7 +51,44 @@
         <img
           [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
       </button>
-    </form>
+    </form> -->
+
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div class="inputs">
+    <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name"
+           class="field" [placeholder]="(contact$ | async)?.phName ?? contact.phName"
+           type="text" id="name" required>
+    <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
+
+    <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email"
+           class="field" [placeholder]="(contact$ | async)?.phMail ?? contact.phMail"
+           type="email" id="email" required
+           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+    <span class="required email" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
+  </div>
+
+  <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message"
+            class="field" [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage"
+            id="message" required>
+  </textarea>
+  <span class="required message" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput }}</span>
+
+  <div class="privacy-box">
+    <button type="button" class="checkbox" (click)="toggleCheckbox()">
+      <img [src]="checkboxImg" />
+    </button>
+    <span>{{ contact.have }}
+      <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}"
+         [ngStyle]="{color: '#F28A62'}">{{contact.prPolicy}}</a>
+      {{contact.read}}
+    </span>
+  </div>
+
+  <button type="submit" class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
+    <img [src]="(contactForm.form.valid && isChecked) ? 'assets/img/Btn_Send.svg' : 'assets/img/Btn_Send_Error.svg'">
+  </button>
+</form>
+
     <button type="button" class="arrow-top cursor-pointer" (click)="scrollToTop()" aria-label="Nach oben scrollen">
       <img class="arrow-up-img" [src]="'assets/img/Arrow_up.svg'" alt="" />
     </button>
