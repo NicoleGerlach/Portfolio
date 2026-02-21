@@ -33,6 +33,5 @@ export class MyProjectsComponent implements OnInit {
 
   openExternal(url: string) {
     window.open(url, '_blank', 'noopener,noreferrer');
-    console.log('lifeTest URL:', url);
   }
 }

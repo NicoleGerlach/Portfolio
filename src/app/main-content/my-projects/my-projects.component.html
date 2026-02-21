@@ -70,10 +70,10 @@
     @if (project.projects?.length) {
     <div class="live-test">
       <!-- <div class="button-box"> -->
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.lifeTest)">
+      <button type="button" class="btn" (click)="openExternal(ref.lifeTest)">
         <img (mouseover)="hoverLifetest = true" (mouseout)="hoverLifetest = false" [src]="hoverLifetest ? 'assets/img/Btn_LifeTest_Hover.svg' : 'assets/img/Btn_LifeTest.svg'">
       </button>
-      <button type="button" class="btn-test-git" (click)="openExternal(ref.gitHub)">
+      <button type="button" class="btn" (click)="openExternal(ref.gitHub)">
         <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false" [src]="hoverGithub ? 'assets/img/Btn_GitHub_Hover.svg' : 'assets/img/Btn_GitHub.svg'">
       </button>
       <!-- </div> -->

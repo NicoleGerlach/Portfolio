@@ -26,6 +26,15 @@ footer {
     margin: 32px 63px;
 }
 
+.btn {
+    background-color: unset;
+    border: unset;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .impressum {
     font-size: 14px;
     display: flex;

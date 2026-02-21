@@ -31,6 +31,10 @@ export class AboutMeComponent implements OnInit {
   ngOnInit(): void {
     this.aboutMe$ = this.languageService.aboutContent$;
     this.languageService.loadTextsAboutMe();
-    };
+  };
+
+  openExternal(url: string) {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
 
 }

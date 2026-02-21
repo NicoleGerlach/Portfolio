@@ -10,9 +10,15 @@
       <div class="icons">
         <img class="logo" src="assets/img/Logo.svg" />
         <div class="social-media">
+          <a href="#contact" class="btn">
           <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false" [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_header.svg'" />
+          </a>
+          <button type="button" (click)="openExternal('https://github.com/dashboard')" class="btn">
           <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false" [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_header.svg'" />
+          </button>
+          <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')" class="btn">
           <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false" [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_header.svg'" />
+          </button>
         </div>
       </div>
       <div class="name">
@@ -32,7 +38,6 @@
         />
       </a>
     </div>
-
   </div>
 </section>
 }

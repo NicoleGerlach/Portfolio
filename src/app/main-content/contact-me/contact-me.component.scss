@@ -21,6 +21,8 @@
     content: url('../../../assets/img/Arrow_up_hover.svg');
 }
 
+
+
 .contact-option {
     display: flex;
     align-items: center;
@@ -186,5 +188,13 @@ a {
 
     .arrow-top {
         display: none;
+    }
+
+    .top {
+        position: absolute;
+        top: 0px;
+        right: 112px;
+        background-color: unset;
+        border: unset;
     }
 }
