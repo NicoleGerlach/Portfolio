@@ -148,13 +148,11 @@ a {
     color: #F28A62;
 
     opacity: 1;
-    // transform: translateY(0);
     transition: opacity 600ms ease-out, transform 300ms ease-out;
 }
 
 .success.hide {
     opacity: 0;
-    // transform: translateY(20px);
     pointer-events: none;
 }
 
