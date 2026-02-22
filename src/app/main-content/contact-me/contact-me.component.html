@@ -55,5 +55,8 @@
       <img class="arrow-up-img" [src]="'assets/img/Arrow_up.svg'" alt="" />
     </button>
   </div>
+  <span class="success" [class.hide]="!isSend">
+    {{ contact.successful }}
+  </span>
 </section>
 }

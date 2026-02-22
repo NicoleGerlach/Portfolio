@@ -13,5 +13,6 @@
     "read": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
     "nameInput": "Gültiger Name notwendig",
     "emailInput": "Gültige E-Mail Adresse notwendig",
-    "messageInput": "Bitte mindestens 10 Zeichen eingeben."
+    "messageInput": "Bitte mindestens 10 Zeichen eingeben.",
+    "successful": "Vielen Dank! Ihre Email wurde erfolgreich gesendet."
 }

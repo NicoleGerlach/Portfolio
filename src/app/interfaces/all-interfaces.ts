@@ -96,7 +96,7 @@ export interface ContactContent {
   nameInput: string;
   emailInput: string;
   messageInput: string;
-
+  successful: string
 }
 
 export interface PrivacyPolicyContent {

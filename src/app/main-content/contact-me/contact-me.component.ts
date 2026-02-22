@@ -28,6 +28,7 @@ export class ContactMeComponent implements OnInit {
   checkboxImg = 'assets/img/Checkbox.svg';
   isChecked = false;
   submitImg = 'assets/img/Btn_Send_Error.svg';
+  isSend = false;
 
   constructor(public languageService: LanguageService) { }
 
@@ -73,12 +74,22 @@ export class ContactMeComponent implements OnInit {
             console.log(this.contactData);
             ngForm.resetForm();
             this.resetCheckbox();
+            this.mailIsSend();
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else {}
-    }
+    } else { }
   }
+
+  mailIsSend() {
+    this.isSend = true;
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => {
+      this.isSend = false;
+      document.body.style.overflow = '';
+    }, 1500);
+  }
+}

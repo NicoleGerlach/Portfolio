@@ -136,6 +136,28 @@ a {
     display: none;
 }
 
+.success {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(4, 38, 57, 0.95);
+    color: #F28A62;
+
+    opacity: 1;
+    // transform: translateY(0);
+    transition: opacity 600ms ease-out, transform 300ms ease-out;
+}
+
+.success.hide {
+    opacity: 0;
+    // transform: translateY(20px);
+    pointer-events: none;
+}
+
 @media (min-width: 900px) {
     section {
         position: relative;
