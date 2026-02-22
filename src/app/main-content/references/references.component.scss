@@ -11,9 +11,7 @@ h2 {
 
 .feedback-container {
   width: 98vw;
-  height: clamp(19.375rem, -0.313rem + 45vi, 25rem);
-  // height: 50vh;
-  // max-height: 400px;
+  height: clamp(19.375rem, -2.5rem + 50vw, 25.625rem);
   display: flex;
   overflow-x: scroll;
   gap: 24px;
@@ -106,7 +104,7 @@ h2 {
   justify-content: center;
   top: 0;
   left: 0;
-  padding: 0 14px;
+  padding: 0 clamp(1.313rem, -7.633rem + 28.625vw, 15.625rem);
   background-color: rgb(4, 38, 57, 0.95);
   gap: 14px;
   z-index: 1;
@@ -139,19 +137,19 @@ h2 {
   display: none;
 }
 
-::-webkit-scrollbar {
+.feedback-container::-webkit-scrollbar {
   width: 4px;
   height: 6px;
   border-radius: 4px;
   padding-right: 4px;
 }
 
-::-webkit-scrollbar-thumb {
+.feedback-container::-webkit-scrollbar-thumb {
   background: #f8f5ec;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-track {
+.feedback-container::-webkit-scrollbar-track {
   background: #042639;
 }
 
@@ -221,7 +219,6 @@ h2 {
   .feedback-big {
     font-size: 18px;
     background-color: rgb(4, 38, 57, 0.95);
-    padding: 0 50px;
     align-items: center;
   }
 }

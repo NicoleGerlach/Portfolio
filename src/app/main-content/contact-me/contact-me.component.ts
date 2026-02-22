@@ -40,9 +40,18 @@ export class ContactMeComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-    toggleCheckbox() {
+  toggleCheckbox() {
     this.isChecked = !this.isChecked;
-    this.checkboxImg = this.checkboxImg === 'assets/img/Checkbox.svg' ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg'  
+    this.checkboxImg = this.checkboxImg === 'assets/img/Checkbox.svg' ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg'
+  }
+
+  resetCheckbox() {
+    this.isChecked = false;
+    this.updateCheckboxImg();
+  }
+
+  updateCheckboxImg() {
+    this.checkboxImg = this.isChecked ? 'assets/img/Checkbox_done.svg' : 'assets/img/Checkbox.svg';
   }
 
   post = {
@@ -63,36 +72,13 @@ export class ContactMeComponent implements OnInit {
           next: (response) => {
             console.log(this.contactData);
             ngForm.resetForm();
+            this.resetCheckbox();
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid) {
-
-      ngForm.resetForm();
-      this.toggleCheckbox();
+    } else {}
     }
   }
-
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.valid && this.isChecked) {
-  //         console.log("Funktioniert", this.contactData);
-
-  //   }
-  //   ngForm.resetForm();
-  //   this.toggleCheckbox();
-  // }
-
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.form.valid && this.isChecked) {
-  //     console.log("Funktioniert", this.contactData);
-  //     // hier echte Verarbeitung/POST einfügen
-  //   } else {
-  //     // Optional: Fehlermeldung oder UI-Feedback
-  //     console.warn("Formular unvollständig oder Checkbox nicht aktiviert.");
-  //   }
-  // }
-
-}

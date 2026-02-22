@@ -13,6 +13,7 @@ import { MySkillsContent } from '../../interfaces/all-interfaces';
 })
 export class MySkillsComponent implements OnInit {
   mySkills$!: Observable<MySkillsContent | null>;
+  hover = false;
 
   constructor (public languageService: LanguageService) {}
 

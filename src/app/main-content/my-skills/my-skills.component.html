@@ -1,7 +1,6 @@
 @if (mySkills$ | async; as mySkills) {
 <section id="skills">
   <h2>{{ mySkills.headline }}</h2>
-
   <div class="icons-wrapper">
     <div class="icons">
       <figure class="icon-box">
@@ -20,7 +19,6 @@
         <img src="assets/img/HTML.svg" />
         <figcaption class="skills">{{ mySkills.html }}</figcaption>
       </figure>
-
       <figure class="icon-box">
         <img src="assets/img/CSS.svg" />
         <figcaption class="skills">{{ mySkills.css }}</figcaption>
@@ -49,9 +47,8 @@
       </figure>
     </div>
   </div>
-
-  <a href="#contactMe" class="lets-talk-btn"
-    ><img src="assets/img/Btn_LetsTalk_Mobile.svg"
-  /></a>
+  <a href="#contactMe" class="lets-talk-btn"><img (mouseover)="hover = false" (mouseout)="hover = true"
+      [src]="hover ? 'assets/img/Btn_LetsTalk_Mobile.svg' : 'assets/img/Btn_LetsTalk_Mobile_Hover.svg'">
+  </a>
 </section>
 }

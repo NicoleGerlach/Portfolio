@@ -21,8 +21,6 @@
     content: url('../../../assets/img/Arrow_up_hover.svg');
 }
 
-
-
 .contact-option {
     display: flex;
     align-items: center;
@@ -68,12 +66,12 @@ form {
 }
 
 .email {
-    margin-top: 63px;
-    margin-left: 373px;
+    margin-top: 147px;
+    margin-left: 24px;
 }
 
 .message {
-    margin-top: 288px;
+    margin-top: 370px;
     margin-left: 24px;
 }
 
@@ -143,19 +141,16 @@ a {
         position: relative;
     }
 
-    .arrow-up {
+    .arrow-top {
         position: absolute;
-        top: 12px;
+        top: 0;
         right: clamp(5rem, -5rem + 16vw, 7rem);
         width: 100%;
         display: flex;
         justify-content: flex-end;
         background-color: unset;
         border: unset;
-
-        .arrow-up-img:hover {
-            cursor: pointer;
-        }
+        margin: unset;
     }
 
     .contact {
@@ -178,23 +173,26 @@ a {
         gap: 21px;
     }
 
+    .name {
+        margin-top: 63px;
+        margin-left: 24px;
+    }
+
+    .email {
+        margin-top: 63px;
+        margin-left: clamp(22.5rem, -3.542rem + 46.296vi, 38.125rem);
+    }
+
+    .message {
+        margin-top: 288px;
+        margin-left: 24px;
+    }
+
     form textarea.field {
         grid-column: 1 / -1;
     }
 
     .send-btn {
         margin-bottom: 180px;
-    }
-
-    .arrow-top {
-        display: none;
-    }
-
-    .top {
-        position: absolute;
-        top: 0px;
-        right: 112px;
-        background-color: unset;
-        border: unset;
     }
 }

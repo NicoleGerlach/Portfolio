@@ -1,5 +1,11 @@
 section {
   padding: 1em 2em 3em;
+  display: flex;
+  justify-content: center;
+}
+
+.content-box {
+  max-width: 860px;
 }
 
 .local {
@@ -46,7 +52,7 @@ section {
   }
 
   .located {
-    max-width: 275px;
+    max-width: 295px;
   }
 
   .located::after {

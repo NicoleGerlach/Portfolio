@@ -34,5 +34,4 @@ export class ReferencesComponent implements OnInit {
     this.currentIndex = null;
     document.body.style.overflow = 'unset';
   }
-
 }

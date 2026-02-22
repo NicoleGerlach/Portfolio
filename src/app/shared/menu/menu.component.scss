@@ -1,24 +1,18 @@
 .menu-bubble {
-  // padding: 1em;
-  // position: relative;
 
-position: absolute;
-// top: clamp(6.375rem, -3.317rem + 24.231vw, 10.313rem);
-top: 17.2%;
-left: 0;
-width: 100%;
-// background-color: #042639;
-// height: 409px;
-display: flex;
-align-items: center;
-  
+  position: absolute;
+  top: 17.2%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
   .bubble-shape {
     margin: 0 auto;
     display: block;
-    // max-width: 354px;
-    // max-height: 370px;
     height: clamp(19rem, 0.077rem + 47.308vw, 26.688rem);
   }
+
   .menu-bar {
     height: 60%;
     padding: 0;
@@ -30,6 +24,7 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
     li {
       width: 100%;
       list-style: none;
@@ -37,9 +32,15 @@ align-items: center;
       text-align: center;
       cursor: pointer;
       color: #042639;
+
+      &:hover {
+        color: #F8F5EC;
+      }
     }
+
     .languages {
       width: fit-content;
+
       button {
         font-size: clamp(1.188rem, 0.919rem + 0.811vw, 1.375rem);
         background-color: transparent;
@@ -48,6 +49,24 @@ align-items: center;
     }
   }
 }
+
+
+.menu-bar li.active {
+  position: relative;
+}
+
+.menu-bar li.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
 
 .desktop-content {
   display: none;
@@ -117,11 +136,12 @@ span {
 @media (min-width: 900px) {
   .desktop-content {
     height: 104px;
-    padding: 0 1em;
+    padding: 0 clamp(2.125rem, -32.458rem + 55.333vw, 12.5rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #f28a62;
+
     .menu-bar {
       display: flex;
       width: 100%;
@@ -130,16 +150,22 @@ span {
       justify-content: space-between;
       font-size: clamp(1.25rem, 0.625rem + 1.111vw, 1.625rem);
       padding-left: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
-      padding-right: clamp(3.75rem, 0.625rem + 5.556vw, 5.625rem);
+
       li {
         list-style-type: none;
         cursor: pointer;
         color: #042639;
+
+        &:hover {
+          color: #F8F5EC;
+        }
       }
+
       .languages {
         list-style-type: none;
+
         button {
-          font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+          font-size: clamp(1.188rem, 0.919rem + 0.811vw, 1.375rem);
           background-color: transparent;
           border: none;
         }

@@ -1,11 +1,10 @@
 
 <ng-template #menuContentTpl>
   <ul class="menu-bar">
-    <li (click)="onNavigate('whyMe', $event)">{{ menuContent?.whyMe }}</li>
-    <li (click)="onNavigate('skills', $event)">{{ menuContent?.skills }}</li>
-    <li (click)="onNavigate('projects', $event)">{{ menuContent?.projects }}</li>
-    <li (click)="onNavigate('contact', $event)">{{ menuContent?.contact }}</li>
-
+    <li [class.active]="activeSection === 'whyMe'" (click)="onNavigate('whyMe', $event)">{{ menuContent?.whyMe }}</li>
+    <li [class.active]="activeSection === 'skills'" (click)="onNavigate('skills', $event)">{{ menuContent?.skills }}</li>
+    <li [class.active]="activeSection === 'projects'" (click)="onNavigate('projects', $event)">{{ menuContent?.projects }}</li>
+    <li [class.active]="activeSection === 'contact'" (click)="onNavigate('contact', $event)">{{ menuContent?.contact }}</li>
     <li
       class="languages"
       [ngClass]="{
@@ -18,7 +17,6 @@
     </li>
   </ul>
 </ng-template>
-
 @if (isHamburger) {
 <div class="menu-bubble" [class.d-none]="!(menuClass)">
   <svg
@@ -26,12 +24,10 @@
     aria-hidden="true"
     viewBox="0 0 354 370"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <path
       d="M350.449 199.663C334.748 302.754 279.352 370 162.931 370C35.2523 370 0 288.311 0 206.181C0 103.979 72.8744 -9.18411 213.883 0.591717C312.827 15.4037 366.15 96.5727 350.449 199.663Z"
-      fill="#D97A4E"
-    />
+      fill="#D97A4E"/>
   </svg>
   <ng-container *ngTemplateOutlet="menuContentTpl"></ng-container>
 </div>

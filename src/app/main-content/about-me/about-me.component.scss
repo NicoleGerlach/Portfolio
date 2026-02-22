@@ -1,7 +1,8 @@
 
-// section {
-//   height: calc(100vh - 104px);
-// }
+section {
+  display: flex;
+  justify-content: center;
+}
 
 .pic {
   display: flex;
@@ -80,9 +81,11 @@
 
 @media (min-width: 900px) {
   .content-wrapper {
+    max-width: 1214px;
     display: flex;
     justify-content: space-around;
     margin-top: 63px;
+    gap: 47px;
   }
 
   .content {
@@ -115,5 +118,9 @@
     flex-direction: column;
     align-items: center;
     gap: 16px;
+  }
+
+  .arrow-down {
+    margin-top: clamp(0rem, -14.205rem + 22.727vw, 6.25rem);
   }
 }

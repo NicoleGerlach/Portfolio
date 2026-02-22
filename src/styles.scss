@@ -37,19 +37,8 @@ h2 {
   margin-bottom: 32px;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 4px;
-  padding-right: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f8f5ec;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: unset;
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .cursor-pointer {
