@@ -37,8 +37,8 @@
             ],
             "proDuration": "5 weeks",
             "img": "assets/img/PitPenguin.png",
-            "proDeclaration": "This is a jump-and-run game that's not just for kids. The goal is to collect all the fish coins, avoid the little snow bunnies or neutralize them by jumping, and have enough poison bottles to defeat the final boss.",
-            "proOrganisation": "The game was organized using object-oriented programming (OOP): clear classes like player and enemy ensure a clean separation of logic. Collisions and jumps were clearly defined so that the platforming character reacts reliably to the terrain and enemies are hit correctly. In addition to the logic, the graphics were also carefully designed to make the game visually appealing and the movements fluid.",
+            "proDeclaration": "This is a jump-and-run game that's not just for kids. The goal is to collect all the fish coins, avoid the little snow bunnies or defeat them by jumping, and find enough poison bottles to beat the final boss.",
+            "proOrganisation": "The game was organized using out-of-character (OOP) logic: clear classes like player and enemy ensure a clean separation of logic. Collisions and jumps were clearly defined so that the platforming character reacts reliably to the terrain and enemies are hit correctly. The logic was carefully designed, and the graphics were implemented to create an appealing visual presentation and fluid movement.",
             "lifeTest": "https://pitpenguin.gerlach-nicole.de/",
             "gitHub": "https://github.com/NicoleGerlach/PitPenguin.git"
 

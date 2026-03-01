@@ -25,7 +25,6 @@
         <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
           [placeholder]="(contact$ | async)?.phName ?? contact.phName" type="text" id="name" required>
         <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
-
         <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
           [placeholder]="(contact$ | async)?.phMail ?? contact.phMail" type="email" id="email" required
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">

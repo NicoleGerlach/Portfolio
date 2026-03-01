@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 import { Component, Inject, inject, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
@@ -71,17 +70,20 @@ export class ContactMeComponent implements OnInit {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log(this.contactData);
-            ngForm.resetForm();
-            this.resetCheckbox();
-            this.mailIsSend();
+            this.resetContactForm(ngForm);
           },
           error: (error) => {
             console.error(error);
           },
           complete: () => console.info('send post complete'),
         });
-    } else { }
+    }
+  }
+
+  resetContactForm(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.resetCheckbox();
+    this.mailIsSend();
   }
 
   mailIsSend() {

@@ -1,4 +1,3 @@
-
 export interface HeaderContent {
   whyMe: string;
   skills: string;
@@ -54,31 +53,31 @@ export interface ReferenceCard {
 }
 
 export interface ProjectContent {
-  headline: string,
-  technologies: string,
-  duration: string,
-  about: string,
-  organisation: string,
-  groupWork: string,
-  projects?: ProjectCard[],
+  headline: string;
+  technologies: string;
+  duration: string;
+  about: string;
+  organisation: string;
+  groupWork: string;
+  projects?: ProjectCard[];
 }
 
 export interface ProjectCard {
-  proNumber: string,
-  proName: string,
-  proTechImg?: TechImg[],
-  proTechnologies: string,
-  proDuration: string,
-  img: string,
-  proDeclaration: string,
-  proOrganisation: string,
-  proGroupWork: string,
-  lifeTest: string,
-  gitHub: string,
+  proNumber: string;
+  proName: string;
+  proTechImg?: TechImg[];
+  proTechnologies: string;
+  proDuration: string;
+  img: string;
+  proDeclaration: string;
+  proOrganisation: string;
+  proGroupWork: string;
+  lifeTest: string;
+  gitHub: string;
 }
 
 export interface TechImg {
-  src: string,
+  src: string;
 }
 
 export interface ContactContent {
@@ -105,6 +104,7 @@ export interface PrivacyPolicyContent {
   name: string;
   address: string;
   city: string;
+  email: string;
   first: string;
   notice: string;
   noticeText: string;

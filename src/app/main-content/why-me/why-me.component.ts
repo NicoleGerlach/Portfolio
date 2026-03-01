@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
@@ -22,5 +21,4 @@ export class WhyMeComponent implements OnInit {
     this.whyMe$ = this.languageService.whyMeContent$;
     this.languageService.loadTextsWhyMe();
   }
-
 }

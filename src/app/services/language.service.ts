@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -101,5 +100,4 @@ export class LanguageService {
     const path = this.pathMap.privacyPolicy[lang] ?? this.pathMap.privacyPolicy.de;
     this.http.get<PrivacyPolicyContent>(path).subscribe(data => this.privacyPolicySubject.next(data));
   }
-
 }

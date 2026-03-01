@@ -1,4 +1,3 @@
-
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
@@ -33,8 +32,8 @@ export class AboutMeComponent implements OnInit {
     this.languageService.loadTextsAboutMe();
   };
 
-  openExternal(url: string) {
+  openExternal(url: string): void {
+    console.log('openExternal', url);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
-
 }

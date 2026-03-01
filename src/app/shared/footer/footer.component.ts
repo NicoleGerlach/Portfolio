@@ -13,8 +13,12 @@ export class FooterComponent {
   hoverGithub = false;
   hoverLinkedin = false;
 
-  openExternal(url: string) {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  openExternal(url: string): void {
+    console.log('openExternal', url);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
 }

@@ -141,20 +141,23 @@ h2 {
   width: 4px;
   height: 6px;
   border-radius: 4px;
-  padding-right: 4px;
 }
-
 .feedback-container::-webkit-scrollbar-thumb {
   background: #f8f5ec;
   border-radius: 4px;
 }
-
 .feedback-container::-webkit-scrollbar-track {
   background: #042639;
 }
 
-@media (min-width: 900px) {
+@-moz-document url-prefix() {
+  .feedback-container {
+    scrollbar-width: thin;
+    scrollbar-color: #f8f5ec #042639;
+  }
+}
 
+@media (min-width: 900px) {
   .headline-feedback,
   h2 {
     display: none;

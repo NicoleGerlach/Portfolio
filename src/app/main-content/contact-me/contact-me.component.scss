@@ -107,7 +107,6 @@ textarea::placeholder {
 .privacy-box {
     display: flex;
     align-items: center;
-    // margin-top: 16px;
     gap: 5px;
 }
 
@@ -146,7 +145,6 @@ a {
     align-items: center;
     background-color: rgb(4, 38, 57, 0.95);
     color: #F28A62;
-
     opacity: 1;
     transition: opacity 600ms ease-out, transform 300ms ease-out;
 }

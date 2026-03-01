@@ -21,5 +21,4 @@ export class MySkillsComponent implements OnInit {
     this.mySkills$ = this.languageService.mySkillsContent$;
     this.languageService.loadTextsSkills();
   }
-
 }
