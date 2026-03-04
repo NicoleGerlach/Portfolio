@@ -164,3 +164,7 @@ export interface PrivacyPolicyContent {
   inquiryTextThree: string;
   inquiryTextFour: string;
 }
+
+ export interface FooterContent {
+  legalNotice: string
+ }

@@ -23,7 +23,7 @@
             "proOrganisation": "Durch klare Strukturen bleibt der Code sauber, lesbar und wartbar. Das Projekt wurde in wiederverwendbare Komponenten zerlegt, die klar abgegrenzte Funktionen erfüllen und in unterschiedlichen Teilen des Projekts oder zukünftigen Projekten erneut genutzt werden können. Konsistente Namenskonventionen, aussagekräftige Variablen und Funktionen spiegeln den Zweck und Kontext wider.",
             "proGroupWork": "In meinem zweiten Gruppenprojekt organisierten wir unsere Aufgaben über ein Kanbanboard, trafen uns regelmäßig zu Video-Calls und unterstützten uns gegenseitig bei Engpässen, um Transparenz, Zusammenarbeit und einen kontinuierlichen Arbeitsfluss sicherzustellen. Es wurden immer wieder gegenseitige Code-Reviews an kleinen Abschnitten durchgeführt. Anschließend testeten wir einzelne Module und schließlich das Gesamtsystem.",
             "lifeTest": "https://join.gerlach-nicole.de/",
-            "gitHub": "https://github.com/FouratOueslati/Join.git"
+            "gitHub": "https://github.com/NicoleGerlach/Join.git"
         },
         {
             "proNumber": "2. Projekt",

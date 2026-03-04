@@ -13,7 +13,7 @@ export class FooterComponent {
   hoverGithub = false;
   hoverLinkedin = false;
 
-    scrollToTop() {
+  scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 

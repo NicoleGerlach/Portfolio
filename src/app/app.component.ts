@@ -6,6 +6,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { MainContentComponent } from './main-content/main-content.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { ImprintComponent } from './imprint/imprint.component'; 
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
     MainContentComponent,
     HeaderComponent,
     FooterComponent,
-    PrivacyPolicyComponent],
+    PrivacyPolicyComponent,
+    ImprintComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,0 +1,18 @@
+@if (header$ | async; as menuContent) {
+<header>
+  <app-menu [menuContent]="menuContent" (navigate)="onNavigate($event)" (changeLang)="onLang($event)" />
+</header>
+<section id="imprint">
+  <button type="button" (click)="goBack()">
+    <img src="assets/img/Arrow_back.svg" />
+  </button>
+  <h2 class="headline">Imprint</h2>
+  <div class="content">
+    <span>Nicole Gerlach</span>
+    <span>Niederhäslicher Straße 15</span>
+    <span>01705 Freital</span>
+    <span>0162 465 8668</span>
+    <span>contact[at]gerlach-nicole.de</span>
+  </div>
+</section>
+}
