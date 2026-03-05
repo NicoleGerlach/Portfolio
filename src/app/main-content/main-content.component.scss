@@ -9,6 +9,10 @@ app-menu {
   display: none;
 }
 
+main {
+  flex: 1;
+}
+
 .references {
   max-width: -webkit-fill-available;
 }
