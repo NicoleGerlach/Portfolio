@@ -61,11 +61,12 @@ a {
     .footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        padding: 0 clamp(2.125rem, -32.458rem + 55.333vw, 12.5rem);
     }
 
     .footer-icons-wide {
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: flex-end;
         order: 3;
         gap: 16px;

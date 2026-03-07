@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Inject, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ContactContent } from '../../interfaces/all-interfaces';
@@ -29,7 +29,8 @@ export class ContactMeComponent implements OnInit {
   submitImg = 'assets/img/Btn_Send_Error.svg';
   isSend = false;
 
-  constructor(public languageService: LanguageService) { }
+  constructor(public languageService: LanguageService,
+  ) { }
 
   ngOnInit(): void {
     this.contact$ = this.languageService.contactContent$;

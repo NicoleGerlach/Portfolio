@@ -6,7 +6,6 @@
     @for (p of project.projects; track p; let i = $index) {
     <span (click)="showProject(i)" [class.card-background]="currentProjectIndex === i" class="project-list">
       <span class="wide">{{ p.proName }}</span>
-      <span class="mobile">{{ p.proNumber }}</span>
     </span>
     }
   </div>

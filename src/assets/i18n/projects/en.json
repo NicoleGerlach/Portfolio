@@ -7,7 +7,6 @@
     "groupWork": "My group work expirience",
     "projects": [
         {
-            "proNumber": "1. Project",
             "proName": "Join",
             "proTechnologies": "HTML, CSS, Javascript, Git, Firebase", 
             "proTechImg": [
@@ -27,7 +26,6 @@
 
         },
         {
-            "proNumber": "2. Project",
             "proName": "Pit Penguin",
             "proTechnologies": "HTML, CSS, Javascript",
             "proTechImg": [

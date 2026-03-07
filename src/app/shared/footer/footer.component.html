@@ -1,9 +1,8 @@
 <footer id="footer" class="footer-box">
     <div class="footer">
         <div class="logo">
-            <button type="button" class="logo-pic" (click)="scrollToTop()"
-                aria-label="Nach oben scrollen">
-                <img class="arrow-up-img" [src]="'assets/img/Logo_Footer.svg'"/>
+            <button type="button" class="logo-pic" (click)="scrollToTop()" aria-label="Nach oben scrollen">
+                <img class="arrow-up-img" [src]="'assets/img/Logo_Footer.svg'" />
             </button>
             <span class="name-small">N.Gerlach</span>
             <span class="profession-small">developer</span>
@@ -28,10 +27,10 @@
                 <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
                     [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_footer.svg'">
             </button>
-            <a href="#contact">
+            <button type="button" (click)="focusToName()" class="btn">
                 <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false"
                     [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_footer.svg'">
-            </a>
+            </button>
             <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')"
                 class="btn">
                 <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"

@@ -63,7 +63,6 @@ export interface ProjectContent {
 }
 
 export interface ProjectCard {
-  proNumber: string;
   proName: string;
   proTechImg?: TechImg[];
   proTechnologies: string;

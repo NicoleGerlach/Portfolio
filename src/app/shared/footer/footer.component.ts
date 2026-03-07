@@ -21,4 +21,11 @@ export class FooterComponent {
     console.log('openExternal', url);
     window.open(url, '_blank', 'noopener,noreferrer');
   }
+
+  focusToName(): void {
+    const nameInput = document.getElementById('name');
+    nameInput?.focus();
+    console.log('er springt zu Name');
+  }
+  
 }

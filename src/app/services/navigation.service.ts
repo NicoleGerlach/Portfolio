@@ -32,16 +32,18 @@ export class NavigationService {
     this.closeMenu();
   }
 
-  private scrollToWithFragment(sectionId: string, retries = 20) {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
-    if (retries > 0) {
-      setTimeout(() => this.scrollToWithFragment(sectionId, retries - 1), 50);
-    }
+private scrollToWithFragment(sectionId: string, retries = 20, offsetDesktop = 110, offsetMobile = 20) {
+  const el = document.getElementById(sectionId);
+  if (el) {
+    const offset = window.innerWidth <= 900 ? offsetMobile : offsetDesktop;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    return;
   }
+  if (retries > 0) {
+    setTimeout(() => this.scrollToWithFragment(sectionId, retries - 1, offsetDesktop, offsetMobile), 50);
+  }
+}
 
   toggleMenu() {
     const current = this.privatemenuOpenSubject.value;

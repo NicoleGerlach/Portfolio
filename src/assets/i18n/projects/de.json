@@ -7,7 +7,6 @@
     "groupWork": "Meine Gruppenarbeitserfahrung",
     "projects": [
         {
-            "proNumber": "1. Projekt",
             "proName": "Join",
             "proTechnologies": "HTML, CSS, Javascript, Git, Firebase",
             "proTechImg": [
@@ -26,7 +25,6 @@
             "gitHub": "https://github.com/NicoleGerlach/Join.git"
         },
         {
-            "proNumber": "2. Projekt",
             "proName": "Pit Penguin",
             "proTechnologies": "HTML, CSS, Javascript",
             "proTechImg": [

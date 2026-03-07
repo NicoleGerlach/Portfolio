@@ -28,7 +28,6 @@ export class HeaderService {
       localStorage.setItem('lang', lang);
       this.loadAllTexts();
     }
-    console.log('setLang funktioniert');
     this.navigationService.closeMenu();
   }
 

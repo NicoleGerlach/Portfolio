@@ -22,31 +22,31 @@
     </div>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
       <div class="inputs">
-        <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
-          [placeholder]="(contact$ | async)?.phName ?? contact.phName"
-          (blur)="contactData.name = contactData.name.trim()" type="text" id="name" required>
-        <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
-        <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
-          [placeholder]="(contact$ | async)?.phMail ?? contact.phMail"
-          (blur)="contactData.email = contactData.email ? contactData.email.trim() : ''" type="email" id="email" required
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-        <span class="required email" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
+        <div class="field-wrap">
+          <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
+            [placeholder]="(contact$ | async)?.phName ?? contact.phName"
+            (blur)="contactData.name = contactData.name.trim()" type="text" id="name" required>
+          <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
+        </div>
+        <div class="field-wrap">
+          <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
+            [placeholder]="(contact$ | async)?.phMail ?? contact.phMail"
+            (blur)="contactData.email = contactData.email.trim()" type="text" id="email" required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+          <span class="required email" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
+        </div>
+        <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message" class="field"
+          [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage"
+          (blur)="contactData.message = contactData.message.trim()" id="message" required></textarea>
+        <span class="required message" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
+          }}</span>
       </div>
-      <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message" class="field"
-        [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage"
-        (blur)="contactData.message = contactData.message.trim()" id="message" required>
-  </textarea>
-      <span class="required message" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
-        }}</span>
       <div class="privacy-box">
         <button type="button" class="checkbox" (click)="toggleCheckbox()">
           <img [src]="checkboxImg" />
         </button>
-        <span>{{ contact.have }}
-          <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}"
-            [ngStyle]="{color: '#F28A62'}">{{contact.prPolicy}}</a>
-          {{contact.read}}
-        </span>
+        <span>{{ contact.have }} <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}"
+            [ngStyle]="{color: '#F28A62'}">{{contact.prPolicy}}</a> {{contact.read}} </span>
       </div>
       <button type="submit" class="send-btn" [disabled]="!contactForm.form.valid || !isChecked">
         <img
