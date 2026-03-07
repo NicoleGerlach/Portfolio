@@ -12,10 +12,10 @@
                 <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
                     [src]="hoverGithub ? 'assets/img/Github_button_footer.svg' : 'assets/img/Github_button_mobile.svg'">
             </button>
-            <a href="#contact">
+            <button type="button" (click)="focusToName()" class="btn">
                 <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false"
                     [src]="hoverEmail ? 'assets/img/Email_button_footer.svg' : 'assets/img/Email_button_mobile.svg'">
-            </a>
+            </button>
             <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')"
                 class="btn">
                 <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"

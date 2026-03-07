@@ -32,7 +32,7 @@ export class NavigationService {
     this.closeMenu();
   }
 
-private scrollToWithFragment(sectionId: string, retries = 20, offsetDesktop = 110, offsetMobile = 20) {
+public scrollToWithFragment(sectionId: string, retries = 20, offsetDesktop = 110, offsetMobile = 20) {
   const el = document.getElementById(sectionId);
   if (el) {
     const offset = window.innerWidth <= 900 ? offsetMobile : offsetDesktop;

@@ -23,9 +23,10 @@ export class FooterComponent {
   }
 
   focusToName(): void {
+    const contactSection = document.getElementById('contactMe')
     const nameInput = document.getElementById('name');
+    contactSection?.scrollTo({ behavior: 'smooth', top: 0 });
     nameInput?.focus();
-    console.log('er springt zu Name');
   }
-  
+
 }
