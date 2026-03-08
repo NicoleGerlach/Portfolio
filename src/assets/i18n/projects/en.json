@@ -39,7 +39,6 @@
             "proOrganisation": "The game was organized using out-of-character (OOP) logic: clear classes like player and enemy ensure a clean separation of logic. Collisions and jumps were clearly defined so that the platforming character reacts reliably to the terrain and enemies are hit correctly. The logic was carefully designed, and the graphics were implemented to create an appealing visual presentation and fluid movement.",
             "lifeTest": "https://pitpenguin.gerlach-nicole.de/",
             "gitHub": "https://github.com/NicoleGerlach/PitPenguin.git"
-
         }
     ]
 }

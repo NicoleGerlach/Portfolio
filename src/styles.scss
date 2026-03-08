@@ -49,3 +49,10 @@ html {
 .cursor-pointer {
   cursor: pointer;
 }
+
+app-root,
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
