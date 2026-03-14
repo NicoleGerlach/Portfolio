@@ -1,44 +1,42 @@
 <footer id="footer" class="footer-box">
     <div class="footer">
         <div class="logo">
-            <button type="button" class="logo-pic" (click)="scrollToTop()" aria-label="Nach oben scrollen">
-                <img class="arrow-up-img" [src]="'assets/img/Logo_Footer.svg'" />
+            <button type="button" class="logo-pic" (click)="goToStart()">
+                <img class="arrow-up-img" [src]="'assets/img/Logo_Footer.svg'"/>
             </button>
             <span class="name-small">N.Gerlach</span>
             <span class="profession-small">developer</span>
         </div>
         <div class="footer-icons">
-            <button type="button" (click)="openExternal('https://github.com/NicoleGerlach')" class="btn">
+            <a href="https://github.com/NicoleGerlach" target="_blank" rel="noopener noreferrer">
                 <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
                     [src]="hoverGithub ? 'assets/img/Github_button_footer.svg' : 'assets/img/Github_button_mobile.svg'">
-            </button>
+            </a>
             <button type="button" (click)="focusToName()" class="btn">
                 <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false"
                     [src]="hoverEmail ? 'assets/img/Email_button_footer.svg' : 'assets/img/Email_button_mobile.svg'">
             </button>
-            <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')"
-                class="btn">
+            <a href="https://www.linkedin.com/in/nicole-gerlach-6b58013b0/" target="_blank" rel="noopener noreferrer">
                 <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"
                     [src]="hoverLinkedin ? 'assets/img/Linkedin_button_footer.svg' : 'assets/img/Linkedin_button_mobile.svg'">
-            </button>
+            </a>
         </div>
         <div class="footer-icons-wide">
-            <button type="button" (click)="openExternal('https://github.com/NicoleGerlach')" class="btn">
+            <a href="https://github.com/NicoleGerlach" target="_blank" rel="noopener noreferrer">
                 <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
                     [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_footer.svg'">
-            </button>
+            </a>
+            <a href="https://www.linkedin.com/in/nicole-gerlach-6b58013b0/" target="_blank" rel="noopener noreferrer">
+                <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"
+                    [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_footer.svg'">
+            </a>
             <button type="button" (click)="focusToName()" class="btn">
                 <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false"
                     [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_footer.svg'">
             </button>
-            <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')"
-                class="btn">
-                <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"
-                    [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_footer.svg'">
-            </button>
         </div>
         <div class="impressum">
-            <a [routerLink]="['/imprint']" [queryParams]="{returnTo: 'footer'}">Imprint</a>
+            <a [routerLink]="['/imprint']">Imprint</a>
             <div>&copy; Nicole Gerlach 2025</div>
         </div>
     </div>

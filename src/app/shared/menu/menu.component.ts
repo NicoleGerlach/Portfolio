@@ -4,6 +4,7 @@ import { HeaderContent } from '../../interfaces/all-interfaces';
 import { LanguageService } from '../../services/language.service';
 import { NavigationService } from '../../services/navigation.service';
 import { Subject, takeUntil } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -24,7 +25,8 @@ export class MenuComponent {
 
   constructor(
     private languageService: LanguageService,
-    private nav: NavigationService
+    private nav: NavigationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -69,5 +71,19 @@ export class MenuComponent {
 
   get currentLang() {
     return this.languageService.currentLang;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goToStart() {
+    if (this.router.url === '/') {
+      this.scrollToTop()
+    } else {
+      this.router.navigate(['/']).then(() => {
+        this.scrollToTop();
+      });
+    }
   }
 }

@@ -167,6 +167,8 @@ a {
 @media (min-width: 900px) {
     section {
         position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     .arrow-top {

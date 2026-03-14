@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-footer',
@@ -13,13 +14,10 @@ export class FooterComponent {
   hoverGithub = false;
   hoverLinkedin = false;
 
+  constructor(private router: Router) { }
+
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  openExternal(url: string): void {
-    console.log('openExternal', url);
-    window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   focusToName(): void {
@@ -29,4 +27,13 @@ export class FooterComponent {
     nameInput?.focus();
   }
 
+  goToStart() {
+    if (this.router.url === '/') {
+      this.scrollToTop()
+    } else {
+      this.router.navigate(['/']).then(() => {
+        this.scrollToTop();
+      });
+    }
+  }
 }

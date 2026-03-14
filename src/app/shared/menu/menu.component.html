@@ -32,7 +32,9 @@
 </div>
 } @else {
 <div class="desktop-content">
+<button type="button" (click)="goToStart()" class="btn">
   <img src="assets/img/Logo_Footer.svg" />
+</button>
   <ng-container *ngTemplateOutlet="menuContentTpl"></ng-container>
 </div>
 }

@@ -8,15 +8,27 @@
       <div class="icons">
         <img class="logo" src="assets/img/Logo.svg" />
         <div class="social-media">
-          <a href="#contact" class="btn">
-          <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false" [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_header.svg'" />
+          <a href="#contact" class="btn" rel="noopener noreferrer">
+            <img (mouseover)="hoverEmail = true" (mouseout)="hoverEmail = false"
+              [src]="hoverEmail ? 'assets/img/Email_button_mobile.svg' : 'assets/img/Email_button_header.svg'" />
           </a>
-          <button type="button" (click)="openExternal('https://github.com/NicoleGerlach')" class="btn">
-          <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false" [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_header.svg'" />
-          </button>
-          <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')" class="btn">
-          <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false" [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_header.svg'" />
-          </button>
+          <a href="https://github.com/NicoleGerlach" target="_blank" rel="noopener noreferrer">
+            <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
+              [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_header.svg'" />
+          </a>
+          <a href="https://www.linkedin.com/in/nicole-gerlach-6b58013b0/" target="_blank" rel="noopener noreferrer">
+            <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"
+              [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_header.svg'" />
+          </a>
+          <!-- <button type="button" (click)="openExternal('https://github.com/NicoleGerlach')" class="btn">
+            <img (mouseover)="hoverGithub = true" (mouseout)="hoverGithub = false"
+              [src]="hoverGithub ? 'assets/img/Github_button_mobile.svg' : 'assets/img/Github_button_header.svg'" />
+          </button> -->
+          <!-- <button type="button" (click)="openExternal('https://www.linkedin.com/in/nicole-gerlach-6b58013b0/')"
+            class="btn">
+            <img (mouseover)="hoverLinkedin = true" (mouseout)="hoverLinkedin = false"
+              [src]="hoverLinkedin ? 'assets/img/Linkedin_button_mobile.svg' : 'assets/img/Linkedin_button_header.svg'" />
+          </button> -->
         </div>
       </div>
       <div class="name">
@@ -24,16 +36,11 @@
         <span class="profession">{{ aboutMe.profession }}</span>
       </div>
       <a href="#whyMe" class="arrow-down">
-        <img
-          class="arrow-down-img"
-          (mouseover)="hoverArrow = true"
-          (mouseout)="hoverArrow = false"
-          [src]="
+        <img class="arrow-down-img" (mouseover)="hoverArrow = true" (mouseout)="hoverArrow = false" [src]="
             hoverArrow
               ? 'assets/img/Arrow_down_hover.svg'
               : 'assets/img/Arrow_down.svg'
-          "
-        />
+          " />
       </a>
     </div>
   </div>

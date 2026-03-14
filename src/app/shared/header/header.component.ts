@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     private headerService: HeaderService,
     public navigationService: NavigationService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.header$ = this.languageService.headerContent$;
