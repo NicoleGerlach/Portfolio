@@ -30,29 +30,25 @@ export class MenuComponent {
   ) { }
 
   ngOnInit(): void {
-    const sections = ['whyMe', 'skills', 'projects', 'contact'];
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) {
-          this.activeSection = visible.target.id;
-        }
-      },
-      {
-        root: null,
-        rootMargin: '-50px 0px -50px 0px',
-        threshold: [0.5]
-      }
-    );
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-    this.destroy$.pipe(takeUntil(this.destroy$)).subscribe(() => {
-      observer.disconnect();
-    });
+  const sections = ['whyMe', 'skills', 'projects', 'contact'];
+  const observer = new IntersectionObserver((entries) => {
+    const id = this.getMostVisibleSectionId(entries);
+    if (id) {
+      this.activeSection = id;
+    }
+  }, { root: null, rootMargin: '-50px 0px -50px 0px', threshold: [0.5] });
+  sections.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+  this.destroy$.pipe(takeUntil(this.destroy$)).subscribe(() => observer.disconnect());
+}
+
+  getMostVisibleSectionId(entries: IntersectionObserverEntry[]): string | undefined {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    return visible?.target?.id;
   }
 
   ngOnDestroy(): void {
