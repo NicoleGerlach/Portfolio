@@ -7,6 +7,8 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../services/header.service';
 import { MenuComponent } from '../shared/menu/menu.component';
 import { NavigationService } from '../services/navigation.service';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-imprint',
@@ -29,8 +31,8 @@ export class ImprintComponent implements OnInit {
   
   ngOnInit(): void {
     this.header$ = this.languageService.headerContent$;
-    // this.languageService.loadTextsLegalNotice();
     this.returnToPreviousLocation();
+    AOS.init();
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
   }
 

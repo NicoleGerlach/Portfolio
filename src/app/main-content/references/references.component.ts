@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ReferencesContent } from '../../interfaces/all-interfaces';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-references',
@@ -22,6 +24,7 @@ export class ReferencesComponent implements OnInit {
   ngOnInit(): void {
     this.references$ = this.languageService.referencesContent$;
     this.languageService.loadTextsReferences();
+    AOS.refresh();
   }
 
   toggleFeedback(index: number) {

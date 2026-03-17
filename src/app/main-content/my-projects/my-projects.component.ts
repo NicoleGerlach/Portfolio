@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { ProjectContent } from '../../interfaces/all-interfaces';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-my-projects',
@@ -23,6 +25,7 @@ export class MyProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.project$ = this.languageService.projectContent$;
     this.languageService.loadTextsProjects();
+    AOS.init();
   }
 
   showProject(index: number): void {

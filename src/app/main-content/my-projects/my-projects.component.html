@@ -19,7 +19,7 @@
         <span>{{ project.duration }} {{ ref.proDuration }}</span>
       </div>
       <div class="content">
-        <div class="project-img">
+        <div class="project-img" data-aos="fade-left" data-aos-duration="1000">
           @if (ref.proTechImg?.length) {
           <div class="tech-box">
             <span>{{ project.technologies }}</span>
@@ -32,7 +32,7 @@
           }
           <img [src]="ref.img" alt="{{ ref.proName }}" />
         </div>
-        <div class="margin-bottom-32 content-project">
+        <div class="margin-bottom-32 content-project" data-aos="fade-right" data-aos-duration="1000">
           <div class="project-explanation">
             <img src="assets/img/Ellipse_small.svg" />
             <span class="headline">{{ project.about }} </span>

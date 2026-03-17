@@ -5,6 +5,7 @@ section {
 .icons-wrapper {
   max-width: 900px;
   margin: 0 auto;
+
   .icons {
     padding: 24px;
     box-sizing: border-box;
@@ -14,12 +15,14 @@ section {
     gap: 12px;
     place-items: center;
     align-items: baseline;
+
     .icon-box {
       margin: 0;
       width: 100px;
       font-size: 18px;
       color: #f28a62;
       text-align: center;
+
       img {
         max-width: 100%;
         max-height: 100%;

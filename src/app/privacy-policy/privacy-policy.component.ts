@@ -7,6 +7,8 @@ import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { HeaderService } from '../services/header.service';
 import { MenuComponent } from '../shared/menu/menu.component';
 import { NavigationService } from '../services/navigation.service';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -33,6 +35,7 @@ export class PrivacyPolicyComponent implements OnInit {
     this.header$ = this.languageService.headerContent$;
     this.languageService.loadTextsPrivacyPolicy();
     this.returnToPreviousLocation();
+    AOS.init();
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
   }
 

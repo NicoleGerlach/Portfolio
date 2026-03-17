@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { MySkillsContent } from '../../interfaces/all-interfaces';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-my-skills',
@@ -20,5 +22,6 @@ export class MySkillsComponent implements OnInit {
   ngOnInit(): void {
     this.mySkills$ = this.languageService.mySkillsContent$;
     this.languageService.loadTextsSkills();
+    AOS.init();
   }
 }

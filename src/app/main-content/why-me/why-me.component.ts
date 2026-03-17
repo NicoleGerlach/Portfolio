@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Observable } from 'rxjs';
 import { WhyMeContent } from '../../interfaces/all-interfaces';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-why-me',
@@ -20,5 +22,6 @@ export class WhyMeComponent implements OnInit {
   ngOnInit(): void {
     this.whyMe$ = this.languageService.whyMeContent$;
     this.languageService.loadTextsWhyMe();
+    AOS.init();
   }
 }

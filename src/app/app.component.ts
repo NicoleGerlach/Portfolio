@@ -7,8 +7,9 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { ImprintComponent } from './imprint/imprint.component';
-
 import { LanguageService } from './services/language.service';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',
@@ -28,9 +29,10 @@ import { LanguageService } from './services/language.service';
 export class AppComponent implements OnInit {
   title = 'Nicole Gerlach';
 
-  constructor(private languageService: LanguageService) {}
+  constructor(private languageService: LanguageService) { }
 
-    ngOnInit() {
+  ngOnInit() {
+    AOS.init({ once: false, duration: 600, offset: 120 })
     const savedLang = localStorage.getItem('lang') as 'de' | 'en' | null;
     const initialLang: 'de' | 'en' = savedLang ?? 'de';
     if (this.languageService.currentLang !== initialLang) {

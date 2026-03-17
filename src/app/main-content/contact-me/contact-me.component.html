@@ -1,10 +1,9 @@
-
 @if (contact$ | async; as contact) {
 <section id="contactMe">
   <div class="content">
     <h2>{{ contact.headline }}</h2>
     <div class="contact">
-      <div class="contact-data">
+      <div class="contact-data" data-aos="fade-left" data-aos-duration="1000">
         <div class="contact-option margin-left-right">
           <img src="assets/img/icon _phone_.svg" />
           <div>{{ contact.phone }}</div>
@@ -14,11 +13,11 @@
           <div>{{ contact.mail }}</div>
         </div>
       </div>
-      <div class="contact-box margin-bottom-32">
+      <div class="contact-box margin-bottom-32" data-aos="fade-right" data-aos-duration="1000">
         <span>{{ contact.text }}</span>
       </div>
     </div>
-    <div class="work-together margin-bottom-32">
+    <div class="work-together margin-bottom-32" data-aos="fade-right" data-aos-duration="1000">
       <span>{{ contact.cooperation }}</span>
     </div>
     <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
@@ -26,26 +25,26 @@
         <div class="field-wrap">
           <input #nameInput="ngModel" name="name" minlength="5" [(ngModel)]="contactData.name" class="field"
             [placeholder]="(contact$ | async)?.phName ?? contact.phName"
-            (blur)="contactData.name = contactData.name.trim()" type="text" id="name" required>
+            (blur)="contactData.name = contactData.name.trim()" type="text" id="name" required data-aos="flip-up" data-aos-duration="1000">
           <span class="required name" *ngIf="nameInput.invalid && nameInput.touched">{{ contact.nameInput }}</span>
         </div>
         <div class="field-wrap">
           <input #emailInput="ngModel" name="email" [(ngModel)]="contactData.email" class="field"
             [placeholder]="(contact$ | async)?.phMail ?? contact.phMail"
             (blur)="contactData.email = contactData.email.trim()" type="text" id="email" required
-            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" data-aos="flip-up" data-aos-duration="1000">
           <span class="required email" *ngIf="emailInput.invalid && emailInput.touched">{{ contact.emailInput }}</span>
         </div>
         <textarea #messageInput="ngModel" name="message" minlength="10" [(ngModel)]="contactData.message" class="field"
           [placeholder]="(contact$ | async)?.phMessage ?? contact.phMessage"
-          (blur)="contactData.message = contactData.message.trim()" id="message" required></textarea>
+          (blur)="contactData.message = contactData.message.trim()" id="message" required data-aos="flip-up" data-aos-duration="1000"></textarea>
         <span class="required message" *ngIf="messageInput.invalid && messageInput.touched">{{ contact.messageInput
           }}</span>
       </div>
-      <div>
+      <div data-aos="fade-right" data-aos-duration="1000">
         <input type="checkbox" id="privacyCheck" (change)="toggleCheckbox()" hidden />
         <label for="privacyCheck" class="privacy-box">
-          <img [src]="checkboxImg" />
+          <img [src]="checkboxImg"/>
           <span>{{ contact.have }}
             <a [routerLink]="['/privacyPolicy']" [queryParams]="{returnTo: 'footer'}"
               [ngStyle]="{color: '#F28A62'}">{{contact.prPolicy}}</a> {{contact.read}}

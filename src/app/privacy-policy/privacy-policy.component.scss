@@ -12,12 +12,15 @@ section {
 button {
     background: none;
     border: none;
+    padding: unset;
+    margin: 0 10px;
 }
 
 .notice-box {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin: 0 23px;
 }
 
 h3 {

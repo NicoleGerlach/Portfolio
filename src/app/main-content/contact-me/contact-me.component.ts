@@ -6,6 +6,8 @@ import { ContactContent } from '../../interfaces/all-interfaces';
 import { RouterLink } from "@angular/router";
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-contact-me',
@@ -35,6 +37,7 @@ export class ContactMeComponent implements OnInit {
   ngOnInit(): void {
     this.contact$ = this.languageService.contactContent$;
     this.languageService.loadTextsContact();
+    AOS.init();
   }
 
   scrollToTop() {

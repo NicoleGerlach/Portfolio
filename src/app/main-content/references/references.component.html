@@ -8,7 +8,7 @@
   @if (references.notions.length) {
     <div class="feedback-container">
       @if (currentIndex === null) { @for (ref of references.references; track ref; let i = $index) {
-      <div class="feedback-card">
+      <div class="feedback-card" data-aos="flip-right" data-aos-duration="1000">
         <img class="background-elipse" src="assets/img/Ellipse_Feedback.svg" />
         <img class="background-elipse-hover" src="assets/img/Ellipse_Feedback_hover.svg">
         <img class="background-elipse-wide d-none" src="assets/img/Ellipse_Feedback_Wide.svg"/>
