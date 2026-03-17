@@ -22,6 +22,8 @@ export class MySkillsComponent implements OnInit {
   ngOnInit(): void {
     this.mySkills$ = this.languageService.mySkillsContent$;
     this.languageService.loadTextsSkills();
-    AOS.init();
+    this.mySkills$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
   }
 }

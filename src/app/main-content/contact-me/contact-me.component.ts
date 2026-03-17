@@ -37,7 +37,9 @@ export class ContactMeComponent implements OnInit {
   ngOnInit(): void {
     this.contact$ = this.languageService.contactContent$;
     this.languageService.loadTextsContact();
-    AOS.init();
+    this.contact$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
   }
 
   scrollToTop() {

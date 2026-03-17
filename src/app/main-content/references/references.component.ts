@@ -24,7 +24,9 @@ export class ReferencesComponent implements OnInit {
   ngOnInit(): void {
     this.references$ = this.languageService.referencesContent$;
     this.languageService.loadTextsReferences();
-    AOS.refresh();
+    this.references$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
   }
 
   toggleFeedback(index: number) {

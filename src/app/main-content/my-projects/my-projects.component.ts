@@ -25,7 +25,9 @@ export class MyProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.project$ = this.languageService.projectContent$;
     this.languageService.loadTextsProjects();
-    AOS.init();
+    this.project$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
   }
 
   showProject(index: number): void {

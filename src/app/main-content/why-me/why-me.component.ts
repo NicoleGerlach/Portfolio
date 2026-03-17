@@ -22,6 +22,8 @@ export class WhyMeComponent implements OnInit {
   ngOnInit(): void {
     this.whyMe$ = this.languageService.whyMeContent$;
     this.languageService.loadTextsWhyMe();
-    AOS.init();
+    this.whyMe$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
   }
 }

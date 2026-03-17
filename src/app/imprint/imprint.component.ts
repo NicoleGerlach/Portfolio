@@ -32,7 +32,9 @@ export class ImprintComponent implements OnInit {
   ngOnInit(): void {
     this.header$ = this.languageService.headerContent$;
     this.returnToPreviousLocation();
-    AOS.init();
+    this.header$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
   }
 

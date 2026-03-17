@@ -28,14 +28,16 @@ export class PrivacyPolicyComponent implements OnInit {
     private router: Router,
     private headerService: HeaderService,
     private navigationService: NavigationService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.privacyPolicy$ = this.languageService.privacyPolicyContent$;
     this.header$ = this.languageService.headerContent$;
     this.languageService.loadTextsPrivacyPolicy();
     this.returnToPreviousLocation();
-    AOS.init();
+    this.privacyPolicy$.subscribe(() => {
+      setTimeout(() => AOS.refresh(), 0);
+    });
     setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
   }
 
