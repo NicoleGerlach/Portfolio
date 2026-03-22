@@ -13,10 +13,10 @@ body {
   font-family: "Josefin Sans";
   font-weight: 400;
   line-height: 120%;
-  // grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 h2 {

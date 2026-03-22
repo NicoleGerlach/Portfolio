@@ -39,13 +39,15 @@ footer {
 }
 
 .impressum {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
     justify-content: space-between;
+    color: #042639;
 }
 
 a {
-    color: #F8F5EC;
+    color: #042639;
     text-decoration: none;
 }
 

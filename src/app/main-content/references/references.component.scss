@@ -85,7 +85,7 @@ h2 {
   border: unset;
   color: #f28a62;
   font-family: "Josefin Sans";
-  font-size: 14px;
+  font-size: 16px;
   margin: 14px 0;
   display: flex;
   padding: unset;
@@ -107,7 +107,7 @@ h2 {
   left: 0;
   padding: 0 clamp(1.313rem, -7.633rem + 28.625vw, 15.625rem);
   background-color: rgb(4, 38, 57, 0.95);
-  gap: 14px;
+  gap: 16px;
   z-index: 1;
 }
 
@@ -117,7 +117,7 @@ h2 {
   border: unset;
   color: #f28a62;
   font-family: "Josefin Sans";
-  font-size: 14px;
+  font-size: 16px;
   padding: unset;
 
   &:hover {
