@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #042639;
   color: #f8f5ec;
@@ -16,7 +20,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 h2 {
